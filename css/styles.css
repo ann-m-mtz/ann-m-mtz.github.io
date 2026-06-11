@@ -1,3 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 40px;
+  padding: 0 24px;
+}
+
+p {
+  line-height: 1.6;
+}
+
 img {
     user-select: none;
 }
@@ -633,7 +647,7 @@ a:hover {
 
 .about-photo img {
 	filter: grayscale(100%) contrast(120%);
-	max-width: 350px;
+	max-width: 250px;
 	height: auto;
 	border: 1px solid rgba(255, 255, 255, .2);
 	border-radius: 15px;

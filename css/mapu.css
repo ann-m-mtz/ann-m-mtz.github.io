@@ -41,7 +41,8 @@
 }
 
 #mapu-intro p {
-    max-width: 800px;
+    text-align: justify;
+    max-width: 450px;
     margin: 0 auto;
 }
 
