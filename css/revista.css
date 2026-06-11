@@ -1,0 +1,169 @@
+
+#revista-hero {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 70vh;
+    background-image: url('../assets/images/fondomapunav.png');
+    background-size: content;
+    background-repeat: no-repeat;
+    background-position: top;
+    display: flex;
+}
+
+#revista-hero .container {
+    text-align: center;
+}
+
+#revista-hero h1 {
+    margin-top: 300px;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+#revista-hero h3 {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+
+#revista-intro {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#revista-intro p {
+    text-align: justify;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+/*INTRO*/
+
+.intro-grid {
+
+    display: grid;
+    gap: 3rem;
+
+}
+
+@media (min-width: 992px) {
+
+    .intro-grid {
+
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+    }
+
+}
+
+.intro-image img {
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.intro-text {
+
+    max-width: 600px;
+
+}
+
+.intro-text h2 {
+    font-weight: bolder;
+}
+
+/*Retos*/
+
+.retos-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 992px) {
+    .retos-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+.reto-card {
+    padding: 2rem;
+    background: rgba(255,255,255,.05);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, .75);
+}
+
+.reto-card:last-child {
+    border-bottom: none;
+}
+
+@media (min-width: 992px) {
+    .reto-card {
+        border-bottom: none;
+        border-right: 1px solid rgba(0, 0, 0, .75);
+    }
+
+    .reto-card:last-child {
+        border-right: none;
+    }
+
+}
+
+#retos h2 {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bolder;
+}
+
+/*Galerías*/
+
+.revista-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 992px) {
+    .revista-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+}
+
+.revista-grid img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/*IDK*/
+.desktop-gallery {
+    display: none;
+}
+
+.mobile-gallery {
+
+    display: block;
+
+}
+
+@media (min-width: 992px) {
+
+    .desktop-gallery {
+
+        display: block;
+
+    }
+
+    .mobile-gallery {
+
+        display: none;
+
+    }
+
+}

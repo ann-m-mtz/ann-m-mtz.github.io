@@ -1,0 +1,135 @@
+
+#carteles-hero {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 70vh;
+    background-image: url('../assets/images/fondomapunav.png');
+    background-size: content;
+    background-repeat: no-repeat;
+    background-position: top;
+    display: flex;
+}
+
+#carteles-hero .container {
+    text-align: center;
+}
+
+#carteles-hero h1 {
+    margin-top: 300px;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+#carteles-hero h3 {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+#carteles-hero p {
+    margin-top: 30px;
+}
+
+
+#carteles-intro {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#carteles-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*What what*/
+.award-poster {
+    padding: 2rem 0;
+}
+
+.award-poster:not(:last-child) {
+    border-bottom: 1px solid rgba(0,0,0, .75);
+}
+
+.award-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.award-info h2 {
+    margin-bottom: .5rem;
+}
+
+.award-meta {
+    opacity: .7;
+    font-style: italic;
+}
+
+.award-grid {
+    display: grid;
+
+    align-items: center;
+}
+
+@media (min-width: 992px) {
+    .award-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.poster-image {
+    display: flex;
+    justify-content: center;
+}
+
+.poster-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    display: block;
+}
+
+.award-proof {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.award-proof a {
+    color: black;
+    font-weight: lighter;
+    display: inline-block;
+    padding: 1rem;
+    border: .5px solid rgba(0,0,0, .25);
+    border-radius: 15px;
+    text-decoration: none;
+    transition: .3s ease;
+
+}
+
+.award-proof a:hover {
+    background: rgba(255,255,255,.08);
+    color: lightblue;
+}
+
+.award-proof img {
+    align-items: center;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 15px;
+    opacity: .95;
+    transition: .3s ease;
+}
+
+.award-proof img:hover {
+    transform: scale(1.02);
+}
+
+@media (min-width: 992px) {
+    .award-proof {
+        justify-content: flex-start;
+    }
+}

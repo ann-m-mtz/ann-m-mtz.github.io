@@ -1,0 +1,183 @@
+
+#pack-hero {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 70vh;
+    background-image: url('../assets/images/fondomapunav.png');
+    background-size: content;
+    background-repeat: no-repeat;
+    background-position: top;
+    display: flex;
+}
+
+#pack-hero .container {
+    text-align: center;
+}
+
+#pack-hero h1 {
+    margin-top: 300px;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+#pack-hero h3 {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+#pack-hero p {
+    margin-top: 30px;
+}
+
+
+#pack-intro {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#pack-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*Lo demás, empezando con galerías*/
+
+.packaging-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 992px) {
+    .packaging-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.packaging-grid img {
+    width: 100%;
+    height: 350px;
+    border-radius: 15px;
+    object-fit: contain;
+}
+
+/*Contexto*/
+
+.context-text {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: justify;
+    margin-bottom: 35px;
+}
+
+.context-text h2 {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.desktop-packaging {
+    display: none;
+}
+
+.mobile-packaging {
+    display: block;
+    max-width: 450px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 992px) {
+
+    .desktop-packaging {
+        display: block;
+    }
+
+    .mobile-packaging {
+        display: none;
+    }
+
+}
+
+/*Retos*/
+
+#packaging-retos h2 {
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 50px;
+}
+
+.retos-packaging {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 992px) {
+    .retos-packaging {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .reto-ilustrado {
+        border-right: 1px solid rgba(0,0,0,.75);
+       padding-right: 2rem;
+    }
+
+    .reto-ilustrado:last-child {
+        border-right: none;
+    }
+}
+
+.reto-ilustrado {
+    text-align: center;
+}
+
+.reto-ilustrado img {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 991px) {
+
+    .reto-ilustrado {
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid rgba(0,0,0,.75);
+    }
+
+    .reto-ilustrado:last-child {
+        border-bottom: none;
+    }
+
+}
+
+/*Impreso*/
+
+.resultado-grid {
+
+    display: grid;
+    gap: 2rem;
+
+    align-items: center;
+
+}
+
+@media (min-width: 992px) {
+    .resultado-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.resultado-grid img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}

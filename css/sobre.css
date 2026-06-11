@@ -1,0 +1,292 @@
+.about-page {
+
+    background-image: url('../assets/images/fondosobre.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+
+#sobre-hero {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 50vh;
+    display: flex;
+}
+
+#sobre-hero .container {
+    text-align: center;
+}
+
+#sobre-hero h1 {
+    margin-top: 200px;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+    color: whitesmoke;
+}
+
+.divisor-about {
+    margin-top: -100px;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 4rem 0;
+}
+
+.divisor-about::before,
+.divisor-about::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(255,255,255,.25);
+}
+
+
+#sobre-intro {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#sobre-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-photo {
+    filter: grayscale(100%) contrast(120%);
+    max-width: 250px;
+    height: auto;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 15px;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto 2rem auto;
+}
+
+/*Esta vieja*/
+.about-grid-top {
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 992px) {
+
+    .about-grid-top {
+
+        grid-template-columns: 300px 2fr;
+    }
+}
+
+.about-grid-bottom {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+
+@media (min-width: 992px) {
+    .about-grid-bottom {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+}
+
+.about-card.bio {
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-card {
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 20px;
+    padding: 2rem;
+    color: whitesmoke;
+}
+
+.about-card h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+
+.about-card h3 {
+     margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact-icons a {
+    font-size: 2rem;
+    color: whitesmoke;
+    transition: .3s ease;
+}
+
+.contact-icons a:hover {
+    color: lightblue;
+    transform: translateY(-3px);
+}
+
+#about-cards {
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+}
+
+.education-item {
+    font-size: 12px;
+    margin-bottom: 1.5rem;
+
+}
+
+.education-item h3 {
+    font-size: 12px;
+    color: lightblue;
+    margin-bottom: .25rem;
+
+}
+
+
+
+#formacion {
+    font-size: 25px;
+}
+
+.education-item p {
+    margin-bottom: .1rem;
+
+}
+
+.education-item span {
+
+    opacity: .7;
+
+    font-size: .9rem;
+
+}
+
+.lol {
+    text-align: center;
+}
+
+.formation-layout {
+
+    display: grid;
+    gap: 2rem;
+    margin-top: 1.5rem;
+
+}
+
+@media (min-width: 768px) {
+
+    .formation-layout {
+
+        grid-template-columns: 2fr 1fr;
+
+    }
+
+}
+
+.formation-column h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    opacity: .8;
+    text-align: center;
+}
+
+.formation-column h4 {
+    color: whitesmoke;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.formation-column p {
+    font-size: 12px;
+    opacity: 80%;
+}
+
+@media (min-width: 768px) {
+    .formation-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .formation-column:last-child {
+        border-left: 1px solid rgba(255,255,255,.15);
+        padding-left: 2rem;
+    }
+}
+
+.formation-column:last-child {
+    border-top: 1px solid rgba(255, 255, 255, .15);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .formation-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .formation-column:last-child {
+        border-top: none;
+        margin-top: 0;
+        padding-top: 0;
+        border-left: 1px solid rgba(255,255,255,.15);
+        padding-left: 2rem;
+
+    }
+
+}
+
+.subsection-title {
+
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+
+    text-align: center;
+
+    font-size: 1.2rem;
+
+}
+
+.software-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.software-tags span {
+    padding: .4rem .8rem;
+    border-radius: 999px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.15);
+    font-size: .85rem;
+}
+
+/*Quitar footer*/
+
+.about-page .closing-section {
+    background-image: none;
+}
+

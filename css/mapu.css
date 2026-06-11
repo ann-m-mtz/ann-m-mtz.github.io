@@ -1,0 +1,178 @@
+
+#mapu-hero {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 70vh;
+    background-image: url('../assets/images/fondomapunav.png');
+    background-size: content;
+    background-repeat: no-repeat;
+    background-position: top;
+    display: flex;
+}
+
+#mapu-hero .container {
+    text-align: center;
+}
+
+#mapu-hero h1 {
+    margin-top: 300px;
+    justify-content: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 100px;
+}
+
+#mapu-hero h3 {
+    font-style: italic;
+    font-weight: 100;
+    font-size: 20px;
+    margin-top: -10px;
+}
+
+#mapu-hero p {
+    margin-top: 30px;
+}
+
+#mapu-intro {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#mapu-intro p {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Desktop */
+.desktop-gallery {
+    display: none;
+}
+
+/* Móvil */
+
+.mobile-gallery {
+    display: block;
+}
+
+/* Desktop */
+
+@media (min-width: 992px) {
+    .desktop-gallery {
+        display: block;
+    }
+    .mobile-gallery {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .desktop-gallery {
+        display: none;
+    }
+    .mobile-gallery {
+        display: block;
+    }
+}
+
+.gallery-grid img,
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+
+/*Carrusel*/
+.carousel-item img {
+    width: 100%;
+    height: 480px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+.mapu-section {
+    padding: 2rem 0;
+}
+
+.mapu-section h2,
+.mapu-section p {
+    text-align: center;
+}
+
+.mapu-section p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+
+    filter: brightness(0) invert(.25);
+
+}
+
+/* SOLO para Expansión */
+
+.expansion-masonry {
+    columns: 3;
+    column-gap: 1rem;
+}
+
+.expansion-masonry img {
+    width: 100%;
+    margin-bottom: 1rem;
+    break-inside: avoid;
+    border-radius: 15px;
+    display: block;
+}
+
+@media (max-width: 991px) {
+
+    .expansion-masonry {
+        columns: 1;
+    }
+
+}
+
+/*Otros*/
+
+.otros-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+    .otros-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.otros-grid img,
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
