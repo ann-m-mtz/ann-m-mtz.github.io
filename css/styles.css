@@ -7,6 +7,21 @@ img {
 
 /*Pura barra de navegación*/
 
+.language-switch {
+	color: whitesmoke;
+    margin-left: 2rem;
+    font-size: .7rem;
+    letter-spacing: 2px;
+    font-family: monospace;
+    font-weight: 100;
+}
+
+@media (max-width: 991px) {
+    .language-switch {
+        margin-left: 0;
+    }
+}
+
 header {
     font-size: 15px;
     padding: 15px 30px;
@@ -256,7 +271,6 @@ a:hover {
 }
 
 .mapu-card {
-
    	background-image: url('../assets/images/mapu/homemapu.jpg');
     background-position: center;
     background-size: cover;
@@ -390,6 +404,10 @@ a:hover {
 	background: rgba(255, 255, 255, 0);
 	backdrop-filter: blur(.5px);
 	text-align: center;
+}
+
+.card-content p {
+	max-width: 300px;
 }
 
 .project-card {
@@ -639,9 +657,9 @@ a:hover {
 }
 
 .about-photo img {
+	margin-top: 40px;
 	filter: grayscale(100%) contrast(120%);
 	max-width: 250px;
-	border: 1px solid rgba(255, 255, 255, .2);
 	border-radius: 15px;
 }
 
