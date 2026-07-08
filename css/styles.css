@@ -642,7 +642,6 @@ a:hover {
 	z-index: 1;
 	padding: 50px;
 	width: 100%;
-	max-width: 450px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
