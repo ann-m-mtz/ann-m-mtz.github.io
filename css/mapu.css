@@ -1,3 +1,28 @@
+.mapu-section {
+    padding: 5rem 0;
+}
+
+
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem 0;
+}
+
+.section-divider span {
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: rgba(0,0,0,.15);
+}
+
+.section-divider i {
+    color: #5E8A65;
+    font-size: 2rem;
+}
+
 
 #mapu-hero {
     align-items: center;
@@ -42,7 +67,7 @@
 
 #mapu-intro p {
     text-align: justify;
-    max-width: 450px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
