@@ -5,11 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ana Muñoz | Design, Illustration & Research</title>
-    <script src="js/main.js"></script>
+    <title>Ana Muñoz | Diseño, ilustración e investigación</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!--ESTAMOS PROBANDO EL SLIDER-->
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<!--FIN DE PRUEBA SLIDER EL SLIDER-->
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/prevencion.css">
@@ -220,9 +230,9 @@
         <div class="retos-grid">
 
             <div class="reto-card">
-
+<span class="reto-number">01</span>
                 <h3>Sensitive Communication</h3>
-
+<hr>
                 <p>
                     Addressing the topic of suicide responsibly while avoiding alarmist or stigmatizing approaches.
                 </p>
@@ -230,9 +240,9 @@
             </div>
 
             <div class="reto-card">
-
+<span class="reto-number">02</span>
                 <h3>Accessibility</h3>
-
+<hr>
                 <p>
                     Translating specialized concepts into messages that can be understood by a broad audience.
                 </p>
@@ -240,9 +250,9 @@
             </div>
 
             <div class="reto-card">
-
+<span class="reto-number">03</span>
                 <h3>Visual Consistency</h3>
-
+<hr>
                 <p>
                     Adapting content across different formats without losing clarity or graphic coherence.
                 </p>
@@ -262,81 +272,39 @@
 
         <h2>Materials Developed</h2>
 
-        <div class="desktop-gallery">
+<div class="swiper prevencionSwiper">
 
-            <div class="prevencion-grid">
+    <div class="swiper-wrapper">
 
-                <img src="assets/images/prevencion/Cartel.jpg">
-                <img src="assets/images/prevencion/Redes 1.jpg">
-                <img src="assets/images/prevencion/Familiares.jpg">
-                <img src="assets/images/prevencion/Redes 3.jpg">
-                <img src="assets/images/prevencion/Redes 2.jpg">
-                <img src="assets/images/prevencion/Redes 4.jpg">
-                <img src="assets/images/prevencion/Redes 5.png">
-
-            </div>
-
-        </div>
-<!--Carrusel-->
-<div id="prevencionCarousel"
-     class="carousel slide mobile-gallery">
-
-    <div class="carousel-inner">
-
-        <div class="carousel-item active">
-            <img src="assets/images/prevencion/Cartel.jpg"
-                 class="d-block w-100">
+        <div class="swiper-slide">
+            <img src="assets/images/prevencion/Cartel.jpg" alt="Cartel de prevención">
         </div>
 
-        <div class="carousel-item">
-            <img src="assets/images/prevencion/Familiares.jpg"
-                 class="d-block w-100">
+        <div class="swiper-slide">
+            <img src="assets/images/prevencion/Redes 1.jpg" alt="Publicación para redes sociales">
         </div>
 
-        <div class="carousel-item">
-            <img src="assets/images/prevencion/Redes 1.jpg"
-                 class="d-block w-100">
+        <div class="swiper-slide">
+            <img src="assets/images/prevencion/Familiares.jpg" alt="Material familiar de prevención">
         </div>
 
-        <div class="carousel-item">
-            <img src="assets/images/prevencion/Redes 3.jpg"
-                 class="d-block w-100">
+        <div class="swiper-slide">
+            <img src="assets/images/prevencion/Redes 3.jpg" alt="Publicación para redes sociales">
         </div>
 
-        <div class="carousel-item">
-            <img src="assets/images/prevencion/Redes 2.jpg"
-                 class="d-block w-100">
+        <div class="swiper-slide">
+            <img src="assets/images/prevencion/Redes 2.jpg" alt="Publicación para redes sociales">
         </div>
 
-        <div class="carousel-item">
-            <img src="assets/images/prevencion/Redes 4.jpg"
-                 class="d-block w-100">
+        <div class="swiper-slide">
+            <img src="assets/images/prevencion/Redes 4.jpg" alt="Publicación para redes sociales">
         </div>
 
-        <div class="carousel-item">
-            <img src="assets/images/prevencion/Redes 5.png"
-                 class="d-block w-100">
+        <div class="swiper-slide">
+            <img src="assets/images/prevencion/Redes 5.png" alt="Publicación para redes sociales">
         </div>
 
     </div>
-
-    <button class="carousel-control-prev"
-            type="button"
-            data-bs-target="#prevencionCarousel"
-            data-bs-slide="prev">
-
-        <span class="carousel-control-prev-icon"></span>
-
-    </button>
-
-    <button class="carousel-control-next"
-            type="button"
-            data-bs-target="#prevencionCarousel"
-            data-bs-slide="next">
-
-        <span class="carousel-control-next-icon"></span>
-
-    </button>
 
 </div>
 
@@ -374,5 +342,10 @@
 
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--ESTAMOS PROBANDO EL SLIDER-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+<!--FIN DE LA PRUEBA DE SLIDDER-->
 </body>
 </html>

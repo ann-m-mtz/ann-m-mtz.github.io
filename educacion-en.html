@@ -5,11 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ana Muñoz | Design, Illustration & Research</title>
-    <script src="js/main.js"></script>
+    <title>Ana Muñoz | Diseño, ilustración e investigación</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!--ESTAMOS PROBANDO EL SLIDER-->
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<!--FIN DE PRUEBA SLIDER EL SLIDER-->
 
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/educacion.css">
@@ -183,7 +193,10 @@
 
     <div class="container">
 
-        <div class="masonry-gallery">
+
+        <!-- DESKTOP MASONRY -->
+
+        <div class="masonry-gallery desktop-gallery">
 
             <img src="assets/images/educacion/borchureportada.png" alt="">
             <img src="assets/images/educacion/brochure.png" alt="">
@@ -200,10 +213,72 @@
 
         </div>
 
+
+
+        <!-- MOBILE SWIPER -->
+
+        <div class="swiper educacionSwiper mobile-gallery">
+
+            <div class="swiper-wrapper">
+
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/borchureportada.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/brochure.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/Cumpleaños.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/ebook.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/Mario Palooza.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/Volante.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/NUEVA televisión.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/presentacion.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/redes.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/Promoción1.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/taller para padres.jpg" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                    <img src="assets/images/educacion/Volante Lucha.png" alt="">
+                </div>
+
+
+            </div>
+
+        </div>
+
+
     </div>
 
 </section>
-
 
 
 
@@ -238,5 +313,9 @@
 
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<!--ESTAMOS PROBANDO EL SLIDER-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+<!--FIN DE LA PRUEBA DE SLIDDER-->
 </body>
 </html>

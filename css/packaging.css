@@ -23,6 +23,13 @@
     font-size: 50px;
 }
 
+#packaging-retos h2 {
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+
 #pack-hero h3 {
     font-style: italic;
     font-weight: 100;
@@ -104,68 +111,109 @@
 
 /*Retos*/
 
-#packaging-retos h2 {
-    text-align: center;
-    font-weight: bolder;
-    margin-bottom: 50px;
-}
+/* ==========================
+   PACKAGING RETOS ILUSTRADOS
+========================== */
+
 
 .retos-packaging {
-    display: grid;
-    gap: 2rem;
-    margin-bottom: 40px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1.5rem;
+    margin-bottom:3rem;
 }
 
-@media (min-width: 992px) {
-    .retos-packaging {
-        grid-template-columns: repeat(3,1fr);
-    }
-
-    .reto-ilustrado {
-        border-right: 1px solid rgba(0,0,0,.75);
-       padding-right: 2rem;
-    }
-
-    .reto-ilustrado:last-child {
-        border-right: none;
-    }
-}
 
 .reto-ilustrado {
+    position:relative;
+    padding:1.5rem;
+    background:#fafafa;
+    border:1px solid rgba(0,0,0,.15);
+    border-radius:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    overflow:hidden;
+    transition:transform .25s ease;
+}
+
+
+.reto-ilustrado:hover {
+    transform:translateY(-5px);
+}
+
+
+/* Imagen */
+
+.reto-image {
+    width:100%;
+    height:220px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:1rem;
+}
+
+
+.reto-image img {
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+}
+
+
+/* Número */
+
+.reto-ilustrado .reto-number {
+    position:absolute;
+    top:1rem;
+    left:1.2rem;
+    font-size:1rem;
+    font-weight:900;
+    letter-spacing:2px;
+    color:#5f80b6;
+    opacity:.8;
+}
+
+
+/* Texto */
+
+.reto-ilustrado h3 {
+    margin-top:.5rem;
+    color:#5f80b6;
+    font-weight:900;
+}
+
+
+.reto-ilustrado hr {
+    margin:1rem 0;
+}
+
+
+.reto-ilustrado p {
+    margin-bottom:0;
+}
+
+
+@media(min-width:768px){
+    .retos-packaging {
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+/*--------------------------------------Impreso*/
+
+#resultado-impreso {
+    margin-top: 3rem;
+}
+
+.resultado-texto h2 {
     text-align: center;
+    font-weight: bolder;
 }
-
-.reto-ilustrado img {
-    width: 100%;
-    height: 280px;
-    object-fit: contain;
-    border-radius: 15px;
-    margin-bottom: 1rem;
-}
-
-@media (max-width: 991px) {
-
-    .reto-ilustrado {
-        padding-bottom: 2rem;
-        margin-bottom: 2rem;
-        border-bottom: 1px solid rgba(0,0,0,.75);
-    }
-
-    .reto-ilustrado:last-child {
-        border-bottom: none;
-    }
-
-}
-
-/*Impreso*/
 
 .resultado-grid {
-
     display: grid;
     gap: 2rem;
-
     align-items: center;
-
 }
 
 @media (min-width: 992px) {
@@ -180,4 +228,34 @@
     border-radius: 15px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+}
+
+/*Swiper*/
+/* Packaging Swiper */
+
+.packagingSwiper {
+    width: 100%;
+    padding: 1rem 0 3rem;
+}
+
+
+.packagingSwiper .swiper-slide {
+    transition: .35s;
+}
+
+
+.packagingSwiper img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    object-fit: contain;
+    background: #f4f1ea;
+    transform: scale(.88);
+    opacity: .9;
+}
+
+
+.packagingSwiper .swiper-slide-active img {
+    transform: scale(1);
+    opacity: 1;
 }

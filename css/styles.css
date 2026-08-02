@@ -264,7 +264,11 @@ a:hover {
 #contexto {
 	text-align: center;
 	margin-top: -80px;
-	margin-bottom: 30px;
+	margin-bottom: -30px;
+}
+
+#mini {
+	font-style: italic;
 }
 
 #contexto h1 {
@@ -277,6 +281,111 @@ a:hover {
 #contexto p {
 	margin-left: 60px;
 	margin-right: 60px;
+}
+
+/* ==========================
+HOME INTRO
+========================== */
+
+#home-intro{
+
+    padding:5rem 0;
+
+}
+
+.intro-text{
+
+    max-width:720px;
+
+    margin:0 auto 3rem;
+
+    text-align:center;
+
+    line-height:1.8;
+
+    color:#555;
+
+}
+
+
+/* ---------- TARJETAS ---------- */
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1rem;
+    margin-bottom:3.5rem;
+}
+
+.stat-card{
+    padding:2rem 1rem;
+    border:1px solid rgba(0,0,0,.08);
+    border-radius:18px;
+    background:#fafafa;
+    text-align:center;
+    transition:.25s;
+    box-shadow:0 8px 18px rgba(0,0,0,.05);
+
+}
+
+.stat-card:hover{
+    transform:translateY(-4px);
+}
+
+.stat-number{
+    display:block;
+    font-size:2rem;
+    font-weight:900;
+    color:#5f80b6;
+    margin-bottom:.4rem;
+}
+
+.stat-label{
+    display:block;
+    line-height:1.4;
+    font-size:.95rem;
+    color:#555;
+}
+
+
+/* ---------- CHIPS ---------- */
+
+.services-title{
+    text-align:center;
+    margin-bottom:1.5rem;
+    font-weight:700;
+}
+
+.services-chips{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:.8rem;
+}
+
+.services-chips span{
+    padding:.55rem 1rem;
+    border-radius:999px;
+    background:#f4f4f4;
+    border:1px solid rgba(0,0,0,.08);
+    font-size:.92rem;
+    transition:.25s;
+}
+
+.services-chips span:hover{
+    background:#5f80b6;
+    color:white;
+}
+
+
+/* ---------- DESKTOP ---------- */
+
+@media(min-width:768px){
+    .stats-grid{
+        grid-template-columns:repeat(4,1fr);
+        gap:1.5rem;
+    }
+
 }
 
 /*Empieza el contenido de MAPU*/
@@ -309,7 +418,7 @@ a:hover {
     margin-bottom: 1rem;
     width: 100%;
     min-height: 350px;
-    background: rgba(0,0,0,.65);
+    background: rgba(0,0,0,.30);
     backdrop-filter: blur(1.5px);
     -webkit-backdrop-filter: blur(10px);
     display: flex;
@@ -388,8 +497,8 @@ a:hover {
 .titulodeseccion::after {
 	content:"";
 	flex: 1;
-	height: 1px;
-	background: rgba(0, 0, 0, 255);
+	height: .5px;
+	background: lightgray;
 }
 
 .grid {
@@ -465,7 +574,7 @@ a:hover {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	background: rgba(0, 0, 0, .65);
+	background: rgba(0, 0, 0, .35);
 	backdrop-filter: blur(1.5px);
 	-webkit-backdrop-filter: blur(1.5px);
 	color: whitesmoke;
@@ -556,7 +665,7 @@ a:hover {
     content: "";
     flex: 1;
     height: 1px;
-    background: rgba(0,0,0,255);
+    background: lightgray;
 
 }
 
@@ -597,13 +706,13 @@ a:hover {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,.55);
+    background: rgba(0,0,0,.35);
     backdrop-filter: blur(1px);
     transition: .4s ease;
 }
 
 .collection-card:hover::before {
-    background: rgba(0,0,0,.75);
+    background: rgba(0,0,0,.50);
 
 }
 

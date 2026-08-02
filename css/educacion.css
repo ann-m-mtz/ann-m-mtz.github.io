@@ -110,3 +110,57 @@
 
 }
 
+/* ==========================
+   EDUCACION SWIPER
+========================== */
+
+
+.educacionSwiper {
+
+    width:100%;
+
+    padding:1rem 0 3rem;
+
+}
+
+
+.educacionSwiper img {
+
+    width:100%;
+
+    display:block;
+
+    border-radius:15px;
+
+    object-fit:contain;
+
+}
+
+
+.educacionSwiper .swiper-slide {
+
+    transition:.35s;
+
+}
+
+
+@media(min-width:768px){
+
+    .mobile-gallery {
+
+        display:none;
+
+    }
+
+}
+
+
+@media(max-width:767px){
+
+    .desktop-gallery {
+
+        display:none;
+
+    }
+
+}
