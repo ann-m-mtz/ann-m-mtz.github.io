@@ -19,12 +19,49 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 
-//Slider Prueba
+//Efectos Index
+
+const reveals = document.querySelectorAll(".reveal");
+
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("active");
+
+        }
+
+    });
+
+}, {
+    threshold:0.2
+});
+
+
+reveals.forEach(element=>{
+    observer.observe(element);
+});
+
+//Slider Index Proyectos
+
+const projectsSwiper = new Swiper(".projectsSwiper", {
+    grabCursor:true,
+    centeredSlides:true,
+    slidesPerView:1.2,
+    spaceBetween:10,
+    speed:800,
+    autoplay:{
+        delay:2500,
+        disableOnInteraction:false,
+    }
+});
 
 //Slider Mapu - Primeros
 
 const primerosSwiper = new Swiper(".primerosSwiper", {
-    loop: true,
     spaceBetween: 20,
     grabCursor: true,
     centeredSlides: true,
@@ -41,7 +78,6 @@ const primerosSwiper = new Swiper(".primerosSwiper", {
 });
 
 const crecimientoSwiper = new Swiper(".crecimientoSwiper", {
-    loop: true,
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -58,7 +94,6 @@ const crecimientoSwiper = new Swiper(".crecimientoSwiper", {
 });
 
 const expansionSwiper = new Swiper(".expansionSwiper", {
-    loop: true,
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -75,7 +110,6 @@ const expansionSwiper = new Swiper(".expansionSwiper", {
 });
 
 const otrosSwiper = new Swiper(".otrosSwiper", {
-    loop: true,
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -93,7 +127,6 @@ const otrosSwiper = new Swiper(".otrosSwiper", {
 //Revista
 
 const revistaSwiper = new Swiper(".revistaSwiper", {
-    loop: true,
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -112,7 +145,6 @@ const revistaSwiper = new Swiper(".revistaSwiper", {
 //Prevención
 
 const prevencionSwiper = new Swiper(".prevencionSwiper", {
-    loop: true,
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -130,7 +162,6 @@ const prevencionSwiper = new Swiper(".prevencionSwiper", {
 // Packaging
 
 const packagingSwiper = new Swiper(".packagingSwiper", {
-    loop: true,
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -147,7 +178,6 @@ const packagingSwiper = new Swiper(".packagingSwiper", {
 
 //Educación
 const educacionSwiper = new Swiper(".educacionSwiper", {
-    loop:true,
     grabCursor:true,
     centeredSlides:true,
     slidesPerView:1.1,
@@ -157,7 +187,6 @@ const educacionSwiper = new Swiper(".educacionSwiper", {
 //Ilustración
 
 const ilustracionSwiper = new Swiper(".ilustracionSwiper", {
-    loop:true,
     grabCursor:true,
     centeredSlides:true,
     slidesPerView:1.1,

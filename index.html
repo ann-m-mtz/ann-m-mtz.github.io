@@ -5,10 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ana Muñoz | Diseño, ilustración e investigación</title>
-    <script src="js/main.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!--ESTAMOS PROBANDO EL SLIDER-->
+
+<link
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+rel="stylesheet"
+/>
+
+<!--FIN DE PRUEBA SLIDER EL SLIDER-->
 
     <link rel="stylesheet" href="css/styles.css">
 
@@ -177,29 +185,29 @@
     <div class="container">
 
         <div class="stats-grid">
-            <article class="stat-card">
+
+            <article class="stat-card reveal">
                 <span class="stat-number">5+</span>
                 <span class="stat-label">
                     Años de<br>experiencia
                 </span>
             </article>
 
-            <article class="stat-card">
-                <span class="stat-number">100%
-            </span>
+            <article class="stat-card reveal">
+                <span class="stat-number">100%</span>
                 <span class="stat-label">
                     Aprendizaje<br>continuo
                 </span>
             </article>
 
-            <article class="stat-card">
+            <article class="stat-card reveal">
                 <span class="stat-number">B2 - C1</span>
                 <span class="stat-label">
                     Inglés
                 </span>
             </article>
 
-            <article class="stat-card">
+            <article class="stat-card reveal">
                 <span class="stat-number">D + Ψ</span>
                 <span class="stat-label">
                     Diseño +
@@ -244,125 +252,185 @@
 
 <!-- CARRRRUSEEEEELLLLProyectos Seleccionados divididos en 3 -->
 
-        <section id="selected-projects">
-            <div class="section-header">
-                <h2 class="titulodeseccion">★ Proyectos Seleccionados ★</h2>
-            </div>
-            <div class="container">
-                <div class="desktop-projects">
-                    <div class="grid">
-                    <article class="project-card revista">
-                        <div class="card-content">
-                            <h3>Revista Psicología</h3>
-                            <p>Proyecto de divulgación científica; desarrollo editorial completo.</p>
-                            <a href="revista.html">Ver proyecto</a>
-                        </div>
-                    </article>
-                    <article class="project-card prevencion">
-                        <div class="card-content">
-                            <h3>Prevención del Suicidio</h3>
-                            <p>Comunicación de temas sensibles de manera accesible, responsable y libre de estigmas.</p>
-                            <a href="prevencion.html">Ver proyecto</a>
-                        </div>
-                    </article>
-                    <article class="project-card packaging">
-                        <div class="card-content">
-                            <h3>Packaging Ilustrado</h3>
-                            <p>Integración de ilustraciones originales en una solución de diseño aplicada.</p>
-                            <a href="packaging.html">Ver proyecto</a>
-                        </div>
-                    </article>
-                    </div>
-                </div>
+<section id="selected-projects">
 
-                <div id="projectsCarousel"
-     class="carousel slide mobile-projects">
-
-    <div class="carousel-inner">
-
-        <!-- CARD 1 -->
-
-        <div class="carousel-item active">
-
-            <article class="project-card revista">
-
-                <div class="card-content">
-
-                    <h3>Revista</h3>
-                    <p>Proyecto de divulgación científica; desarrollo editorial completo.</p>
-                    <a href="revista.html">
-                        Ver proyecto
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-        <!-- CARD 2 -->
-
-        <div class="carousel-item">
-
-            <article class="project-card prevencion">
-
-                <div class="card-content">
-
-                    <h3>Prevención del Suicidio</h3>
-                    <p>Comunicación de temas sensibles de manera accesible, responsable y libre de estigmas.</p>
-                    <a href="prevencion.html">
-                        Ver proyecto
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-        <!-- CARD 3 -->
-
-        <div class="carousel-item">
-
-            <article class="project-card packaging">
-
-                <div class="card-content">
-
-                    <h3>Packaging Ilustrado</h3>
-                    <p>Integración de ilustraciones originales en una solución de diseño aplicada.</p>
-                    <a href="packaging.html">
-                        Ver proyecto
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
+    <div class="section-header">
+        <h2 class="titulodeseccion">★ Proyectos Seleccionados ★</h2>
     </div>
 
-    <button class="carousel-control-prev"
-            type="button"
-            data-bs-target="#projectsCarousel"
-            data-bs-slide="prev">
 
-        <span class="carousel-control-prev-icon"></span>
+    <div class="container">
 
-    </button>
 
-    <button class="carousel-control-next"
-            type="button"
-            data-bs-target="#projectsCarousel"
-            data-bs-slide="next">
+        <!-- DESKTOP GRID -->
 
-        <span class="carousel-control-next-icon"></span>
+        <div class="desktop-projects">
 
-    </button>
+            <div class="grid">
 
-</div>
+
+                <article class="project-card revista">
+
+                    <div class="card-content">
+
+                        <h3>Revista Psicología</h3>
+
+                        <p>
+                            Proyecto de divulgación científica;
+                            desarrollo editorial completo.
+                        </p>
+
+                        <a href="revista.html">
+                            Ver proyecto
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="project-card prevencion">
+
+                    <div class="card-content">
+
+                        <h3>Prevención del Suicidio</h3>
+
+                        <p>
+                            Comunicación de temas sensibles de manera
+                            accesible, responsable y libre de estigmas.
+                        </p>
+
+                        <a href="prevencion.html">
+                            Ver proyecto
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="project-card packaging">
+
+                    <div class="card-content">
+
+                        <h3>Packaging Ilustrado</h3>
+
+                        <p>
+                            Integración de ilustraciones originales
+                            en una solución de diseño aplicada.
+                        </p>
+
+                        <a href="packaging.html">
+                            Ver proyecto
+                        </a>
+
+                    </div>
+
+                </article>
+
 
             </div>
-        </section>
+
+        </div>
+
+
+
+
+        <!-- MOBILE SWIPER -->
+
+        <div class="swiper projectsSwiper mobile-projects">
+
+            <div class="swiper-wrapper">
+
+
+                <div class="swiper-slide">
+
+                    <article class="project-card revista">
+
+                        <div class="card-content">
+
+                            <h3>Revista Psicología</h3>
+
+                            <p>
+                                Proyecto de divulgación científica;
+                                desarrollo editorial completo.
+                            </p>
+
+                            <a href="revista.html">
+                                Ver proyecto
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+
+                <div class="swiper-slide">
+
+                    <article class="project-card prevencion">
+
+                        <div class="card-content">
+
+                            <h3>Prevención del Suicidio</h3>
+
+                            <p>
+                                Comunicación de temas sensibles de manera
+                                accesible, responsable y libre de estigmas.
+                            </p>
+
+                            <a href="prevencion.html">
+                                Ver proyecto
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+
+                <div class="swiper-slide">
+
+                    <article class="project-card packaging">
+
+                        <div class="card-content">
+
+                            <h3>Packaging Ilustrado</h3>
+
+                            <p>
+                                Integración de ilustraciones originales
+                                en una solución de diseño aplicada.
+                            </p>
+
+                            <a href="packaging.html">
+                                Ver proyecto
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="swiper-pagination"></div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
 
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaa Colecciones también en 3 -->
 
@@ -401,7 +469,7 @@
                     </div>
                     <div class="sobremi">
                 <h2>Sobre mí</h2> <br>
-                <p>Soy diseñadora gráfica, ilustradora y egresada de psicología. Me gusta aprender cosas, y desarrollar proyectos tan variados como mis intereses. A veces eso termina en una identidad visual, a veces en una ilustración, y otras en una investigación. Este portafolio reúne algunos de esos experimentos, proyectos y obsesiones creativas.
+                <p>Soy diseñadora gráfica, ilustradora y egresada de psicología. Me gusta aprender cosas, y desarrollar proyectos tan variados como mis intereses. Este portafolio reúne algunos de esos experimentos, proyectos y obsesiones creativas.
 </p>
                 <a href="sobre.html">¿Qué más? →</a>
                 </div>
@@ -431,5 +499,9 @@
 
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<!--ESTAMOS PROBANDO EL SLIDER-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+<!--FIN DE LA PRUEBA DE SLIDDER-->
 </body>
 </html>

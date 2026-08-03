@@ -4,12 +4,19 @@
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Ana Muñoz | Design, Illustration & Research</title>
-    <script src="js/main.js"></script>
+    <title>Ana Muñoz | Diseño, ilustración e investigación</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!--ESTAMOS PROBANDO EL SLIDER-->
+
+<link
+href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+rel="stylesheet"
+/>
+
+<!--FIN DE PRUEBA SLIDER EL SLIDER-->
 
     <link rel="stylesheet" href="css/styles.css">
 
@@ -179,29 +186,29 @@
     <div class="container">
 
         <div class="stats-grid">
-            <article class="stat-card">
+
+            <article class="stat-card reveal">
                 <span class="stat-number">5+</span>
                 <span class="stat-label">
                     Years of<br>experience
                 </span>
             </article>
 
-            <article class="stat-card">
-                <span class="stat-number">100%
-            </span>
+            <article class="stat-card reveal">
+                <span class="stat-number">100%</span>
                 <span class="stat-label">
                     Continuous<br>learning
                 </span>
             </article>
 
-            <article class="stat-card">
+            <article class="stat-card reveal">
                 <span class="stat-number">B2 - C1</span>
                 <span class="stat-label">
                     English
                 </span>
             </article>
 
-            <article class="stat-card">
+            <article class="stat-card reveal">
                 <span class="stat-number">D + Ψ</span>
                 <span class="stat-label">
                     Design +
@@ -245,125 +252,156 @@
 
 <!-- CARRRRUSEEEEELLLLProyectos Seleccionados divididos en 3 -->
 
-        <section id="selected-projects">
-            <div class="section-header">
-                <h2 class="titulodeseccion">★ Selected Projects ★</h2>
+<section id="selected-projects">
+
+    <div class="section-header">
+        <h2 class="titulodeseccion">★ Selected Projects ★</h2>
+    </div>
+
+
+    <div class="container">
+
+
+        <!-- DESKTOP GRID -->
+
+        <div class="desktop-projects">
+
+            <div class="grid">
+
+
+                <article class="project-card revista">
+
+                    <div class="card-content">
+
+                        <h3>Psychology Magazine</h3>
+
+                        <p>
+                           A science communication project with complete editorial development.
+                        </p>
+
+                        <a href="revista.html">
+                            View project
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="project-card prevencion">
+
+                    <div class="card-content">
+
+                        <h3>Suicide Prevention</h3>
+
+                        <p>
+                            Communicating sensitive topics in an accessible, responsible, and stigma-free way.
+
+                        <a href="prevencion.html">
+                            View project
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <article class="project-card packaging">
+
+                    <div class="card-content">
+
+                        <h3>Illustrated Packaging</h3>
+
+                        <p>
+                            Integrating original illustrations into an applied design solution.
+                        </p>
+
+                        <a href="packaging.html">
+                            View project
+                        </a>
+
+                    </div>
+
+                </article>
+
+
             </div>
-            <div class="container">
-                <div class="desktop-projects">
-                    <div class="grid">
+
+        </div>
+
+
+
+
+        <!-- MOBILE SWIPER -->
+
+        <div class="swiper projectsSwiper mobile-projects">
+
+            <div class="swiper-wrapper">
+
+
+                <div class="swiper-slide">
+
                     <article class="project-card revista">
+
                         <div class="card-content">
+
                             <h3>Psychology Magazine</h3>
-                            <p>A science communication project with complete editorial development.</p>
-                            <a href="revista-en.html">View project</a>
+
+                            <p>
+                                A science communication project with complete editorial development.
+                            </p>
+
+                            <a href="revista.html">
+                                View project
+                            </a>
+
                         </div>
+
                     </article>
+
+                </div>
+
+
+
+                <div class="swiper-slide">
+
                     <article class="project-card prevencion">
+
                         <div class="card-content">
+
                             <h3>Suicide Prevention</h3>
-                            <p>Communicating sensitive topics in an accessible, responsible, and stigma-free way.</p>
-                            <a href="prevencion-en.html">View project</a>
+
+                            <p>
+                                Communicating sensitive topics in an accessible, responsible, and stigma-free way.
+                            </p>
+                            <a href="prevencion.html">
+                                View project
+                            </a>
                         </div>
                     </article>
+                </div>
+
+                <div class="swiper-slide">
                     <article class="project-card packaging">
                         <div class="card-content">
                             <h3>Illustrated Packaging</h3>
-                            <p>Integrating original illustrations into an applied design solution.</p>
-                            <a href="packaging-en.html">View project</a>
+                            <p>
+                                Integrating original illustrations into an applied design solution.
+                            </p>
+                            <a href="packaging.html">
+                                View project
+                            </a>
                         </div>
                     </article>
-                    </div>
                 </div>
-
-                <div id="projectsCarousel"
-     class="carousel slide mobile-projects">
-
-    <div class="carousel-inner">
-
-        <!-- CARD 1 -->
-
-        <div class="carousel-item active">
-
-            <article class="project-card revista">
-
-                <div class="card-content">
-
-                    <h3>Psychology Magazine</h3>
-                    <p>A science communication project with complete editorial development.</p>
-                    <a href="revista-en.html">
-                        View project
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-        <!-- CARD 2 -->
-
-        <div class="carousel-item">
-
-            <article class="project-card prevencion">
-
-                <div class="card-content">
-
-                    <h3>Suicide Prevention</h3>
-                    <p>Communicating sensitive topics in an accessible, responsible, and stigma-free way.</p>
-                    <a href="prevencion-en.html">
-                        View project
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-        <!-- CARD 3 -->
-
-        <div class="carousel-item">
-
-            <article class="project-card packaging">
-
-                <div class="card-content">
-
-                    <h3>Illustrated Packaging</h3>
-                    <p>Integrating original illustrations into an applied design solution.</p>
-                    <a href="packaging-en.html">
-                        View project
-                    </a>
-
-                </div>
-
-            </article>
-
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
     </div>
+</section>
 
-    <button class="carousel-control-prev"
-            type="button"
-            data-bs-target="#projectsCarousel"
-            data-bs-slide="prev">
-
-        <span class="carousel-control-prev-icon"></span>
-
-    </button>
-
-    <button class="carousel-control-next"
-            type="button"
-            data-bs-target="#projectsCarousel"
-            data-bs-slide="next">
-
-        <span class="carousel-control-next-icon"></span>
-
-    </button>
-
-</div>
-
-            </div>
-        </section>
 
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaa Colecciones también en 3 -->
 
@@ -402,7 +440,7 @@
                     </div>
                     <div class="sobremi">
                 <h2>About</h2> <br>
-                <p>I'm a graphic designer, illustrator, and psychology graduate. I enjoy learning new things, and work on projects as diverse as my interests. Sometimes that leads to a visual identity, sometimes to an illustration, and other times to research. This portfolio brings together some of those experiments, projects, and creative obsessions.
+                <p>I'm a graphic designer, illustrator, and psychology graduate. I enjoy learning new things, and work on projects as diverse as my interests. This portfolio brings together some of those experiments, projects, and creative obsessions.
 </p>
                 <a href="sobre-en.html">What else? →</a>
                 </div>
@@ -432,5 +470,9 @@
 
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <!--ESTAMOS PROBANDO EL SLIDER-->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/main.js"></script>
+<!--FIN DE LA PRUEBA DE SLIDDER-->
 </body>
 </html>

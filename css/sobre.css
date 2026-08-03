@@ -71,6 +71,54 @@
     margin: 0 auto 2rem auto;
 }
 
+h5 {
+    color: whitesmoke;
+    font-size: 15px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+/*==========================
+TICKER
+==========================*/
+
+.curiosity-ticker {
+    width:100%;
+    overflow:hidden;
+    position:relative;
+}
+
+.ticker-track {
+    display:flex;
+    width:max-content;
+    gap:2rem;
+    animation:ticker 30s linear infinite;
+}
+
+.ticker-track span {
+    flex-shrink:0;
+    white-space:nowrap;
+    font-size:.9rem;
+    color:#6f6f6f;
+    opacity:.8;
+}
+
+.ticker-track span::before {
+    content:"✦";
+    color:whitesmoke;
+    margin-right:.6rem;
+}
+
+@keyframes ticker {
+    from {
+        transform:translateX(0);
+    }
+    to {
+        transform:translateX(-50%);
+    }
+}
+
 /*Esta vieja*/
 .about-grid-top {
     display: grid;
@@ -114,6 +162,7 @@
     border-radius: 20px;
     padding: 2rem;
     color: whitesmoke;
+    min-width: 0;
 }
 
 .about-card h2 {
