@@ -158,11 +158,16 @@ rel="stylesheet"
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaComienza el Hero -->
 
         <section id="hero">
-            <img src="assets/images/fondoindex.png"
-         alt="Imagen principal"
-         class="hero-image">
+            <picture class="hero-image">
+                <source srcset="assets/images/fondoindex.avif" type="image/avif">
+                <source srcset="assets/images/fondoindex.webp" type="image/webp">
+                <img src="assets/images/fondoindex.png"
+                     width="1920" height="1336"
+                     alt="Imagen principal">
+            </picture>
             <div class="hero-content">
-                <img src="assets/images/logo.png" id="logo-inicio" class="img-fluid">
+                <img src="assets/images/logo.png" id="logo-inicio" class="img-fluid"
+                     width="1052" height="484">
                 <h1 class="tit">Diseño, ilustración y mucha curiosidad. <br><br> ↓
                 </h1>
                 
@@ -465,7 +470,12 @@ rel="stylesheet"
 
                 <div class="about-grid">
                     <div class="about-photo">
-                        <img src="assets/images/perfil/foto.jpg">
+                        <picture>
+                            <source srcset="assets/images/perfil/foto.avif" type="image/avif">
+                            <source srcset="assets/images/perfil/foto.webp" type="image/webp">
+                            <img src="assets/images/perfil/foto.jpg"
+                                 width="2371" height="2371" loading="lazy" alt="">
+                        </picture>
                     </div>
                     <div class="sobremi">
                 <h2>Sobre mí</h2> <br>

@@ -218,6 +218,12 @@ a:hover {
 	display:block;
 }
 
+.hero-image img {
+	width:100%;
+	height:100%;
+	display:block;
+}
+
 
 @media (min-width: 180px) {
 
@@ -634,6 +640,16 @@ HOME INTRO
 
 .revista {
 	background-image: url(../assets/images/revista/revistamockup.jpg);
+	background-image: -webkit-image-set(
+		url("../assets/images/revista/revistamockup.avif") type("image/avif") 1x,
+		url("../assets/images/revista/revistamockup.webp") type("image/webp") 1x,
+		url("../assets/images/revista/revistamockup.jpg") type("image/jpeg") 1x
+	);
+	background-image: image-set(
+		url("../assets/images/revista/revistamockup.avif") type("image/avif") 1x,
+		url("../assets/images/revista/revistamockup.webp") type("image/webp") 1x,
+		url("../assets/images/revista/revistamockup.jpg") type("image/jpeg") 1x
+	);
 
 }
 
@@ -785,6 +801,16 @@ HOME INTRO
 
 .carteles {
     background-image: url('../assets/images/carteles/sintabaco2022.jpg');
+	background-image: -webkit-image-set(
+		url("../assets/images/carteles/sintabaco2022.avif") type("image/avif") 1x,
+		url("../assets/images/carteles/sintabaco2022.webp") type("image/webp") 1x,
+		url("../assets/images/carteles/sintabaco2022.jpg") type("image/jpeg") 1x
+	);
+	background-image: image-set(
+		url("../assets/images/carteles/sintabaco2022.avif") type("image/avif") 1x,
+		url("../assets/images/carteles/sintabaco2022.webp") type("image/webp") 1x,
+		url("../assets/images/carteles/sintabaco2022.jpg") type("image/jpeg") 1x
+	);
 }
 
 /*Sobre mi + Footer*/
@@ -792,10 +818,23 @@ HOME INTRO
 .closing-section {
 	padding-top: 100px;
     background-image: url('../assets/images/fondoindex4.png');
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    position: relative;
+	background-size: cover;
+	background-position: top;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+#hero ~ .closing-section {
+	background-image: -webkit-image-set(
+		url("../assets/images/fondoindex4.avif") type("image/avif") 1x,
+		url("../assets/images/fondoindex4.webp") type("image/webp") 1x,
+		url("../assets/images/fondoindex4.png") type("image/png") 1x
+	);
+	background-image: image-set(
+		url("../assets/images/fondoindex4.avif") type("image/avif") 1x,
+		url("../assets/images/fondoindex4.webp") type("image/webp") 1x,
+		url("../assets/images/fondoindex4.png") type("image/png") 1x
+	);
 }
 
 

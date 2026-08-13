@@ -185,9 +185,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
             <section id="about-intro">
 
-    <img src="assets/images/perfil/foto.jpg"
-         alt="Ana"
-         class="about-photo">
+    <picture>
+        <source srcset="assets/images/perfil/foto.avif" type="image/avif">
+        <source srcset="assets/images/perfil/foto.webp" type="image/webp">
+        <img src="assets/images/perfil/foto.jpg"
+             width="2371" height="2371" loading="lazy"
+             alt="Ana"
+             class="about-photo">
+    </picture>
 
 </section>
 
