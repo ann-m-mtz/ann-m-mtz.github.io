@@ -83,11 +83,18 @@
 
 .masonry-gallery img {
     width: 100%;
+    height: auto;
     margin-bottom: 1rem;
     border-radius: 15px;
     break-inside: avoid;
     display: block;
     transition: .3s ease;
+}
+
+.masonry-gallery picture {
+    margin-bottom: 1rem;
+    break-inside: avoid;
+    display: block;
 }
 
 .masonry-gallery img:hover {
@@ -117,9 +124,15 @@
 
 .ilustracionSwiper img {
     width:100%;
+    height:auto;
     display:block;
     border-radius:15px;
     object-fit:contain;
+}
+
+.ilustracionSwiper picture {
+    width:100%;
+    display:block;
 }
 
 @media (max-width:767px){

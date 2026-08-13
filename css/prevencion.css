@@ -64,7 +64,13 @@
 .intro-image img {
     margin-top: 30px;
     width: 100%;
+    height: auto;
     border-radius: 15px;
+}
+
+.intro-image picture {
+    width: 100%;
+    display: block;
 }
 
 .intro-text {
@@ -189,6 +195,7 @@
 .prevencion-grid img {
 
     width: 100%;
+    height: auto;
     margin-bottom: 1rem;
 
     border-radius: 15px;
@@ -198,6 +205,12 @@
 }
 
 /* Prevención Swiper */
+
+.prevencion-grid picture {
+    margin-bottom: 1rem;
+    break-inside: avoid;
+    display: block;
+}
 
 .prevencionSwiper {
     width: 100%;
@@ -212,9 +225,15 @@
 
 .prevencionSwiper img {
     width: 100%;
+    height: auto;
     display: block;
     border-radius: 15px;
     object-fit: contain;
+}
+
+.prevencionSwiper picture {
+    width: 100%;
+    display: block;
 }
 
 .prevencionSwiper .swiper-slide img {

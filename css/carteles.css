@@ -85,8 +85,15 @@
 
 .poster-image img {
     width: 100%;
+    height: auto;
     max-width: 400px;
     border-radius: 15px;
+    display: block;
+}
+
+.poster-image picture {
+    width: 100%;
+    max-width: 400px;
     display: block;
 }
 
@@ -116,10 +123,17 @@
 
 .award-proof img {
     width: 100%;
+    height: auto;
     max-width: 250px;
     border-radius: 15px;
     opacity: .95;
     transition: .3s ease;
+}
+
+.award-proof picture {
+    width: 100%;
+    max-width: 250px;
+    display: block;
 }
 
 .award-proof img:hover {
