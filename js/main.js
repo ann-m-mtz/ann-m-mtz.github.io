@@ -47,7 +47,7 @@ reveals.forEach(element=>{
 
 //Slider Index Proyectos
 
-const projectsSwiper = new Swiper(".projectsSwiper", {
+const projectsSwiper = document.querySelector(".projectsSwiper") && new Swiper(".projectsSwiper", {
     grabCursor:true,
     centeredSlides:true,
     slidesPerView:1.2,
@@ -61,7 +61,7 @@ const projectsSwiper = new Swiper(".projectsSwiper", {
 
 //Slider Mapu - Primeros
 
-const primerosSwiper = new Swiper(".primerosSwiper", {
+const primerosSwiper = document.querySelector(".primerosSwiper") && new Swiper(".primerosSwiper", {
     spaceBetween: 20,
     grabCursor: true,
     centeredSlides: true,
@@ -77,7 +77,7 @@ const primerosSwiper = new Swiper(".primerosSwiper", {
     }
 });
 
-const crecimientoSwiper = new Swiper(".crecimientoSwiper", {
+const crecimientoSwiper = document.querySelector(".crecimientoSwiper") && new Swiper(".crecimientoSwiper", {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -93,7 +93,7 @@ const crecimientoSwiper = new Swiper(".crecimientoSwiper", {
     }
 });
 
-const expansionSwiper = new Swiper(".expansionSwiper", {
+const expansionSwiper = document.querySelector(".expansionSwiper") && new Swiper(".expansionSwiper", {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -109,7 +109,7 @@ const expansionSwiper = new Swiper(".expansionSwiper", {
 
 });
 
-const otrosSwiper = new Swiper(".otrosSwiper", {
+const otrosSwiper = document.querySelector(".otrosSwiper") && new Swiper(".otrosSwiper", {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -126,7 +126,7 @@ const otrosSwiper = new Swiper(".otrosSwiper", {
 
 //Revista
 
-const revistaSwiper = new Swiper(".revistaSwiper", {
+const revistaSwiper = document.querySelector(".revistaSwiper") && new Swiper(".revistaSwiper", {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -144,7 +144,7 @@ const revistaSwiper = new Swiper(".revistaSwiper", {
 
 //Prevención
 
-const prevencionSwiper = new Swiper(".prevencionSwiper", {
+const prevencionSwiper = document.querySelector(".prevencionSwiper") && new Swiper(".prevencionSwiper", {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -161,7 +161,7 @@ const prevencionSwiper = new Swiper(".prevencionSwiper", {
 
 // Packaging
 
-const packagingSwiper = new Swiper(".packagingSwiper", {
+const packagingSwiper = document.querySelector(".packagingSwiper") && new Swiper(".packagingSwiper", {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
@@ -177,7 +177,7 @@ const packagingSwiper = new Swiper(".packagingSwiper", {
 });
 
 //Educación
-const educacionSwiper = new Swiper(".educacionSwiper", {
+const educacionSwiper = document.querySelector(".educacionSwiper") && new Swiper(".educacionSwiper", {
     grabCursor:true,
     centeredSlides:true,
     slidesPerView:1.1,
@@ -186,7 +186,7 @@ const educacionSwiper = new Swiper(".educacionSwiper", {
 
 //Ilustración
 
-const ilustracionSwiper = new Swiper(".ilustracionSwiper", {
+const ilustracionSwiper = document.querySelector(".ilustracionSwiper") && new Swiper(".ilustracionSwiper", {
     grabCursor:true,
     centeredSlides:true,
     slidesPerView:1.1,
