@@ -23,7 +23,6 @@
 
 #sobre-hero h1 {
     margin-top: 200px;
-    justify-content: center;
     text-align: center;
     font-weight: bolder;
     font-size: 50px;
@@ -31,7 +30,6 @@
 }
 
 .divisor-about {
-    margin-top: -100px;
     color: whitesmoke;
     display: flex;
     align-items: center;
@@ -65,7 +63,6 @@
     max-width: 250px;
     height: auto;
     border: 1px solid rgba(255, 255, 255, .2);
-    border-radius: 15px;
     border-radius: 20px;
     display: block;
     margin: 0 auto 2rem auto;
@@ -243,16 +240,6 @@ TICKER
 
 }
 
-@media (min-width: 768px) {
-
-    .formation-layout {
-
-        grid-template-columns: 2fr 1fr;
-
-    }
-
-}
-
 .formation-column h3 {
     font-size: 1rem;
     text-transform: uppercase;
@@ -271,17 +258,6 @@ TICKER
 .formation-column p {
     font-size: 12px;
     opacity: 80%;
-}
-
-@media (min-width: 768px) {
-    .formation-layout {
-        grid-template-columns: 2fr 1fr;
-    }
-
-    .formation-column:last-child {
-        border-left: 1px solid rgba(255,255,255,.15);
-        padding-left: 2rem;
-    }
 }
 
 .formation-column:last-child {

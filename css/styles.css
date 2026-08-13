@@ -94,8 +94,7 @@ header.scrolled {
     color: lightblue !important;
 }
 
-.dropdown-item.active,
-.dropdown-item:active {
+.dropdown-item.active {
     background: rgba(255,255,255,.08) !important;
     color: lightblue !important;
 }
@@ -111,10 +110,6 @@ a:hover {
 	color: lightblue;
 }
 
-
-.navbar {
-
-}
 
 .navbar-nav {
 	gap: 1.5rem;
@@ -156,7 +151,6 @@ a:hover {
 
     .navbar-nav {
         margin: 0 auto;
-        gap: 1.5rem;
         justify-content: center;
     }
 
@@ -174,8 +168,7 @@ a:hover {
 
 #logo-inicio {
 	margin-top: 10px;
-	padding: 70px;
-	padding-bottom: 20px;
+	padding: 70px 70px 20px;
 	width: 80vw;
 	max-width: 700px;
 	display:flex;
@@ -211,8 +204,7 @@ a:hover {
 	display: flex;
 	justify-content:center;
 	align-items: center;
-	margin: 40px;
-	margin-top: 0px;
+	margin: 0 40px 40px;
 	/*width: 800px;*/
 }
 
@@ -466,16 +458,6 @@ HOME INTRO
 }
 
 
-/* ---------- DESKTOP ---------- */
-
-@media(min-width:768px){
-    .stats-grid{
-        grid-template-columns:repeat(4,1fr);
-        gap:1.5rem;
-    }
-
-}
-
 /*Empieza el contenido de MAPU*/
 
 #featured-project {
@@ -640,10 +622,6 @@ HOME INTRO
 	text-align: center;
 }
 
-.card-content p {
-	max-width: 300px;
-}
-
 .project-card {
 	min-height: 300px;
 	border-radius: 15px;
@@ -682,6 +660,7 @@ HOME INTRO
 }
 
 .card-content p {
+	max-width: 300px;
 	width: 350px;
 	text-align: center;
 }
@@ -818,8 +797,6 @@ HOME INTRO
 	justify-content: center;
 	align-items: center;
 	color: whitesmoke;
-	z-index: 1;
-	position: relative;
 
 }
 
