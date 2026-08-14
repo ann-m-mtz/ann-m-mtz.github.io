@@ -84,9 +84,7 @@
 .masonry-gallery img {
     width: 100%;
     height: auto;
-    margin-bottom: 1rem;
     border-radius: 15px;
-    break-inside: avoid;
     display: block;
     transition: .3s ease;
 }
