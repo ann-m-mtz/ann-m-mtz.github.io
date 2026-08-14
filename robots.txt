@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://ann-m-mtz.github.io/sitemap.xml
