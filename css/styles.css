@@ -289,6 +289,159 @@ textarea:focus-visible,
 	display:block;
 }
 
+/* ==========================
+   PROJECT HEROES
+========================== */
+
+.project-hero {
+    position: relative;
+    min-height: 100vh;
+}
+
+.project-hero__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: clamp(8.5rem, 18vh, 12rem);
+    padding-bottom: clamp(6rem, 12vh, 8rem);
+    text-align: center;
+}
+
+.project-hero__title {
+    max-width: min(100%, 1050px);
+    margin: 0;
+    color: var(--color-on-dark);
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: bolder;
+    line-height: .95;
+    text-align: center;
+}
+
+.project-hero__period {
+    margin: .6rem 0 0;
+    padding: 0;
+    color: var(--color-on-dark);
+    font-size: .9rem;
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.project-hero__ticker-glass {
+    width: min(100%, 420px);
+    margin-top: .8rem;
+    padding: .4rem .75rem;
+    color: var(--color-on-dark);
+    background: var(--surface-light-glass);
+    backdrop-filter: var(--blur-glass);
+    -webkit-backdrop-filter: var(--blur-glass);
+    border: 1px solid var(--color-line-on-dark);
+    border-radius: var(--radius-control);
+    box-shadow: var(--shadow-card);
+}
+
+.project-ticker {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: clip;
+    color: rgba(255, 255, 255, .78);
+}
+
+.project-ticker-track {
+    display: flex;
+    width: max-content;
+    animation: project-ticker 64s linear infinite;
+}
+
+.project-ticker-group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.project-ticker span {
+    white-space: nowrap;
+    font-size: .82rem;
+    font-weight: 400;
+    letter-spacing: .02em;
+}
+
+.project-ticker:hover .project-ticker-track,
+.project-ticker:focus-within .project-ticker-track {
+    animation-play-state: paused;
+}
+
+@keyframes project-ticker {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.project-content-start {
+    position: relative;
+    margin-top: -50px;
+}
+
+.project-content-start hr {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .project-hero__content {
+        padding-top: 8rem;
+        padding-bottom: 5rem;
+    }
+
+    .project-hero__title {
+        font-size: clamp(3.5rem, 16vw, 4.75rem);
+    }
+
+    .project-hero__ticker-glass {
+        width: min(100%, 340px);
+        margin-top: .8rem;
+        padding: .4rem .75rem;
+    }
+
+    .project-ticker-track {
+        animation-duration: 76s;
+    }
+
+    .project-ticker-group {
+        gap: 1.75rem;
+        padding-right: 1.75rem;
+    }
+
+    .project-ticker span {
+        font-size: .78rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-ticker {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: thin;
+    }
+
+    .project-ticker-track {
+        animation: none;
+    }
+
+    .project-ticker-group[aria-hidden="true"] {
+        display: none;
+    }
+}
+
 
 @media (min-width: 180px) {
 

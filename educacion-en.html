@@ -165,28 +165,36 @@
 
 <!-- HERO -->
 
-<section id="educacion-hero">
+<section id="educacion-hero" class="project-hero">
 
-<div class="hero-overlay"></div>
+<picture class="hero-image">
+    <source srcset="assets/images/fondoindex.avif" type="image/avif">
+    <source srcset="assets/images/fondoindex.webp" type="image/webp">
+    <img src="assets/images/fondoindex.jpg" width="1920" height="1336" alt="">
+</picture>
 
-<div class="container">
+<div class="container project-hero__content">
 
-    <h1>Visual Communication</h1>
-        <div class="services-chips">
-            <span>Photoshop</span>
-            <span>Illustrator</span>
-            <span>InDesign</span>
-            <span>Canva</span>
-            <span>Digital content</span>
-            <span>Print materials</span>
+    <h1 class="project-hero__title">Visual Communication</h1>
+    <div class="project-hero__ticker-glass">
+        <div class="project-ticker" aria-label="Project tools and processes">
+            <div class="project-ticker-track">
+                <div class="project-ticker-group">
+                    <span>Photoshop</span><span>Illustrator</span><span>InDesign</span><span>Canva</span><span>Digital content</span><span>Print materials</span>
+                </div>
+                <div class="project-ticker-group" aria-hidden="true">
+                    <span>Photoshop</span><span>Illustrator</span><span>InDesign</span><span>Canva</span><span>Digital content</span><span>Print materials</span>
+                </div>
+            </div>
         </div>
+    </div>
 
 </div>
 
 </section>
 
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Introducción -->
-<section id="educacion-intro">
+<section id="educacion-intro" class="project-content-start">
 
 <div class="container">
 
@@ -273,8 +281,7 @@
 
         <div class="swiper educacionSwiper mobile-gallery">
 
-            <div class="swiper-wrapper">
-
+<div class="swiper-wrapper">
 
                 <div class="swiper-slide">
                     <picture>
@@ -284,13 +291,6 @@
                     </picture>
                 </div>
 
-                <div class="swiper-slide">
-                    <picture>
-                        <source srcset="assets/images/educacion/Cumpleaños.avif" type="image/avif">
-                        <source srcset="assets/images/educacion/Cumpleaños.webp" type="image/webp">
-                        <img src="assets/images/educacion/Cumpleaños.jpg" width="2700" height="3600" loading="lazy" alt="">
-                    </picture>
-                </div>
 
                 <div class="swiper-slide">
                     <picture>
@@ -302,9 +302,25 @@
 
                 <div class="swiper-slide">
                     <picture>
-                        <source srcset="assets/images/educacion/Mario Palooza.avif" type="image/avif">
-                        <source srcset="assets/images/educacion/Mario Palooza.webp" type="image/webp">
-                        <img src="assets/images/educacion/Mario Palooza.png" width="1429" height="2000" loading="lazy" alt="">
+                        <source srcset="assets/images/educacion/redes.avif" type="image/avif">
+                        <source srcset="assets/images/educacion/redes.webp" type="image/webp">
+                        <img src="assets/images/educacion/redes.png" width="3750" height="2500" loading="lazy" alt="">
+                    </picture>
+                </div>
+
+                <div class="swiper-slide">
+                    <picture>
+                        <source srcset="assets/images/educacion/presentacion.avif" type="image/avif">
+                        <source srcset="assets/images/educacion/presentacion.webp" type="image/webp">
+                        <img src="assets/images/educacion/presentacion.png" width="2979" height="2296" loading="lazy" alt="">
+                    </picture>
+                </div>
+
+                <div class="swiper-slide">
+                    <picture>
+                        <source srcset="assets/images/educacion/Promoción1.avif" type="image/avif">
+                        <source srcset="assets/images/educacion/Promoción1.webp" type="image/webp">
+                        <img src="assets/images/educacion/Promoción1.png" width="1200" height="1200" loading="lazy" alt="">
                     </picture>
                 </div>
 
@@ -326,30 +342,6 @@
 
                 <div class="swiper-slide">
                     <picture>
-                        <source srcset="assets/images/educacion/presentacion.avif" type="image/avif">
-                        <source srcset="assets/images/educacion/presentacion.webp" type="image/webp">
-                        <img src="assets/images/educacion/presentacion.png" width="2979" height="2296" loading="lazy" alt="">
-                    </picture>
-                </div>
-
-                <div class="swiper-slide">
-                    <picture>
-                        <source srcset="assets/images/educacion/redes.avif" type="image/avif">
-                        <source srcset="assets/images/educacion/redes.webp" type="image/webp">
-                        <img src="assets/images/educacion/redes.png" width="3750" height="2500" loading="lazy" alt="">
-                    </picture>
-                </div>
-
-                <div class="swiper-slide">
-                    <picture>
-                        <source srcset="assets/images/educacion/Promoción1.avif" type="image/avif">
-                        <source srcset="assets/images/educacion/Promoción1.webp" type="image/webp">
-                        <img src="assets/images/educacion/Promoción1.png" width="1200" height="1200" loading="lazy" alt="">
-                    </picture>
-                </div>
-
-                <div class="swiper-slide">
-                    <picture>
                         <source srcset="assets/images/educacion/Taller.avif" type="image/avif">
                         <source srcset="assets/images/educacion/Taller.webp" type="image/webp">
                         <img src="assets/images/educacion/Taller.jpg" width="1545" height="2000" loading="lazy" alt="">
@@ -358,9 +350,25 @@
 
                 <div class="swiper-slide">
                     <picture>
+                        <source srcset="assets/images/educacion/Cumpleaños.avif" type="image/avif">
+                        <source srcset="assets/images/educacion/Cumpleaños.webp" type="image/webp">
+                        <img src="assets/images/educacion/Cumpleaños.jpg" width="2700" height="3600" loading="lazy" alt="">
+                    </picture>
+                </div>
+
+                <div class="swiper-slide">
+                    <picture>
                         <source srcset="assets/images/educacion/Volante Lucha.avif" type="image/avif">
                         <source srcset="assets/images/educacion/Volante Lucha.webp" type="image/webp">
                         <img src="assets/images/educacion/Volante Lucha.png" width="1240" height="1654" loading="lazy" alt="">
+                    </picture>
+                </div>
+
+                <div class="swiper-slide">
+                    <picture>
+                        <source srcset="assets/images/educacion/Mario Palooza.avif" type="image/avif">
+                        <source srcset="assets/images/educacion/Mario Palooza.webp" type="image/webp">
+                        <img src="assets/images/educacion/Mario Palooza.png" width="1429" height="2000" loading="lazy" alt="">
                     </picture>
                 </div>
 

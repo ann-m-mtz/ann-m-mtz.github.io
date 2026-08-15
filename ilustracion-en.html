@@ -166,27 +166,36 @@
 
 <!-- HERO -->
 
-<section id="ilustracion-hero">
+<section id="ilustracion-hero" class="project-hero">
 
-<div class="hero-overlay"></div>
+<picture class="hero-image">
+    <source srcset="assets/images/fondoindex.avif" type="image/avif">
+    <source srcset="assets/images/fondoindex.webp" type="image/webp">
+    <img src="assets/images/fondoindex.jpg" width="1920" height="1336" alt="">
+</picture>
 
-<div class="container">
+<div class="container project-hero__content">
 
-    <h1>Illustration</h1>
-        <div class="services-chips">
-            <span>Tradicional illustration</span>
-            <span>Artwork Digitization</span>
-            <span>Dry medium</span>
-            <span>Watercolor</span>
-            <span>Gouache</span>
+    <h1 class="project-hero__title">Illustration</h1>
+    <div class="project-hero__ticker-glass">
+        <div class="project-ticker" aria-label="Project techniques and media">
+            <div class="project-ticker-track">
+                <div class="project-ticker-group">
+                    <span>Tradicional illustration</span><span>Artwork Digitization</span><span>Dry medium</span><span>Watercolor</span><span>Gouache</span>
+                </div>
+                <div class="project-ticker-group" aria-hidden="true">
+                    <span>Tradicional illustration</span><span>Artwork Digitization</span><span>Dry medium</span><span>Watercolor</span><span>Gouache</span>
+                </div>
+            </div>
         </div>
+    </div>
 
 </div>
 
 </section>
 
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Introducción -->
-<section id="ilustracion-intro">
+<section id="ilustracion-intro" class="project-content-start">
 
 <div class="container">
 
@@ -278,16 +287,7 @@
 
         <div class="swiper ilustracionSwiper mobile-gallery">
 
-            <div class="swiper-wrapper">
-
-
-                <div class="swiper-slide">
-                    <picture>
-                        <source srcset="assets/images/ilustracion/retratodemascotas.avif" type="image/avif">
-                        <source srcset="assets/images/ilustracion/retratodemascotas.webp" type="image/webp">
-                        <img src="assets/images/ilustracion/retratodemascotas.jpeg" width="1496" height="1496" loading="lazy" alt="">
-                    </picture>
-                </div>
+<div class="swiper-wrapper">
 
                 <div class="swiper-slide">
                     <picture>
@@ -305,19 +305,12 @@
                     </picture>
                 </div>
 
-                <div class="swiper-slide">
-                    <picture>
-                        <source srcset="assets/images/ilustracion/ballena.avif" type="image/avif">
-                        <source srcset="assets/images/ilustracion/ballena.webp" type="image/webp">
-                        <img src="assets/images/ilustracion/ballena.jpeg" width="1200" height="1600" loading="lazy" alt="">
-                    </picture>
-                </div>
 
                 <div class="swiper-slide">
                     <picture>
-                        <source srcset="assets/images/ilustracion/altares2.avif" type="image/avif">
-                        <source srcset="assets/images/ilustracion/altares2.webp" type="image/webp">
-                        <img src="assets/images/ilustracion/altares2.jpeg" width="1409" height="1600" loading="lazy" alt="">
+                        <source srcset="assets/images/ilustracion/retratodemascotas.avif" type="image/avif">
+                        <source srcset="assets/images/ilustracion/retratodemascotas.webp" type="image/webp">
+                        <img src="assets/images/ilustracion/retratodemascotas.jpeg" width="1496" height="1496" loading="lazy" alt="">
                     </picture>
                 </div>
 
@@ -331,17 +324,9 @@
 
                 <div class="swiper-slide">
                     <picture>
-                        <source srcset="assets/images/ilustracion/gouache.avif" type="image/avif">
-                        <source srcset="assets/images/ilustracion/gouache.webp" type="image/webp">
-                        <img src="assets/images/ilustracion/gouache.jpeg" width="900" height="1600" loading="lazy" alt="">
-                    </picture>
-                </div>
-
-                <div class="swiper-slide">
-                    <picture>
-                        <source srcset="assets/images/ilustracion/venado.avif" type="image/avif">
-                        <source srcset="assets/images/ilustracion/venado.webp" type="image/webp">
-                        <img src="assets/images/ilustracion/venado.jpeg" width="1200" height="1600" loading="lazy" alt="">
+                        <source srcset="assets/images/ilustracion/craneoinvertido.avif" type="image/avif">
+                        <source srcset="assets/images/ilustracion/craneoinvertido.webp" type="image/webp">
+                        <img src="assets/images/ilustracion/craneoinvertido.jpeg" width="1080" height="1080" loading="lazy" alt="">
                     </picture>
                 </div>
 
@@ -363,17 +348,41 @@
 
                 <div class="swiper-slide">
                     <picture>
-                        <source srcset="assets/images/ilustracion/inktober.avif" type="image/avif">
-                        <source srcset="assets/images/ilustracion/inktober.webp" type="image/webp">
-                        <img src="assets/images/ilustracion/inktober.jpeg" width="900" height="1600" loading="lazy" alt="">
+                        <source srcset="assets/images/ilustracion/altares2.avif" type="image/avif">
+                        <source srcset="assets/images/ilustracion/altares2.webp" type="image/webp">
+                        <img src="assets/images/ilustracion/altares2.jpeg" width="1409" height="1600" loading="lazy" alt="">
                     </picture>
                 </div>
 
                 <div class="swiper-slide">
                     <picture>
-                        <source srcset="assets/images/ilustracion/craneoinvertido.avif" type="image/avif">
-                        <source srcset="assets/images/ilustracion/craneoinvertido.webp" type="image/webp">
-                        <img src="assets/images/ilustracion/craneoinvertido.jpeg" width="1080" height="1080" loading="lazy" alt="">
+                        <source srcset="assets/images/ilustracion/ballena.avif" type="image/avif">
+                        <source srcset="assets/images/ilustracion/ballena.webp" type="image/webp">
+                        <img src="assets/images/ilustracion/ballena.jpeg" width="1200" height="1600" loading="lazy" alt="">
+                    </picture>
+                </div>
+
+                <div class="swiper-slide">
+                    <picture>
+                        <source srcset="assets/images/ilustracion/venado.avif" type="image/avif">
+                        <source srcset="assets/images/ilustracion/venado.webp" type="image/webp">
+                        <img src="assets/images/ilustracion/venado.jpeg" width="1200" height="1600" loading="lazy" alt="">
+                    </picture>
+                </div>
+
+                <div class="swiper-slide">
+                    <picture>
+                        <source srcset="assets/images/ilustracion/gouache.avif" type="image/avif">
+                        <source srcset="assets/images/ilustracion/gouache.webp" type="image/webp">
+                        <img src="assets/images/ilustracion/gouache.jpeg" width="900" height="1600" loading="lazy" alt="">
+                    </picture>
+                </div>
+
+                <div class="swiper-slide">
+                    <picture>
+                        <source srcset="assets/images/ilustracion/inktober.avif" type="image/avif">
+                        <source srcset="assets/images/ilustracion/inktober.webp" type="image/webp">
+                        <img src="assets/images/ilustracion/inktober.jpeg" width="900" height="1600" loading="lazy" alt="">
                     </picture>
                 </div>
 

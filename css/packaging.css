@@ -1,52 +1,8 @@
 
-#pack-hero {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 70vh;
-    background-image: url('../assets/images/fondomapunav.png');
-    background-image: -webkit-image-set(
-        url("../assets/images/fondomapunav.avif") type("image/avif") 1x,
-        url("../assets/images/fondomapunav.webp") type("image/webp") 1x,
-        url("../assets/images/fondomapunav.png") type("image/png") 1x
-    );
-    background-image: image-set(
-        url("../assets/images/fondomapunav.avif") type("image/avif") 1x,
-        url("../assets/images/fondomapunav.webp") type("image/webp") 1x,
-        url("../assets/images/fondomapunav.png") type("image/png") 1x
-    );
-    background-size: content;
-    background-repeat: no-repeat;
-    background-position: top;
-    display: flex;
-}
-
-#pack-hero .container {
-    text-align: center;
-}
-
-#pack-hero h1 {
-    margin-top: 300px;
-    text-align: center;
-    font-weight: bolder;
-    font-size: 50px;
-}
-
 #packaging-retos h2 {
     font-weight: bolder;
     text-align: center;
     margin-bottom: 3rem;
-}
-
-
-#pack-hero h3 {
-    font-style: italic;
-    font-weight: 100;
-    font-size: 20px;
-}
-
-#pack-hero p {
-    margin-top: 30px;
 }
 
 
