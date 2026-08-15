@@ -20,53 +20,165 @@
 
 
 #mapu-hero {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 70vh;
-    background-image: url('../assets/images/fondomapunav.png');
-    background-image: -webkit-image-set(
-        url("../assets/images/fondomapunav.avif") type("image/avif") 1x,
-        url("../assets/images/fondomapunav.webp") type("image/webp") 1x,
-        url("../assets/images/fondomapunav.png") type("image/png") 1x
-    );
-    background-image: image-set(
-        url("../assets/images/fondomapunav.avif") type("image/avif") 1x,
-        url("../assets/images/fondomapunav.webp") type("image/webp") 1x,
-        url("../assets/images/fondomapunav.png") type("image/png") 1x
-    );
-    background-size: content;
-    background-repeat: no-repeat;
-    background-position: top;
-    display: flex;
+    position: relative;
+    min-height: 100vh;
 }
 
-#mapu-hero .container {
+#mapu-hero .mapu-hero-content {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 2;
+    padding-top: clamp(8.5rem, 18vh, 12rem);
+    padding-bottom: clamp(6rem, 12vh, 8rem);
 }
 
 #mapu-hero h1 {
-    margin-top: 300px;
+    margin: 0;
     text-align: center;
     font-weight: bolder;
-    font-size: 100px;
+    font-size: clamp(4.5rem, 9vw, 7.5rem);
+    line-height: .9;
+    color: var(--color-on-dark);
 }
 
-#mapu-hero h3 {
+.mapu-hero-meta {
+    width: min(100%, 420px);
+    max-width: none;
+    margin-top: .8rem;
+    padding: .4rem .75rem;
+    background: var(--surface-light-glass);
+    backdrop-filter: var(--blur-glass);
+    -webkit-backdrop-filter: var(--blur-glass);
+    border: 1px solid var(--color-line-on-dark);
+    border-radius: var(--radius-control);
+    box-shadow: var(--shadow-card);
+    color: var(--color-on-dark);
+}
+
+.mapu-hero-period {
+    margin: .6rem 0 0 !important;
+    padding: 0;
+    color: var(--color-on-dark);
     font-style: italic;
-    font-weight: 100;
-    font-size: 20px;
-    margin-top: -10px;
+    font-size: .9rem;
+    font-weight: 400;
+    letter-spacing: .08em;
+    text-transform: uppercase;
 }
 
-#mapu-hero p {
-    margin-top: 30px;
+.project-ticker {
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    overflow: hidden;
+    color: rgba(255, 255, 255, .78);
+}
+
+.project-ticker-track {
+    display: flex;
+    width: max-content;
+    animation: project-ticker 64s linear infinite;
+}
+
+.project-ticker-group {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+.project-ticker span {
+    white-space: nowrap;
+    font-size: .82rem;
+    font-weight: 400;
+    letter-spacing: .02em;
+}
+
+.project-ticker:hover .project-ticker-track,
+.project-ticker:focus-within .project-ticker-track {
+    animation-play-state: paused;
+}
+
+@keyframes project-ticker {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 767px) {
+    #mapu-hero .mapu-hero-content {
+        padding-top: 8rem;
+        padding-bottom: 5rem;
+    }
+
+    #mapu-hero h1 {
+        font-size: clamp(4.25rem, 20vw, 5.5rem);
+    }
+
+    .mapu-hero-meta {
+        width: min(100%, 340px);
+        margin-top: .8rem;
+        padding: .4rem .75rem;
+    }
+
+    .project-ticker {
+        width: 100%;
+        margin-top: 0;
+        padding-top: 0;
+        overflow: hidden;
+    }
+
+    .project-ticker-track {
+        animation-duration: 76s;
+    }
+
+    .project-ticker-group {
+        gap: 1.75rem;
+        padding-right: 1.75rem;
+    }
+
+    .project-ticker span {
+        font-size: .78rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .crecimientoSwiper {
+        transition: none;
+    }
+
+    .project-ticker {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: thin;
+    }
+
+    .project-ticker-track {
+        animation: none;
+    }
+
+    .project-ticker-group[aria-hidden="true"] {
+        display: none;
+    }
 }
 
 #mapu-intro {
     display: flex;
     justify-content: center;
     text-align: center;
+    margin-top: -50px;
+}
+
+#mapu-intro hr {
+    display: none;
 }
 
 #mapu-intro p {
@@ -153,6 +265,12 @@
 .swiper {
     width: 100%;
     padding: 1rem 0 3rem;
+}
+
+.crecimientoSwiper {
+    overflow-x: clip;
+    overflow-y: visible;
+    transition: height 300ms cubic-bezier(0.2, 0, 0, 1);
 }
 
 .swiper .swiper-slide {
