@@ -79,15 +79,27 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: transparent;
-    transition: top .3s ease, background .3s ease, backdrop-filter .3s ease;
+    background-color: transparent;
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+    transition:
+        top 320ms cubic-bezier(.22, 1, .36, 1),
+        background-color 320ms cubic-bezier(.22, 1, .36, 1),
+        backdrop-filter 320ms cubic-bezier(.22, 1, .36, 1),
+        -webkit-backdrop-filter 320ms cubic-bezier(.22, 1, .36, 1);
 }
 
 header.scrolled {
-    background: var(--surface-dark-glass);
+    background-color: var(--surface-dark-glass);
     backdrop-filter: var(--blur-navigation);
     -webkit-backdrop-filter: var(--blur-navigation);
     top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    header {
+        transition: none;
+    }
 }
 
 @media (max-width: 991px) {
