@@ -186,7 +186,7 @@
     font-size:1rem;
     font-weight:900;
     letter-spacing:2px;
-    color:#5f80b6;
+    color:var(--color-emphasis-on-light);
     opacity:.8;
 }
 
@@ -195,7 +195,7 @@
 
 .reto-ilustrado h3 {
     margin-top:.5rem;
-    color:#5f80b6;
+    color:var(--color-emphasis-on-light);
     font-weight:900;
 }
 
@@ -272,9 +272,9 @@
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 15px;
+    border-radius: var(--radius-media);
     object-fit: contain;
-    background: #f4f1ea;
+    background: var(--color-surface-media);
     transform: scale(.88);
     opacity: .9;
 }

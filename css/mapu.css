@@ -14,7 +14,7 @@
 }
 
 .section-divider i {
-    color: #963e91;
+    color: var(--color-emphasis-on-light);
     font-size: 2rem;
 }
 
@@ -163,8 +163,8 @@
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 15px;
-    background: #f4f1ea;
+    border-radius: var(--radius-media);
+    background: var(--color-surface-media);
     transform: scale(.88);
     transition: transform .35s ease,
                 opacity .35s ease;
