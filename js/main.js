@@ -11,6 +11,33 @@ window.addEventListener("scroll", () => {
 
 });
 
+// NAVBAR MÃ“VIL: Bootstrap conserva los atributos ARIA al cerrar el collapse.
+const mobileNavToggle = document.querySelector('.navbar-toggler[data-bs-toggle="collapse"]');
+const mobileNavCollapse = document.querySelector('.navbar-collapse');
+const mobileNavMediaQuery = window.matchMedia('(max-width: 991.98px)');
+const mobileNavCollapseApi = window.bootstrap?.Collapse;
+
+if (mobileNavToggle && mobileNavCollapse && mobileNavCollapseApi) {
+    const closeMobileNav = () => {
+        if (!mobileNavMediaQuery.matches || !mobileNavCollapse.classList.contains('show')) return;
+
+        mobileNavCollapseApi.getOrCreateInstance(mobileNavCollapse, { toggle: false }).hide();
+    };
+
+    document.addEventListener('click', (event) => {
+        if (!mobileNavCollapse.contains(event.target) && !mobileNavToggle.contains(event.target)) {
+            closeMobileNav();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && mobileNavCollapse.classList.contains('show')) {
+            closeMobileNav();
+            mobileNavToggle.focus();
+        }
+    });
+}
+
 //Prohibido guardar
 
 document.addEventListener('contextmenu', function(e) {
