@@ -38,6 +38,9 @@
     --shadow-media-hover: 0 15px 35px rgba(0, 0, 0, .18);
     --focus-inner: #fff;
     --focus-outer: #111;
+    --reading-measure: 42rem;
+    --reading-leading: 1.75;
+    --reading-paragraph-gap: 1.25rem;
 }
 
 body {
@@ -54,6 +57,26 @@ figcaption,
     color: var(--color-ink);
 }
 
+.reading-copy {
+    max-width: var(--reading-measure);
+    margin-inline: auto;
+    text-align: justify;
+    line-height: var(--reading-leading);
+    overflow-wrap: break-word;
+}
+
+p.reading-copy {
+    margin: 0 auto var(--reading-paragraph-gap);
+}
+
+.reading-copy > p {
+    margin: 0 0 var(--reading-paragraph-gap);
+}
+
+.reading-copy > p:last-child {
+    margin-bottom: 0;
+}
+
 img {
     user-select: none;
 }
@@ -61,10 +84,6 @@ img {
 @media (max-width: 768px) {
     p {
         line-height: 1.7;
-    }
-    .container p {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
     }
 }
 
@@ -393,7 +412,7 @@ textarea:focus-visible,
 }
 
 .project-hero__period {
-    margin: .6rem 0 0;
+    margin: 1rem 0 0;
     padding: 0;
     color: var(--color-on-dark);
     font-size: .9rem;
@@ -628,21 +647,6 @@ HOME INTRO
     padding: 4rem 0 2.5rem;
 }
 
-.intro-text{
-
-    max-width:720px;
-
-    margin:0 auto 3rem;
-
-    text-align:center;
-
-    line-height:1.8;
-
-    color:var(--color-ink);
-
-}
-
-
 /* ---------- CAPACIDADES ---------- */
 
 .services-title{
@@ -651,11 +655,8 @@ HOME INTRO
     font-weight:700;
 }
 
-.home-work-copy {
-    max-width: 760px;
-    margin: 0 auto 2rem;
-    text-align: center;
-    line-height: 1.8;
+p.home-work-copy {
+    margin-bottom: 2rem;
 }
 
 .home-ticker {
@@ -1100,6 +1101,14 @@ HOME INTRO
 
 .sobremi h2 {
     color: var(--color-on-dark);
+}
+
+.sobremi p {
+    max-width: var(--reading-measure);
+    margin: 0 auto var(--reading-paragraph-gap);
+    text-align: justify;
+    line-height: var(--reading-leading);
+    overflow-wrap: break-word;
 }
 
 #about-preview {

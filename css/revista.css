@@ -1,14 +1,9 @@
 
-#revista-intro {
+#revista-intro,
+#revista-context {
     display: flex;
     justify-content: center;
     text-align: center;
-}
-
-#revista-intro p {
-    text-align: justify;
-    max-width: 450px;
-    margin: 0 auto;
 }
 
 /*INTRO*/
@@ -42,16 +37,6 @@
     width: 100%;
     display: block;
 }
-
-.intro-text {
-
-    max-width: 600px;
-
-}
-
-.intro-text h2 {
-}
-
 
 /* ==========================
    RETOS DEL PROYECTO

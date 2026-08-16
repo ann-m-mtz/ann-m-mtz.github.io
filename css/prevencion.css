@@ -1,13 +1,9 @@
 
-#prevencion-intro {
+#prevencion-intro,
+#prevencion-context {
     display: flex;
     justify-content: center;
     text-align: center;
-}
-
-#prevencion-intro p {
-    max-width: 450px;
-    margin: 0 auto;
 }
 
 /*Reciclado*/
@@ -37,11 +33,6 @@
 .intro-image picture {
     width: 100%;
     display: block;
-}
-
-.intro-text {
-    text-align: justify;
-    max-width: 600px;
 }
 
 .intro-text h2 {

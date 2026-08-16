@@ -173,21 +173,12 @@
 #mapu-intro {
     display: flex;
     justify-content: center;
-    text-align: center;
     margin-top: -50px;
 }
 
 #mapu-intro hr {
     display: none;
 }
-
-#mapu-intro p {
-    text-align: justify;
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-
 
 /* Desktop */
 .desktop-gallery {
@@ -215,14 +206,8 @@
     padding: 2rem 0;
 }
 
-.mapu-section h2,
-.mapu-section p {
+.mapu-section h2 {
     text-align: center;
-}
-
-.mapu-section p {
-    max-width: 800px;
-    margin: 0 auto 2rem;
 }
 
 

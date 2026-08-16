@@ -57,17 +57,6 @@
 }
 
 
-#sobre-intro {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-#sobre-intro p {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .about-photo {
     filter: grayscale(100%) contrast(120%);
     max-width: 250px;
@@ -176,6 +165,16 @@ TICKER
 	color: var(--color-on-dark);
     text-align: center;
     margin-bottom: 1.5rem;
+}
+
+.about-card--bio {
+    text-align: justify;
+    line-height: var(--reading-leading);
+    overflow-wrap: break-word;
+}
+
+.about-card--bio p {
+    margin-bottom: var(--reading-paragraph-gap);
 }
 
 
