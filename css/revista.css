@@ -43,66 +43,6 @@
 ========================== */
 
 
-.reto-number {
-    position: absolute;
-    top: 1rem;
-    left: 1.2rem;
-    font-weight: 900;
-    color: var(--color-emphasis-on-light);
-    line-height: 1;
-    font-size: 1.3rem;
-    letter-spacing: 2px;
-    opacity: .8;
-}
-
-.retos-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-bottom: 3rem;
-}
-
-
-.reto-card {
-    margin-bottom: 1rem;
-    padding: 1.5rem;
-    background: var(--surface-light-glass);
-    backdrop-filter: var(--blur-glass);
-    border: 1px solid var(--color-line-glass);
-    border-radius: var(--radius-card);
-    text-align: center;
-    transition: transform .25s ease,
-                background .25s ease;
-    box-shadow: var(--shadow-card);
-}
-
-
-.reto-card:hover {
-    transform: translateY(-5px);
-    background: var(--surface-light-glass-hover);
-}
-
-
-.reto-card h3 {
-    margin-top: 1.7rem;
-    margin-bottom: .8rem;
-    font-weight: bolder;
-    color: var(--color-emphasis-on-light);
-}
-
-
-.reto-card p {
-    margin-bottom: 0;
-}
-
-
-@media (min-width: 768px) {
-    .retos-grid {
-        grid-template-columns: repeat(3,1fr);
-    }
-}
-
-
 #retos h2 {
     text-align: center;
     margin-top: 3rem;

@@ -77,6 +77,64 @@ p.reading-copy {
     margin-bottom: 0;
 }
 
+.project-axes {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 3rem;
+    border-top: 1px solid var(--color-line-strong);
+    border-bottom: 1px solid var(--color-line-strong);
+}
+
+.project-axis {
+    padding: 1.5rem 0;
+    color: var(--color-ink);
+    text-align: left;
+}
+
+.project-axis:not(:first-child) {
+    border-top: 1px solid var(--color-line-strong);
+}
+
+.project-axis__number {
+    display: block;
+    color: var(--color-ink-secondary);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    line-height: 1;
+}
+
+.project-axis h3 {
+    margin: .6rem 0 .75rem;
+    color: var(--color-ink);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.project-axis__rule {
+    margin: 0 0 1rem;
+    border: 0;
+    border-top: 1px solid var(--color-line-subtle);
+    opacity: 1;
+}
+
+.project-axis p {
+    margin: 0;
+    line-height: 1.6;
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .project-axes {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .project-axis:not(:first-child) {
+        border-top: 0;
+    }
+}
+
 img {
     user-select: none;
 }
