@@ -1,6 +1,5 @@
 
 #packaging-retos h2 {
-    font-weight: bolder;
     text-align: center;
     margin-bottom: 3rem;
 }
@@ -48,7 +47,6 @@
 
 .context-text h2 {
     text-align: center;
-    font-weight: bolder;
 }
 
 .desktop-packaging {
@@ -180,7 +178,6 @@
 
 .resultado-texto h2 {
     text-align: center;
-    font-weight: bolder;
 }
 
 .resultado-grid {

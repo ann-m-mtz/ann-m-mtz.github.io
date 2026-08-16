@@ -17,31 +17,42 @@ document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 });
 
-//Efectos Index
+const heroScrollCue = document.querySelector(".hero-scroll-cue");
 
-const reveals = document.querySelectorAll(".reveal");
+if (heroScrollCue) {
+    let heroScrollCueHidden = false;
 
-
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("active");
-
+    const hideOnFirstScroll = () => {
+        if (window.scrollY > 0) {
+            hideHeroScrollCue();
         }
+    };
 
+    const hideHeroScrollCue = () => {
+        if (heroScrollCueHidden) return;
+
+        heroScrollCueHidden = true;
+        heroScrollCue.classList.add("is-hidden");
+        heroScrollCue.setAttribute("aria-hidden", "true");
+        heroScrollCue.setAttribute("tabindex", "-1");
+        heroScrollCue.setAttribute("inert", "");
+        heroScrollCue.inert = true;
+        window.removeEventListener("scroll", hideOnFirstScroll);
+    };
+
+    window.addEventListener("scroll", hideOnFirstScroll, { passive: true });
+    heroScrollCue.addEventListener("click", (event) => {
+        const target = heroScrollCue.getAttribute("href");
+
+        hideHeroScrollCue();
+
+        if (target && target.startsWith("#")) {
+            event.preventDefault();
+            document.querySelector(target)?.scrollIntoView();
+            window.history.pushState(null, "", target);
+        }
     });
-
-}, {
-    threshold:0.2
-});
-
-
-reveals.forEach(element=>{
-    observer.observe(element);
-});
+}
 
 //Slider Index Proyectos
 
@@ -50,11 +61,7 @@ const projectsSwiper = document.querySelector(".projectsSwiper") && new Swiper("
     centeredSlides:true,
     slidesPerView:1.2,
     spaceBetween:10,
-    speed:800,
-    autoplay:{
-        delay:2500,
-        disableOnInteraction:false,
-    }
+    speed:800
 });
 
 //Slider Mapu - Primeros
