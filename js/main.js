@@ -38,12 +38,6 @@ if (mobileNavToggle && mobileNavCollapse && mobileNavCollapseApi) {
     });
 }
 
-//Prohibido guardar
-
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-});
-
 const heroScrollCue = document.querySelector(".hero-scroll-cue");
 
 if (heroScrollCue) {
