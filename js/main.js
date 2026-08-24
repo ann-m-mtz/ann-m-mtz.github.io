@@ -69,7 +69,9 @@ if (heroScrollCue) {
 
         if (target && target.startsWith("#")) {
             event.preventDefault();
-            document.querySelector(target)?.scrollIntoView();
+            const scrollTarget = document.querySelector(target);
+            scrollTarget?.scrollIntoView();
+            scrollTarget?.focus({ preventScroll: true });
             window.history.pushState(null, "", target);
         }
     });

@@ -28,7 +28,7 @@
     <meta name="twitter:description" content="Ana Muñoz es diseñadora gráfica, ilustradora y egresada de psicología, interesada en desarrollar ideas desde la intersección de distintas disciplinas.">
     <meta name="twitter:image" content="https://ann-m-mtz.github.io/assets/images/social/about.jpg">
     <meta name="twitter:image:alt" content="Vista de la sección Sobre mí del portafolio de Ana Muñoz.">
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -41,7 +41,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </head>
 
     <body class="about-page">
-    <main>
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Comienza el nav bar -->
     <header>
 
@@ -78,14 +77,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                 <li class="nav-item dropdown">
 
-                    <a class="nav-link dropdown-toggle"
-                       href="#"
-                       role="button"
-                       data-bs-toggle="dropdown">
+                    <button class="nav-link dropdown-toggle"
+                       type="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
 
                         Proyectos Seleccionados
 
-                    </a>
+                    </button>
 
                     <ul class="dropdown-menu">
 
@@ -118,14 +117,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                 <li class="nav-item dropdown">
 
-                    <a class="nav-link dropdown-toggle"
-                       href="#"
-                       role="button"
-                       data-bs-toggle="dropdown">
+                    <button class="nav-link dropdown-toggle"
+                       type="button"
+                       data-bs-toggle="dropdown"
+                       aria-expanded="false">
 
                         Colecciones
 
-                    </a>
+                    </button>
 
                     <ul class="dropdown-menu">
 
@@ -158,10 +157,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                     <a class="nav-link" href="sobre.html">Sobre mí</a>
                 </li>
 
-                <li class="language-switch">[
-                     <a href="sobre.html" lang="es" hreflang="es" aria-label="Versión en español"> ES</a>
-                                    |
-                     <a href="sobre-en.html" lang="en" hreflang="en" aria-label="English version">EN </a>]
+                <li class="language-switch" aria-label="Selector de idioma">
+                     <span class="language-switch__current" lang="es" aria-current="page" aria-label="Versión actual: español">ES</span>
+                     <a class="language-switch__link" href="sobre-en.html" lang="en" hreflang="en" aria-label="English version">EN</a>
                 </li>
 
             </ul>
@@ -173,6 +171,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 </nav>
 
 </header>
+
+    <main>
 
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Empezamos con la Revista -->
 
@@ -238,7 +238,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                 <p> ¿Qué puedo decir? Me gusta estar lista para lo que sea.</p><hr>
 <!--Jajas-->
-                <h5>Algunas cosas que terminé aprendiendo por curiosidad:</h5>
+                <h3>Algunas cosas que terminé aprendiendo por curiosidad:</h3>
 
                     <div class="curiosity-ticker">
 
@@ -407,13 +407,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 
 <!--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Footer-->
-<div class="closing-section">
-        <section id="about-preview">
-                    <footer>
+    </main>
+
+    <footer class="closing-section">
 
     <div class="footer-divider"></div>
     <div class="footer-content">
-        <h3>Ana Muñoz</h3>
+        <p class="footer-name">Ana Muñoz</p>
         <p>Diseño · Ilustración · Investigación</p>
         <div class="footer-links">
             <a href="mailto:anacristina.mmtz@gmail.com" aria-label="Correo electrónico"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
@@ -426,12 +426,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         </p>
     </div>
     </footer>
-            </div>
-            
-        </section>
-    </div>
-
-</main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

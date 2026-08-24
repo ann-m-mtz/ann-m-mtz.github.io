@@ -148,12 +148,51 @@ img {
 /*Pura barra de navegación*/
 
 .language-switch {
-	color: whitesmoke;
-    margin-left: 2rem;
+	display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    width: fit-content;
+    flex: none;
+    gap: .1rem;
+    margin-left: .5rem;
+    padding: .18rem .26rem;
     font-size: .7rem;
-    letter-spacing: 2px;
+    letter-spacing: 0;
     font-family: monospace;
-    font-weight: 100;
+    line-height: 1;
+    background-color: var(--surface-dark-glass);
+    backdrop-filter: var(--blur-navigation);
+    -webkit-backdrop-filter: var(--blur-navigation);
+    border: 1px solid var(--color-line-on-dark);
+    border-radius: 999px;
+}
+
+.language-switch__current,
+.language-switch__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.75rem;
+    padding: .24rem .3rem;
+    border-radius: 999px;
+    color: var(--color-on-dark);
+    font: inherit;
+    letter-spacing: 0;
+}
+
+.language-switch__current {
+    background-color: var(--surface-light-glass);
+    font-weight: 700;
+}
+
+.language-switch__link {
+    color: var(--color-emphasis-on-dark);
+    font-weight: 500;
+}
+
+.language-switch__link:hover,
+.language-switch__link:focus-visible {
+    color: var(--color-on-dark-strong);
 }
 
 @media (max-width: 991px) {
@@ -317,6 +356,13 @@ a:hover {
         justify-content: center;
     }
 
+}
+
+button.nav-link.dropdown-toggle {
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    border: 0;
+    background: transparent;
+    text-align: left;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1201,6 +1247,80 @@ p.home-work-copy {
 	);
 }
 
+/* Home: el brochazo comienza en el bloque Sobre mí y se desplaza con el
+   documento. El footer continúa el tramo final oscuro sin reiniciar la imagen. */
+body:has(#hero) main > .closing-section {
+	background-color: #000;
+	background-image: -webkit-image-set(
+		url("../assets/images/fondoindex4.avif") type("image/avif") 1x,
+		url("../assets/images/fondoindex4.webp") type("image/webp") 1x,
+		url("../assets/images/fondoindex4.jpg") type("image/jpeg") 1x
+	);
+	background-image: image-set(
+		url("../assets/images/fondoindex4.avif") type("image/avif") 1x,
+		url("../assets/images/fondoindex4.webp") type("image/webp") 1x,
+		url("../assets/images/fondoindex4.jpg") type("image/jpeg") 1x
+	);
+	background-position: top center;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+}
+
+body:has(#hero) > footer.closing-section {
+	background-color: #000;
+	background-image: none;
+}
+
+/* En escritorio, la misma capa decorativa se prolonga detrás del footer sin
+   alterar la altura natural del contenido de Sobre mí. */
+@media (min-width: 992px) {
+	body:has(#hero) main > .closing-section {
+		background-color: transparent;
+		background-image: none;
+	}
+
+	body:has(#hero) main > .closing-section > * {
+		position: relative;
+		z-index: 2;
+	}
+
+	body:has(#hero) main > .closing-section::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: calc(100% + 22rem);
+		background-color: #000;
+		background-image: -webkit-image-set(
+			url("../assets/images/fondoindex4.avif") type("image/avif") 1x,
+			url("../assets/images/fondoindex4.webp") type("image/webp") 1x,
+			url("../assets/images/fondoindex4.jpg") type("image/jpeg") 1x
+		);
+		background-image: image-set(
+			url("../assets/images/fondoindex4.avif") type("image/avif") 1x,
+			url("../assets/images/fondoindex4.webp") type("image/webp") 1x,
+			url("../assets/images/fondoindex4.jpg") type("image/jpeg") 1x
+		);
+		background-position: top center;
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		pointer-events: none;
+	}
+
+	body:has(#hero) > footer.closing-section {
+		position: relative;
+		background-color: #000;
+	}
+
+	body:has(#hero) > footer.closing-section > * {
+		position: relative;
+		z-index: 2;
+	}
+}
+
 
 .sobremi {
 	position: relative;
@@ -1280,6 +1400,24 @@ footer a:hover {
 	color: var(--color-link-hover-on-dark);
 }
 
+.sobremi .home-contact-copy {
+	margin-top: .75rem;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.sobremi .home-contact-copy a {
+	width: auto;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	border-radius: 0;
+	background: transparent;
+	backdrop-filter: none;
+	-webkit-backdrop-filter: none;
+	text-decoration: underline;
+}
+
 /*Footer*/
 
 .footer-divider {
@@ -1296,9 +1434,19 @@ footer {
 	text-align: center;
 }
 
-.footer-content h3 {
+.footer-content h3,
+.footer-name {
 	letter-spacing: 1px;
 	margin-bottom: 10px;
+}
+
+.footer-name {
+    font-size: 1.17em;
+    font-weight: 700;
+}
+
+.footer-content .footer-name {
+    margin-bottom: 10px;
 }
 
 .footer-content p {

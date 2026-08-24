@@ -28,7 +28,7 @@
     <meta name="twitter:description" content="Selección de carteles de Ana Muñoz desarrollados para convocatorias y concursos de diseño, con piezas reconocidas por BiCeBé, INER y la PGR.">
     <meta name="twitter:image" content="https://ann-m-mtz.github.io/assets/images/social/posters.jpg">
     <meta name="twitter:image:alt" content="Vista previa de la colección de carteles de Ana Muñoz.">
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -39,7 +39,6 @@
 </head>
 
     <body>
-    <main>
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Comienza el nav bar -->
      <header>
 
@@ -76,14 +75,11 @@
 
                 <li class="nav-item dropdown">
 
-                    <a class="nav-link dropdown-toggle"
-                       href="#"
-                       role="button"
-                       data-bs-toggle="dropdown">
+                    <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 
                         Proyectos Seleccionados
 
-                    </a>
+                    </button>
 
                     <ul class="dropdown-menu">
 
@@ -116,14 +112,11 @@
 
                 <li class="nav-item dropdown">
 
-                    <a class="nav-link dropdown-toggle"
-                       href="#"
-                       role="button"
-                       data-bs-toggle="dropdown">
+                    <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 
                         Colecciones
 
-                    </a>
+                    </button>
 
                     <ul class="dropdown-menu">
 
@@ -156,10 +149,9 @@
                     <a class="nav-link" href="sobre.html">Sobre mí</a>
                 </li>
 
-                <li class="language-switch">[
-                     <a href="carteles.html" lang="es" hreflang="es" aria-label="Versión en español"> ES</a>
-                                    |
-                     <a href="carteles-en.html" lang="en" hreflang="en" aria-label="English version">EN </a>]
+                <li class="language-switch" aria-label="Selector de idioma">
+                     <span class="language-switch__current" lang="es" aria-current="page" aria-label="Versión actual: español">ES</span>
+                     <a class="language-switch__link" href="carteles-en.html" lang="en" hreflang="en" aria-label="English version">EN</a>
                 </li>
 
             </ul>
@@ -171,6 +163,8 @@
 </nav>
 
 </header>
+
+    <main>
 
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Empezamos con la Revista -->
 
@@ -251,15 +245,9 @@
 
 <div class="award-proof">
 
-    <a href="assets/images/carteles/bicebecertificado.png"
-       target="_blank"
-       rel="noopener noreferrer">
-
-        <img src="assets/images/carteles/bicebecertificado.png"
-             width="2480" height="3508" loading="lazy"
-             alt="Reconocimiento de BICeBé">
-
-    </a>
+    <img src="assets/images/carteles/bicebecertificado.png"
+         width="2480" height="3508" loading="lazy"
+         alt="Reconocimiento de BICeBé">
 
 </div>
 
@@ -300,15 +288,9 @@
 
 <div class="award-proof">
 
-    <a href="assets/images/carteles/tabacoconstancia.png"
-       target="_blank"
-       rel="noopener noreferrer">
-
-        <img src="assets/images/carteles/tabacoconstancia.png"
-             width="2550" height="3300" loading="lazy"
-             alt="Constancia del cartel sobre tabaquismo">
-
-    </a>
+    <img src="assets/images/carteles/tabacoconstancia.png"
+         width="2550" height="3300" loading="lazy"
+         alt="Constancia del cartel sobre tabaquismo">
 
 </div>
 
@@ -352,19 +334,13 @@
 
 <div class="award-proof">
 
-    <a href="assets/images/carteles/PGR2017.jpeg"
-       target="_blank"
-       rel="noopener noreferrer">
-
-        <picture>
+    <picture>
             <source srcset="assets/images/carteles/PGR2017.avif" type="image/avif">
             <source srcset="assets/images/carteles/PGR2017.webp" type="image/webp">
             <img src="assets/images/carteles/PGR2017.jpeg"
                  width="1270" height="1600" loading="lazy"
                  alt="Reconocimiento de la PGR">
-        </picture>
-
-    </a>
+    </picture>
 
 </div>
 
@@ -376,13 +352,13 @@
 
 
 <!--aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Footer-->
-<div class="closing-section">
-        <section id="about-preview">
-                    <footer>
+    </main>
+
+    <footer class="closing-section">
 
     <div class="footer-divider"></div>
     <div class="footer-content">
-        <h3>Ana Muñoz</h3>
+        <p class="footer-name">Ana Muñoz</p>
         <p>Diseño · Ilustración · Investigación</p>
         <div class="footer-links">
             <a href="mailto:anacristina.mmtz@gmail.com" aria-label="Correo electrónico"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
@@ -395,12 +371,6 @@
         </p>
     </div>
     </footer>
-            </div>
-            
-        </section>
-    </div>
-
-</main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

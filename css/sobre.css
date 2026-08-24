@@ -67,7 +67,7 @@
     margin: 0 auto 2rem auto;
 }
 
-h5 {
+.about-card--bio > h3 {
     color: var(--color-on-dark);
     font-size: 15px;
     font-weight: bolder;
