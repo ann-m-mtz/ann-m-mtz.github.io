@@ -77,6 +77,27 @@ if (heroScrollCue) {
     });
 }
 
+// Accesibilidad nativa de Swiper: el teclado actúa sólo sobre carruseles
+// visibles y los mensajes siguen el idioma de cada documento.
+const isEnglishDocument = document.documentElement.lang.startsWith("en");
+const swiperAccessibility = {
+    keyboard: {
+        enabled: true,
+        onlyInViewport: true,
+        pageUpDown: false
+    },
+    a11y: {
+        enabled: true,
+        containerMessage: isEnglishDocument ? "Carousel" : "Carrusel",
+        prevSlideMessage: isEnglishDocument ? "Previous slide" : "Diapositiva anterior",
+        nextSlideMessage: isEnglishDocument ? "Next slide" : "Diapositiva siguiente",
+        firstSlideMessage: isEnglishDocument ? "This is the first slide" : "Esta es la primera diapositiva",
+        lastSlideMessage: isEnglishDocument ? "This is the last slide" : "Esta es la última diapositiva",
+        paginationBulletMessage: isEnglishDocument ? "Go to slide {{index}}" : "Ir a la diapositiva {{index}}",
+        slideLabelMessage: isEnglishDocument ? "{{index}} of {{slidesLength}}" : "{{index}} de {{slidesLength}}"
+    }
+};
+
 //Slider Index Proyectos
 
 const projectsSwiper = document.querySelector(".projectsSwiper") && new Swiper(".projectsSwiper", {
@@ -84,7 +105,12 @@ const projectsSwiper = document.querySelector(".projectsSwiper") && new Swiper("
     centeredSlides:true,
     slidesPerView:1.2,
     spaceBetween:10,
-    speed:800
+    speed:800,
+    pagination: {
+        el: ".projectsSwiper .swiper-pagination",
+        clickable: true
+    },
+    ...swiperAccessibility
 });
 
 //Slider Mapu - Primeros
@@ -102,7 +128,8 @@ const primerosSwiper = document.querySelector(".primerosSwiper") && new Swiper("
         992: {
             slidesPerView: 3.3,
         }
-    }
+    },
+    ...swiperAccessibility
 });
 
 const crecimientoSwiper = document.querySelector(".crecimientoSwiper") && new Swiper(".crecimientoSwiper", {
@@ -118,7 +145,8 @@ const crecimientoSwiper = document.querySelector(".crecimientoSwiper") && new Sw
         992: {
             slidesPerView: 3.3,
         }
-    }
+    },
+    ...swiperAccessibility
 });
 
 // MAPU: conserva únicamente la altura necesaria para las slides que se ven.
@@ -192,7 +220,8 @@ const expansionSwiper = document.querySelector(".expansionSwiper") && new Swiper
         992: {
             slidesPerView: 3.3,
         }
-    }
+    },
+    ...swiperAccessibility
 
 });
 
@@ -208,7 +237,8 @@ const otrosSwiper = document.querySelector(".otrosSwiper") && new Swiper(".otros
         992: {
             slidesPerView: 3.3,
         }
-    }
+    },
+    ...swiperAccessibility
 });
 
 //Revista
@@ -225,7 +255,8 @@ const revistaSwiper = document.querySelector(".revistaSwiper") && new Swiper(".r
         992: {
             slidesPerView: 3.3,
         }
-    }
+    },
+    ...swiperAccessibility
 });
 
 
@@ -243,7 +274,8 @@ const prevencionSwiper = document.querySelector(".prevencionSwiper") && new Swip
         992: {
             slidesPerView: 3.3,
         }
-    }
+    },
+    ...swiperAccessibility
 });
 
 // Packaging
@@ -260,7 +292,8 @@ const packagingSwiper = document.querySelector(".packagingSwiper") && new Swiper
         992: {
             slidesPerView: 3.3,
         }
-    }
+    },
+    ...swiperAccessibility
 });
 
 //Educación
@@ -268,7 +301,8 @@ const educacionSwiper = document.querySelector(".educacionSwiper") && new Swiper
     grabCursor:true,
     centeredSlides:true,
     slidesPerView:1.1,
-    spaceBetween:15
+    spaceBetween:15,
+    ...swiperAccessibility
 });
 
 //Ilustración
@@ -277,5 +311,6 @@ const ilustracionSwiper = document.querySelector(".ilustracionSwiper") && new Sw
     grabCursor:true,
     centeredSlides:true,
     slidesPerView:1.1,
-    spaceBetween:15
+    spaceBetween:15,
+    ...swiperAccessibility
 });

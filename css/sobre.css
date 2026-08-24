@@ -85,6 +85,16 @@ TICKER
     position:relative;
 }
 
+.curiosity-ticker:hover .ticker-track,
+.curiosity-ticker:focus .ticker-track {
+    animation-play-state: paused;
+}
+
+.curiosity-ticker:focus-visible {
+    outline: 1px solid var(--color-on-dark);
+    outline-offset: 4px;
+}
+
 .ticker-track {
     display:flex;
     width:max-content;
@@ -112,6 +122,18 @@ TICKER
     }
     to {
         transform:translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .curiosity-ticker {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: thin;
+    }
+
+    .ticker-track {
+        animation: none;
     }
 }
 

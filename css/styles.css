@@ -599,6 +599,11 @@ textarea:focus-visible,
     animation-play-state: paused;
 }
 
+.project-ticker:focus-visible {
+    outline: 1px solid var(--color-on-dark);
+    outline-offset: 4px;
+}
+
 @keyframes project-ticker {
     from {
         transform: translateX(0);
@@ -670,6 +675,18 @@ textarea:focus-visible,
 
     .project-ticker-group[aria-hidden="true"] {
         display: none;
+    }
+
+    .project-ticker.home-ticker {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    body .swiper,
+    body .swiper-wrapper,
+    body .swiper .swiper-slide,
+    body .swiper .swiper-slide img {
+        transition-duration: 0ms !important;
     }
 }
 
