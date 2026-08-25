@@ -454,6 +454,14 @@ textarea:focus-visible,
     }
 }
 
+@media (max-width: 768px) {
+    .hero-scroll-cue {
+        top: calc(100vh - 5rem);
+        top: calc(100svh - 5rem - env(safe-area-inset-bottom));
+        bottom: auto;
+    }
+}
+
 .hero-scroll-cue:hover {
     color: var(--color-on-dark-strong);
 }
@@ -760,6 +768,12 @@ textarea:focus-visible,
         width: 90vw;
         max-width: 420px;
         padding: 20px 0;
+    }
+}
+
+@media (max-width: 400px) and (max-height: 640px) {
+    #hero .tit {
+        display: none;
     }
 }
 
@@ -1111,6 +1125,23 @@ p.home-work-copy {
 	text-align: center;
 }
 
+@media (max-width: 400px) and (max-height: 640px) {
+    .projectsSwiper .project-card,
+    .projectsSwiper .card-content {
+        height: auto;
+        min-height: 300px;
+    }
+
+    .projectsSwiper .card-content h3 {
+        text-align: center;
+    }
+
+    .projectsSwiper .card-content p {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
 
 .desktop-projects {
     display: none;
@@ -1238,6 +1269,18 @@ p.home-work-copy {
 		url("../assets/images/carteles/sintabaco2022.webp") type("image/webp") 1x,
 		url("../assets/images/carteles/sintabaco2022.jpg") type("image/jpeg") 1x
 	);
+}
+
+@media (max-width: 767px) {
+    :root {
+        --home-mobile-card-width: calc((min(100vw, 540px) - 1.5rem - 2px) / 1.2);
+    }
+
+    #featured-project .mapu-card,
+    .collections-grid {
+        width: min(100%, var(--home-mobile-card-width));
+        margin-inline: auto;
+    }
 }
 
 /*Sobre mi + Footer*/
