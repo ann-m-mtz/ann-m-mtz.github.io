@@ -275,7 +275,7 @@ TICKER
 .formation-column h3 {
     font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: normal;
     margin-bottom: 1rem;
     opacity: .8;
     text-align: center;
