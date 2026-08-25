@@ -70,26 +70,6 @@
     margin-top: 30px;
 }
 
-.award-proof a {
-    color: var(--color-ink);
-    font-weight: lighter;
-    display: inline-block;
-    width: 100%;
-    max-width: 250px;
-    box-sizing: content-box;
-    padding: 1rem;
-    border: .5px solid var(--color-line-control);
-    border-radius: var(--radius-media);
-    text-decoration: none;
-    transition: .3s ease;
-
-}
-
-.award-proof a:hover {
-    background: var(--surface-light-glass);
-    color: var(--color-link-hover-on-light);
-}
-
 .award-proof img {
     width: 100%;
     height: auto;
