@@ -758,6 +758,23 @@ textarea:focus-visible,
     .hero-content {
         padding-bottom: 0;
     }
+
+    #logo-inicio {
+        margin-top: clamp(3.5rem, 12vh, 4.5rem);
+    }
+}
+
+@media (max-width: 767px) and (min-height: 760px) and (max-aspect-ratio: 10 / 19) {
+    #hero,
+    .project-hero {
+        min-height: min(100vh, 42rem);
+        min-height: min(100svh, 42rem);
+    }
+
+    #hero .hero-scroll-cue {
+        top: auto;
+        bottom: clamp(2rem, 4vw, 3rem);
+    }
 }
 
 /*Bienvenida*/

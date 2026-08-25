@@ -150,6 +150,13 @@
     }
 }
 
+@media (max-width: 767px) and (min-height: 760px) and (max-aspect-ratio: 10 / 19) {
+    #mapu-hero {
+        min-height: min(100vh, 42rem);
+        min-height: min(100svh, 42rem);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .crecimientoSwiper {
         transition: none;
