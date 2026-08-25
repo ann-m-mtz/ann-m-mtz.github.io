@@ -133,3 +133,13 @@
     transform: scale(1);
     opacity: 1;
 }
+
+@media (max-width: 599px) {
+    #revista-hero .project-hero__title--magazine-en {
+        font-size: clamp(2rem, 9vw, 2.5rem);
+        word-break: normal;
+        overflow-wrap: normal;
+        hyphens: none;
+        letter-spacing: normal;
+    }
+}

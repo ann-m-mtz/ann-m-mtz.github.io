@@ -74,6 +74,7 @@
 ========================== */
 
 @media (max-width: 599px) {
+    #educacion-hero .project-hero__title--education-es,
     #educacion-hero .project-hero__title--education-en {
         font-size: clamp(2rem, 10vw, 2.5rem);
         word-break: normal;
