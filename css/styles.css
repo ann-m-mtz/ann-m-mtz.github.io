@@ -26,19 +26,43 @@
     --surface-image-overlay: rgba(0, 0, 0, .35);
     --blur-navigation: blur(12px);
     --blur-glass: blur(10px);
+    --blur-metadata: blur(6px);
+    --blur-focal: blur(10px);
     --blur-image-overlay: blur(1.5px);
-    --radius-control: 10px;
-    --radius-media: 15px;
-    --radius-card: 18px;
-    --radius-glass: 20px;
+    --radius-control: 8px;
+    --radius-media: 14px;
+    --radius-card: var(--radius-media);
+    --radius-glass: var(--radius-media);
     --radius-pill: 999px;
-    --shadow-card-subtle: 0 8px 18px rgba(0, 0, 0, .05);
-    --shadow-card: 0 8px 20px rgba(0, 0, 0, .08);
-    --shadow-card-hover: 0 15px 30px rgba(0, 0, 0, .08);
-    --shadow-media-hover: 0 15px 35px rgba(0, 0, 0, .18);
+    --shadow-floating-subtle: 0 12px 32px rgba(0, 0, 0, .1);
+    --shadow-floating: 0 18px 44px rgba(0, 0, 0, .14);
+    --shadow-card-subtle: var(--shadow-floating-subtle);
+    --shadow-card: var(--shadow-floating-subtle);
+    --shadow-card-hover: var(--shadow-floating-subtle);
+    --shadow-media-hover: var(--shadow-floating);
+    --glass-navigation: rgba(8, 8, 8, .58);
+    --glass-metadata: rgba(8, 8, 8, .48);
+    --glass-focal: rgba(8, 8, 8, .66);
+    --content-reading: 68ch;
+    --content-wide: 76rem;
+    --content-max: 84rem;
+    --gutter-inline: clamp(1rem, 3vw, 2.5rem);
+    --space-1: .5rem;
+    --space-2: .75rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+    --space-6: 3rem;
+    --space-section: clamp(3.75rem, 7vw, 6.5rem);
+    --space-section-compact: clamp(2.5rem, 4.5vw, 4rem);
+    --type-body: clamp(.98rem, .25vw + .92rem, 1.08rem);
+    --type-h2: clamp(1.8rem, 2.5vw, 2.55rem);
+    --type-h3: clamp(1.15rem, 1.45vw, 1.5rem);
+    --type-meta: clamp(.76rem, .3vw + .7rem, .86rem);
+    --type-caption: clamp(.78rem, .25vw + .72rem, .88rem);
     --focus-inner: #fff;
     --focus-outer: #111;
-    --reading-measure: 42rem;
+    --reading-measure: var(--content-reading);
     --reading-leading: 1.75;
     --reading-paragraph-gap: 1.25rem;
 }
@@ -2274,4 +2298,337 @@ footer {
     .home-page #selected-projects .projectsSwiper .project-card {
         min-height: 20rem;
     }
+}
+
+/* ==========================================================
+   GLOBAL VISUAL SYSTEM — LOT 2
+   Foundation only: type, measures, rhythm, glass and surfaces.
+========================================================== */
+
+body {
+    font-size: var(--type-body);
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+figcaption,
+.figure-caption {
+    max-width: var(--content-reading);
+    margin-top: var(--space-2);
+    color: var(--color-ink-muted);
+    font-size: var(--type-caption);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* One content shell for project and About pages; Home keeps its approved shell. */
+body:not(.home-page) main > section:not(.project-hero):not(#mapu-hero) > .container,
+.about-page main > section > .container {
+    width: min(calc(100% - (2 * var(--gutter-inline))), var(--content-wide));
+    max-width: none;
+    padding-inline: 0;
+}
+
+body:not(.home-page) .reading-copy {
+    width: 100%;
+    max-width: var(--content-reading);
+}
+
+/* Editorial type ladder for page content, without changing hero geometry. */
+body:not(.home-page) main > section:not(.project-hero):not(#mapu-hero) h2,
+.about-page .about-card h2 {
+    font-size: var(--type-h2);
+    font-weight: 700;
+    line-height: 1.12;
+}
+
+body:not(.home-page) main > section:not(.project-hero):not(#mapu-hero) h3,
+.about-page .about-card h3,
+.about-page .formation-column h4 {
+    font-size: var(--type-h3);
+    font-weight: 650;
+    line-height: 1.24;
+}
+
+body:not(.home-page) main > section:not(.project-hero):not(#mapu-hero) h2,
+body:not(.home-page) main > section:not(.project-hero):not(#mapu-hero) h3 {
+    margin-top: 0;
+}
+
+body:not(.home-page) main > section:not(.project-hero):not(#mapu-hero) h2 {
+    margin-bottom: var(--space-4);
+}
+
+body:not(.home-page) main > section:not(.project-hero):not(#mapu-hero) h3 {
+    margin-bottom: var(--space-3);
+}
+
+body:not(.home-page) .reading-copy p,
+body:not(.home-page) p.reading-copy {
+    margin-bottom: var(--space-4);
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+/* Consistent chapter rhythm. Intentionally excludes heroes and zero-height anchors. */
+body:not(.home-page):not(.about-page) #prevencion-context,
+body:not(.home-page):not(.about-page) #revista-context,
+body:not(.home-page):not(.about-page) #packaging-context,
+body:not(.home-page):not(.about-page) #packaging-retos,
+body:not(.home-page):not(.about-page) #retos,
+body:not(.home-page):not(.about-page) #resultado-impreso,
+body:not(.home-page):not(.about-page) #galeria-prevencion,
+body:not(.home-page):not(.about-page) #galeria-revista,
+body:not(.home-page):not(.about-page) #gallery-section {
+    margin-top: var(--space-section-compact);
+}
+
+body:not(.home-page):not(.about-page) .mapu-section {
+    padding-block: var(--space-section-compact);
+}
+
+body:not(.home-page):not(.about-page) .intro-grid,
+body:not(.home-page):not(.about-page) .resultado-grid {
+    gap: var(--space-6);
+}
+
+body:not(.home-page):not(.about-page) .project-axes {
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-section-compact);
+}
+
+body:not(.home-page):not(.about-page) .project-axis {
+    padding-block: var(--space-4);
+}
+
+body:not(.home-page):not(.about-page) .project-axis__media {
+    margin-bottom: var(--space-4);
+}
+
+body:not(.home-page):not(.about-page) .swiper {
+    margin-top: var(--space-3);
+}
+
+/* Navigation glass: one shared surface at every page. */
+header.scrolled {
+    background-color: var(--glass-navigation);
+    border-bottom: 1px solid var(--color-line-on-dark);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .08);
+}
+
+.dropdown-menu,
+.navbar-collapse {
+    border-color: var(--color-line-on-dark);
+    border-radius: var(--radius-media);
+    box-shadow: var(--shadow-floating-subtle);
+}
+
+.navbar-toggler {
+    border-radius: var(--radius-control);
+}
+
+@media (max-width: 991px) {
+    .navbar-toggler {
+        background-color: var(--glass-navigation);
+        box-shadow: var(--shadow-floating-subtle);
+    }
+
+    .navbar-collapse {
+        background-color: var(--glass-navigation);
+        backdrop-filter: var(--blur-navigation);
+        -webkit-backdrop-filter: var(--blur-navigation);
+    }
+}
+
+/* Compact metadata glass shared by every project family. */
+body .project-hero__ticker-glass,
+body .mapu-hero-meta {
+    padding: .38rem .7rem;
+    background: var(--glass-metadata);
+    border: 1px solid var(--color-line-on-dark);
+    border-radius: var(--radius-control);
+    box-shadow: var(--shadow-floating-subtle);
+    backdrop-filter: var(--blur-metadata);
+    -webkit-backdrop-filter: var(--blur-metadata);
+}
+
+body .project-hero__period,
+body .mapu-hero-period {
+    margin-top: var(--space-3);
+    color: var(--color-emphasis-on-dark);
+    font-size: var(--type-meta);
+    font-style: normal;
+    font-weight: 550;
+    line-height: 1.4;
+}
+
+.project-ticker span,
+.ticker-track span,
+.project-axis__number,
+.education-item,
+.education-item h3,
+.education-item span {
+    font-size: var(--type-meta);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.project-axis__number {
+    color: var(--color-ink-muted);
+    font-weight: 700;
+}
+
+/* Two-radius system for media and informational surfaces. */
+body .packaging-grid img,
+body .resultado-grid img,
+body .intro-image img,
+body .prevencion-grid img,
+body .prevencionSwiper img,
+body .masonry-gallery img,
+body .ilustracionSwiper img,
+body .expansion-masonry img,
+body .swiper img,
+body .about-photo {
+    border-radius: var(--radius-media);
+}
+
+.language-switch,
+.language-switch__current,
+.language-switch__link,
+.software-tags span {
+    border-radius: var(--radius-control);
+}
+
+/* About keeps its structure; only one panel receives focal depth. */
+.about-page .about-card {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    background: rgba(255, 255, 255, .065);
+    border: 1px solid var(--color-line-on-dark);
+    border-radius: var(--radius-media);
+    box-shadow: none;
+    backdrop-filter: var(--blur-metadata);
+    -webkit-backdrop-filter: var(--blur-metadata);
+}
+
+.about-page .about-card--bio {
+    background: var(--glass-focal);
+    box-shadow: var(--shadow-floating);
+    backdrop-filter: var(--blur-focal);
+    -webkit-backdrop-filter: var(--blur-focal);
+}
+
+.about-page .about-card h2 {
+    margin-bottom: var(--space-4);
+}
+
+.about-page .about-card h3,
+.about-page .formation-column h3,
+.about-page .formation-column h4 {
+    letter-spacing: normal;
+}
+
+.about-page .about-grid-top,
+.about-page .about-grid-bottom,
+.about-page .formation-layout {
+    gap: var(--space-5);
+}
+
+.about-page .about-grid-bottom,
+.about-page .formation-layout {
+    margin-top: var(--space-5);
+}
+
+.about-page .software-tags {
+    gap: var(--space-1);
+    margin-top: var(--space-4);
+}
+
+.about-page .software-tags span {
+    padding: .38rem .65rem;
+    border-color: var(--color-line-on-dark);
+    background: var(--glass-metadata);
+    font-size: var(--type-meta);
+    font-weight: 500;
+}
+
+/* Tonal dividers: structural, quiet and consistently spaced. */
+body:not(.home-page) hr,
+.project-axis__rule,
+.footer-divider,
+.section-divider span,
+.divisor-about::before,
+.divisor-about::after {
+    border-color: transparent;
+    background: currentColor;
+    color: var(--color-line-strong);
+    opacity: 1;
+}
+
+.about-page hr,
+.about-page .divisor-about::before,
+.about-page .divisor-about::after {
+    color: var(--color-line-on-dark);
+}
+
+body:not(.home-page) main hr {
+    height: 1px;
+    margin-block: var(--space-5);
+    border: 0;
+}
+
+.section-divider,
+.divisor-about {
+    margin-block: var(--space-section-compact);
+}
+
+.section-divider span {
+    height: 1px;
+}
+
+/* Compact action language; editorial links remain untouched. */
+.nav-link,
+.dropdown-item {
+    font-weight: 650;
+}
+
+.contact-icons a,
+.footer-links a {
+    text-shadow: none;
+}
+
+@media (max-width: 767px) {
+    :root {
+        --gutter-inline: 1rem;
+        --space-section: 3.75rem;
+        --space-section-compact: 2.75rem;
+    }
+
+    body:not(.home-page) main > section:not(.project-hero):not(#mapu-hero) h2,
+    .about-page .about-card h2 {
+        font-size: clamp(1.65rem, 7.5vw, 2.15rem);
+    }
+
+    body:not(.home-page) main > section:not(.project-hero):not(#mapu-hero) h3,
+    .about-page .about-card h3,
+    .about-page .formation-column h4 {
+        font-size: clamp(1.08rem, 4.8vw, 1.35rem);
+    }
+
+    body:not(.home-page):not(.about-page) .intro-grid,
+    body:not(.home-page):not(.about-page) .resultado-grid {
+        gap: var(--space-5);
+    }
+}
+
+body.about-page main section#about-cards .about-card.about-card--bio > h3,
+body.about-page main section#about-cards .about-card .formation-column > h3 {
+    font-size: clamp(.9rem, 1vw, 1rem);
+    font-weight: 650;
+    line-height: 1.35;
+}
+
+body.about-page main section#about-cards .about-card .formation-column h4 {
+    font-size: clamp(.98rem, 1.1vw, 1.08rem);
+    font-weight: 650;
+    line-height: 1.35;
 }
