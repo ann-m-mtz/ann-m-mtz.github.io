@@ -98,6 +98,33 @@ const swiperAccessibility = {
     }
 };
 
+// Refinamiento visual compartido: en desktop comienza cerca del centro para
+// mostrar continuidad a ambos lados; tablet y móvil conservan el primer slide.
+// La paginación se crea en runtime para no alterar el markup de cada página.
+function getSwiperPresentation(selector) {
+    const swiperElement = document.querySelector(selector);
+    const slidesCount = swiperElement.querySelectorAll(".swiper-wrapper > .swiper-slide").length;
+    let paginationElement = swiperElement.querySelector(".swiper-pagination");
+
+    if (!paginationElement) {
+        paginationElement = document.createElement("div");
+        paginationElement.className = "swiper-pagination";
+        swiperElement.append(paginationElement);
+    }
+
+    paginationElement.classList.add("swiper-pagination--minimal");
+
+    return {
+        initialSlide: window.matchMedia("(min-width: 992px)").matches
+            ? Math.floor((slidesCount - 1) / 2)
+            : 0,
+        pagination: {
+            el: paginationElement,
+            clickable: true
+        }
+    };
+}
+
 //Slider Index Proyectos
 
 const projectsSwiper = document.querySelector(".projectsSwiper") && new Swiper(".projectsSwiper", {
@@ -106,10 +133,7 @@ const projectsSwiper = document.querySelector(".projectsSwiper") && new Swiper("
     slidesPerView:1.2,
     spaceBetween:10,
     speed:800,
-    pagination: {
-        el: ".projectsSwiper .swiper-pagination",
-        clickable: true
-    },
+    ...getSwiperPresentation(".projectsSwiper"),
     ...swiperAccessibility
 });
 
@@ -129,6 +153,7 @@ const primerosSwiper = document.querySelector(".primerosSwiper") && new Swiper("
             slidesPerView: 3.3,
         }
     },
+    ...getSwiperPresentation(".primerosSwiper"),
     ...swiperAccessibility
 });
 
@@ -146,6 +171,7 @@ const crecimientoSwiper = document.querySelector(".crecimientoSwiper") && new Sw
             slidesPerView: 3.3,
         }
     },
+    ...getSwiperPresentation(".crecimientoSwiper"),
     ...swiperAccessibility
 });
 
@@ -221,6 +247,7 @@ const expansionSwiper = document.querySelector(".expansionSwiper") && new Swiper
             slidesPerView: 3.3,
         }
     },
+    ...getSwiperPresentation(".expansionSwiper"),
     ...swiperAccessibility
 
 });
@@ -238,6 +265,7 @@ const otrosSwiper = document.querySelector(".otrosSwiper") && new Swiper(".otros
             slidesPerView: 3.3,
         }
     },
+    ...getSwiperPresentation(".otrosSwiper"),
     ...swiperAccessibility
 });
 
@@ -256,6 +284,7 @@ const revistaSwiper = document.querySelector(".revistaSwiper") && new Swiper(".r
             slidesPerView: 3.3,
         }
     },
+    ...getSwiperPresentation(".revistaSwiper"),
     ...swiperAccessibility
 });
 
@@ -275,6 +304,7 @@ const prevencionSwiper = document.querySelector(".prevencionSwiper") && new Swip
             slidesPerView: 3.3,
         }
     },
+    ...getSwiperPresentation(".prevencionSwiper"),
     ...swiperAccessibility
 });
 
@@ -293,6 +323,7 @@ const packagingSwiper = document.querySelector(".packagingSwiper") && new Swiper
             slidesPerView: 3.3,
         }
     },
+    ...getSwiperPresentation(".packagingSwiper"),
     ...swiperAccessibility
 });
 
@@ -302,6 +333,7 @@ const educacionSwiper = document.querySelector(".educacionSwiper") && new Swiper
     centeredSlides:true,
     slidesPerView:1.1,
     spaceBetween:15,
+    ...getSwiperPresentation(".educacionSwiper"),
     ...swiperAccessibility
 });
 
@@ -312,5 +344,6 @@ const ilustracionSwiper = document.querySelector(".ilustracionSwiper") && new Sw
     centeredSlides:true,
     slidesPerView:1.1,
     spaceBetween:15,
+    ...getSwiperPresentation(".ilustracionSwiper"),
     ...swiperAccessibility
 });

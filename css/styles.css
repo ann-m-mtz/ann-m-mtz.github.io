@@ -2257,6 +2257,24 @@ footer {
     }
 }
 
+/* Native Swiper pagination: compact, monochrome and shared site-wide. */
+.swiper .swiper-pagination.swiper-pagination--minimal {
+    bottom: .4rem;
+    line-height: 0;
+}
+
+.swiper .swiper-pagination--minimal .swiper-pagination-bullet {
+    width: .375rem;
+    height: .375rem;
+    margin-inline: .2rem !important;
+    background: var(--color-ink);
+    opacity: .24;
+}
+
+.swiper .swiper-pagination--minimal .swiper-pagination-bullet-active {
+    opacity: .82;
+}
+
 @media (max-width: 420px) {
     .home-page {
         --home-shell: calc(100% - 1.5rem);
