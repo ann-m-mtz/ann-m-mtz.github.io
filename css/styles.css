@@ -2632,3 +2632,253 @@ body.about-page main section#about-cards .about-card .formation-column h4 {
     font-weight: 650;
     line-height: 1.35;
 }
+
+/* ============================================================
+   PROJECT EDITORIAL BASE — LOT 3
+   Shared rhythm with restrained project-specific variations.
+   ============================================================ */
+
+.editorial-project {
+    --project-chapter-gap: clamp(3.75rem, 7vw, 6.75rem);
+    --project-inner-gap: clamp(1.25rem, 2.4vw, 2.25rem);
+    --project-opening-gap: clamp(1.75rem, 3.5vw, 3.5rem);
+}
+
+.editorial-project .project-content-start {
+    min-height: 0;
+    margin-top: -1px;
+    padding: 0;
+}
+
+body.editorial-project:not(.home-page):not(.about-page) #packaging-context,
+body.editorial-project:not(.home-page):not(.about-page) #prevencion-context,
+body.editorial-project:not(.home-page):not(.about-page) #revista-context,
+body.editorial-project:not(.home-page):not(.about-page) #packaging-retos,
+body.editorial-project:not(.home-page):not(.about-page) #retos,
+body.editorial-project:not(.home-page):not(.about-page) #galeria-prevencion,
+body.editorial-project:not(.home-page):not(.about-page) #galeria-revista,
+body.editorial-project:not(.home-page):not(.about-page) #resultado-impreso {
+    margin-top: 0;
+}
+
+.editorial-project #prevencion-context,
+.editorial-project #revista-context {
+    padding-top: clamp(2.75rem, 6vw, 5.5rem);
+}
+
+.editorial-project .intro-grid {
+    align-items: center;
+    gap: var(--project-opening-gap);
+}
+
+.editorial-project .intro-image img {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+    border-radius: var(--radius-media);
+}
+
+.editorial-project .intro-text,
+.editorial-project .context-text {
+    max-width: var(--content-reading);
+    margin-inline: 0;
+}
+
+.editorial-project .intro-text h2,
+.editorial-project .context-text h2,
+.editorial-project #retos > .container > h2,
+.editorial-project #packaging-retos > .container > h2,
+.editorial-project #galeria-prevencion > .container > h2,
+.editorial-project #galeria-revista > .container > h2,
+.editorial-project #resultado-impreso h2 {
+    max-width: 18ch;
+    margin: 0 0 var(--space-heading-content);
+    text-align: left;
+}
+
+.editorial-project #packaging-retos,
+.editorial-project #retos {
+    padding-top: var(--project-chapter-gap);
+}
+
+.editorial-project #packaging-retos > .container > h2,
+.editorial-project #retos > .container > h2 {
+    margin-bottom: clamp(1.75rem, 3.5vw, 3rem);
+}
+
+.editorial-project .project-axes {
+    gap: clamp(1.25rem, 2.5vw, 2.5rem);
+    padding-block: 0;
+    border-top: 1px solid var(--color-line-subtle);
+    border-bottom: 1px solid var(--color-line-subtle);
+}
+
+.editorial-project .project-axis {
+    padding-block: clamp(1.5rem, 2.8vw, 2.5rem);
+}
+
+.editorial-project .project-axis__number {
+    margin-bottom: var(--space-3);
+    font-size: var(--type-label);
+    font-weight: 650;
+    line-height: 1;
+}
+
+.editorial-project .project-axis h3 {
+    max-width: 17ch;
+    margin-bottom: var(--space-3);
+    font-size: clamp(1.12rem, 1.45vw, 1.38rem);
+    font-weight: 650;
+}
+
+.editorial-project .project-axis__rule {
+    width: 2.5rem;
+    margin: 0 0 var(--space-4);
+}
+
+.editorial-project #galeria-prevencion,
+.editorial-project #galeria-revista {
+    padding-top: var(--project-chapter-gap);
+}
+
+.editorial-project #galeria-prevencion > .container > h2,
+.editorial-project #galeria-revista > .container > h2 {
+    margin-bottom: var(--project-inner-gap);
+}
+
+.editorial-project #galeria-prevencion .swiper,
+.editorial-project #galeria-revista .swiper,
+.editorial-project #packaging-showcase .swiper {
+    margin-top: 0;
+}
+
+.editorial-project #galeria-prevencion > .container,
+.editorial-project #galeria-revista > .container {
+    padding-bottom: clamp(3.25rem, 6vw, 5.5rem);
+    border-bottom: 1px solid var(--color-line-subtle);
+}
+
+/* Packaging keeps its visual emphasis: product sequence and context share one opening spread. */
+.editorial-project--packaging #packaging-showcase,
+.editorial-project--packaging #packaging-context {
+    padding-top: clamp(2.5rem, 5vw, 4.75rem);
+}
+
+.editorial-project--packaging #packaging-showcase .packagingSwiper {
+    padding-bottom: var(--space-5);
+}
+
+.editorial-project--packaging #packaging-context .context-text {
+    margin-bottom: 0;
+}
+
+.editorial-project--packaging .packaging-context-grid {
+    display: grid;
+    gap: var(--project-opening-gap);
+    align-items: center;
+}
+
+.editorial-project--packaging .packaging-context-media picture {
+    display: block;
+}
+
+.editorial-project--packaging .packaging-context-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-inline: auto;
+    border-radius: var(--radius-media);
+}
+
+.editorial-project--packaging #packaging-retos {
+    padding-bottom: clamp(3.75rem, 7vw, 6.5rem);
+}
+
+/* Prevention remains deliberately sober and text-led. */
+.editorial-project--prevention #prevencion-context > .container {
+    max-width: 72rem;
+}
+
+.editorial-project--prevention #galeria-prevencion > .container > h2 {
+    max-width: 22ch;
+}
+
+/* Magazine gives the visual sequence more room without changing its order or behavior. */
+.editorial-project--magazine #revista-context > .container,
+.editorial-project--magazine #galeria-revista > .container {
+    max-width: var(--content-wide);
+}
+
+.editorial-project--magazine #galeria-revista > .container > h2 {
+    margin-left: clamp(0rem, 4vw, 3rem);
+}
+
+@media (min-width: 768px) {
+    .editorial-project .intro-grid {
+        display: grid;
+        grid-template-columns: minmax(0, .96fr) minmax(0, 1.04fr);
+    }
+
+    .editorial-project--magazine .intro-grid {
+        grid-template-columns: minmax(0, 1.14fr) minmax(18rem, .86fr);
+    }
+
+    .editorial-project--packaging .packaging-context-grid {
+        grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr);
+    }
+
+    .editorial-project--packaging .packaging-context-media img {
+        width: clamp(22rem, 34vw, 30rem);
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .editorial-project {
+        --project-chapter-gap: 3.5rem;
+        --project-opening-gap: 1.75rem;
+    }
+
+    .editorial-project #prevencion-context,
+    .editorial-project #revista-context,
+    .editorial-project--packaging #packaging-showcase {
+        padding-top: 2.75rem;
+    }
+
+    .editorial-project--packaging #packaging-context {
+        padding-top: var(--space-4);
+    }
+
+    .editorial-project .intro-grid {
+        gap: var(--project-opening-gap);
+    }
+
+    .editorial-project .project-axes {
+        gap: 0;
+    }
+
+    .editorial-project .project-axis + .project-axis {
+        border-top: 1px solid var(--color-line-subtle);
+    }
+
+    .editorial-project .project-axis h3 {
+        max-width: none;
+    }
+
+    .editorial-project #galeria-prevencion > .container,
+    .editorial-project #galeria-revista > .container {
+        padding-bottom: 3.25rem;
+    }
+
+    .editorial-project--magazine #galeria-revista > .container > h2 {
+        margin-left: 0;
+    }
+
+    .editorial-project--packaging .packaging-context-grid {
+        gap: var(--space-5);
+    }
+
+    .editorial-project--packaging #packaging-retos {
+        padding-bottom: 3.5rem;
+    }
+}
