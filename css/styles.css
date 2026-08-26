@@ -2257,13 +2257,22 @@ footer {
     }
 }
 
-/* Native Swiper pagination: compact, monochrome and shared site-wide. */
-.swiper .swiper-pagination.swiper-pagination--minimal {
-    bottom: .4rem;
+/* Native Swiper pagination: outside dynamic-height carousels and in document flow. */
+.swiper:has(+ .swiper-pagination--minimal) {
+    padding-bottom: 0;
+}
+
+.swiper-pagination.swiper-pagination--minimal {
+    position: relative;
+    inset: auto;
+    z-index: 2;
+    width: 100%;
+    min-height: .75rem;
+    margin: .75rem 0 1.25rem;
     line-height: 0;
 }
 
-.swiper .swiper-pagination--minimal .swiper-pagination-bullet {
+.swiper-pagination--minimal .swiper-pagination-bullet {
     width: .375rem;
     height: .375rem;
     margin-inline: .2rem !important;
@@ -2271,7 +2280,7 @@ footer {
     opacity: .24;
 }
 
-.swiper .swiper-pagination--minimal .swiper-pagination-bullet-active {
+.swiper-pagination--minimal .swiper-pagination-bullet-active {
     opacity: .82;
 }
 

@@ -109,10 +109,10 @@ function getSwiperPresentation(selector) {
     if (!paginationElement) {
         paginationElement = document.createElement("div");
         paginationElement.className = "swiper-pagination";
-        swiperElement.append(paginationElement);
     }
 
     paginationElement.classList.add("swiper-pagination--minimal");
+    swiperElement.insertAdjacentElement("afterend", paginationElement);
 
     return {
         initialSlide: window.matchMedia("(min-width: 992px)").matches
