@@ -94,3 +94,151 @@
         justify-content: flex-start;
     }
 }
+
+/* ============================================================
+   POSTERS — LOT 6
+   Alternating editorial rhythm; posters remain dominant.
+   ============================================================ */
+
+.exception--posters #carteles-intro {
+    padding-top: clamp(2.75rem, 5vw, 4.5rem);
+    text-align: left;
+}
+
+.exception--posters #carteles-intro > .container,
+.exception--posters .award-poster > .container {
+    width: min(calc(100% - (2 * var(--gutter-inline))), 72rem);
+}
+
+.exception--posters #carteles-intro p {
+    max-width: var(--content-reading);
+    margin: 0;
+}
+
+.exception--posters .award-poster {
+    padding-block: clamp(3.5rem, 7vw, 7rem);
+}
+
+.exception--posters .award-poster:not(:last-child) {
+    border-bottom: 1px solid var(--color-line-subtle);
+}
+
+.exception--posters .award-info {
+    max-width: 42rem;
+    margin: 0 0 clamp(1.75rem, 3vw, 2.5rem);
+    text-align: left;
+}
+
+.exception--posters .award-info h2 {
+    max-width: 18ch;
+    margin: 0 0 var(--space-3);
+}
+
+.exception--posters .award-meta {
+    display: inline-block;
+    max-width: 52ch;
+    margin: 0;
+    padding: .4rem .65rem;
+    background: var(--glass-metadata);
+    backdrop-filter: var(--blur-metadata);
+    -webkit-backdrop-filter: var(--blur-metadata);
+    border: 1px solid var(--color-line-subtle);
+    border-radius: var(--radius-control);
+    color: var(--color-ink-secondary);
+    font-size: var(--type-label);
+    font-style: normal;
+    line-height: 1.4;
+    opacity: 1;
+}
+
+.exception--posters .award-grid {
+    gap: clamp(2rem, 5vw, 5.5rem);
+}
+
+.exception--posters .poster-image {
+    justify-content: flex-start;
+}
+
+.exception--posters .poster-image picture,
+.exception--posters .poster-image img {
+    max-width: 30rem;
+    border-radius: var(--radius-media);
+}
+
+.exception--posters .award-poster--reverse .award-info {
+    margin-left: auto;
+    text-align: right;
+}
+
+.exception--posters .award-poster--reverse .award-info h2 {
+    margin-left: auto;
+}
+
+.exception--posters .award-poster--closing .poster-image picture,
+.exception--posters .award-poster--closing .poster-image img {
+    max-width: 25rem;
+}
+
+.exception--posters .award-proof {
+    margin-top: 0;
+}
+
+.exception--posters .award-proof img,
+.exception--posters .award-proof picture {
+    max-width: 10.5rem;
+    border-radius: var(--radius-media);
+}
+
+@media (min-width: 768px) {
+    .exception--posters .award-grid {
+        grid-template-columns: minmax(0, 1.45fr) minmax(10rem, .55fr);
+    }
+
+    .exception--posters .award-proof {
+        justify-content: flex-start;
+    }
+
+    .exception--posters .award-poster--reverse .award-grid {
+        grid-template-columns: minmax(10rem, .55fr) minmax(0, 1.45fr);
+    }
+
+    .exception--posters .award-poster--reverse .poster-image {
+        grid-column: 2;
+        grid-row: 1;
+        justify-content: flex-end;
+    }
+
+    .exception--posters .award-poster--reverse .award-proof {
+        grid-column: 1;
+        grid-row: 1;
+        justify-content: flex-end;
+    }
+
+    .exception--posters .award-poster--closing .poster-image {
+        padding-left: clamp(1rem, 5vw, 5rem);
+    }
+}
+
+@media (max-width: 767px) {
+    .exception--posters .award-poster {
+        padding-block: 3.75rem;
+    }
+
+    .exception--posters .award-poster--reverse .award-info {
+        margin-left: 0;
+        text-align: left;
+    }
+
+    .exception--posters .award-poster--reverse .award-info h2 {
+        margin-left: 0;
+    }
+
+    .exception--posters .poster-image {
+        justify-content: center;
+    }
+
+    .exception--posters .award-proof {
+        justify-content: flex-end;
+        padding-right: var(--space-3);
+    }
+}

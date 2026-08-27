@@ -110,3 +110,54 @@
         display:none;
     }
 }
+
+/* ============================================================
+   ILLUSTRATION — LOT 6
+   Contemplative hierarchy for traditionally produced work.
+   ============================================================ */
+
+.exception--illustration #ilustracion-intro {
+    padding-top: clamp(2.75rem, 5vw, 4.5rem);
+    text-align: left;
+}
+
+.exception--illustration #ilustracion-intro > .container,
+.exception--illustration #gallery-section > .container {
+    width: min(calc(100% - (2 * var(--gutter-inline))), var(--content-wide));
+}
+
+.exception--illustration #ilustracion-intro p {
+    max-width: var(--content-reading);
+    margin: 0;
+}
+
+.exception--illustration #gallery-section {
+    margin-top: 0;
+    padding-block: clamp(3.5rem, 7vw, 7rem) clamp(4.5rem, 9vw, 8rem);
+}
+
+.exception--illustration .masonry-gallery {
+    column-gap: clamp(1rem, 2.2vw, 2rem);
+}
+
+.exception--illustration .masonry-gallery picture {
+    margin-bottom: clamp(1.25rem, 2.5vw, 2.25rem);
+}
+
+.exception--illustration .masonry-gallery picture:nth-child(5n) {
+    margin-top: clamp(1.25rem, 3vw, 3rem);
+}
+
+.exception--illustration .masonry-gallery img {
+    border-radius: var(--radius-media);
+}
+
+@media (max-width: 767px) {
+    .exception--illustration #ilustracion-intro {
+        padding-top: 2.75rem;
+    }
+
+    .exception--illustration #gallery-section {
+        padding-block: 3rem 4.5rem;
+    }
+}
