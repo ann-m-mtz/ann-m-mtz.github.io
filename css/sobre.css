@@ -526,7 +526,7 @@ TICKER
     -webkit-backdrop-filter: var(--blur-metadata);
     border-color: var(--color-line-on-dark);
     border-radius: var(--radius-glass);
-    box-shadow: var(--shadow-floating);
+    box-shadow: var(--shadow-floating-subtle);
 }
 
 .about-page main section#about-cards .about-card--contact > h2 {
