@@ -324,3 +324,124 @@
     height: 420px;
     object-fit: contain;
 }
+
+/* ============================================================
+   MAPU — LOT 6
+   Curatorial chapters without turning sections into panels.
+   ============================================================ */
+
+.exception--mapu #mapu-intro {
+    margin-top: -1px;
+    padding-top: clamp(2.75rem, 6vw, 5rem);
+}
+
+.exception--mapu #mapu-intro > .container {
+    width: min(calc(100% - (2 * var(--gutter-inline))), var(--content-wide));
+}
+
+.exception--mapu #mapu-intro .reading-copy {
+    max-width: var(--content-reading);
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .exception--mapu #mapu-intro .reading-copy {
+        margin-inline: auto;
+        text-align: center;
+    }
+}
+
+.exception--mapu .section-divider {
+    gap: clamp(.65rem, 1.5vw, 1rem);
+    margin: clamp(1.25rem, 3vw, 2.5rem) 0;
+    color: var(--color-ink-muted);
+}
+
+.exception--mapu .section-divider span {
+    max-width: min(28vw, 15rem);
+    background: var(--color-line-subtle);
+}
+
+.exception--mapu .section-divider i {
+    width: 1.5rem;
+    color: var(--color-ink-muted);
+    font-size: .82rem;
+    text-align: center;
+    opacity: .62;
+}
+
+.exception--mapu .mapu-section {
+    padding-block: clamp(2rem, 4.5vw, 4rem);
+}
+
+.exception--mapu .mapu-section > .content-card {
+    width: min(calc(100% - (2 * var(--gutter-inline))), var(--content-wide));
+}
+
+.exception--mapu .mapu-section .content-card > h2 {
+    max-width: 20ch;
+    margin: 0 0 var(--space-heading-content);
+    text-align: left;
+}
+
+.exception--mapu .mapu-section .content-card > .reading-copy {
+    max-width: var(--content-reading);
+    margin: 0 0 clamp(1.75rem, 3.5vw, 3rem);
+}
+
+.exception--mapu .mapu-section .swiper,
+.exception--mapu .mapu-section .desktop-gallery {
+    margin-top: 0;
+}
+
+.exception--mapu .mapu-section--expansion .expansion-masonry {
+    column-gap: clamp(.75rem, 1.5vw, 1.25rem);
+}
+
+.exception--mapu .mapu-section--expansion .expansion-masonry picture {
+    margin-bottom: clamp(.75rem, 1.5vw, 1.25rem);
+}
+
+.exception--mapu .mapu-section--other {
+    padding-top: clamp(1.5rem, 3vw, 2.5rem);
+    padding-bottom: clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.exception--mapu .mapu-section--other > .content-card {
+    max-width: 64rem;
+}
+
+.exception--mapu .mapu-section--other .content-card > h2 {
+    font-size: clamp(1.55rem, 2.7vw, 2.25rem);
+}
+
+.exception--mapu .mapu-section--other .content-card > .reading-copy {
+    margin-bottom: var(--space-5);
+}
+
+.exception--mapu .mapu-section--other .otrosSwiper {
+    max-width: 58rem;
+    margin-inline: auto;
+}
+
+@media (max-width: 767px) {
+    .exception--mapu #mapu-intro {
+        padding-top: 2.75rem;
+    }
+
+    .exception--mapu .section-divider {
+        margin-block: 1.25rem;
+    }
+
+    .exception--mapu .mapu-section {
+        padding-block: 2.5rem;
+    }
+
+    .exception--mapu .mapu-section .content-card > .reading-copy {
+        margin-bottom: 1.75rem;
+    }
+
+    .exception--mapu .mapu-section--other {
+        padding-bottom: 3.75rem;
+    }
+}

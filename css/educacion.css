@@ -140,3 +140,50 @@
     }
 
 }
+
+/* ============================================================
+   COMMUNICATION VISUAL — LOT 6
+   A curated selection without inventing categories.
+   ============================================================ */
+
+.exception--communication #educacion-intro {
+    padding-top: clamp(2.75rem, 5vw, 4.5rem);
+    text-align: left;
+}
+
+.exception--communication #educacion-intro > .container,
+.exception--communication #gallery-section > .container {
+    width: min(calc(100% - (2 * var(--gutter-inline))), var(--content-wide));
+}
+
+.exception--communication #educacion-intro p {
+    max-width: var(--content-reading);
+    margin: 0;
+}
+
+.exception--communication #gallery-section {
+    margin-top: 0;
+    padding-block: clamp(3rem, 6vw, 6rem) clamp(4rem, 8vw, 7rem);
+}
+
+.exception--communication .masonry-gallery {
+    column-gap: clamp(.85rem, 1.75vw, 1.5rem);
+}
+
+.exception--communication .masonry-gallery picture {
+    margin-bottom: clamp(.9rem, 1.75vw, 1.5rem);
+}
+
+.exception--communication .masonry-gallery img {
+    border-radius: var(--radius-media);
+}
+
+@media (max-width: 767px) {
+    .exception--communication #educacion-intro {
+        padding-top: 2.75rem;
+    }
+
+    .exception--communication #gallery-section {
+        padding-block: 2.75rem 4rem;
+    }
+}
