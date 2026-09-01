@@ -25,7 +25,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/revista.css">
+    <link rel="stylesheet" href="css/revista.css?v=20260901b">
 </head>
 <body class="editorial-project editorial-project--wedding">
 <header>
@@ -36,23 +36,17 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="mapu.html">Caso de estudio</a></li>
-                    <li class="nav-item dropdown">
-                        <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Proyectos Seleccionados</button>
-                        <ul class="dropdown-menu">
-                            <!-- TODO: BODA VISIBILITY — restaurar este elemento al publicar el caso. -->
-                            <li hidden inert aria-hidden="true" data-project-status="draft"><a class="nav-link dropdown-item" href="revista.html">Identidad visual para boda</a></li>
-                            <li><a class="nav-link dropdown-item" href="prevencion.html">Too Munch?</a></li>
-                            <li><a class="nav-link dropdown-item" href="packaging.html">Packaging Ilustrado</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Colecciones</button>
-                        <ul class="dropdown-menu">
-                            <li><a class="nav-link dropdown-item" href="educacion.html">Comunicación Visual</a></li>
-                            <li><a class="nav-link dropdown-item" href="ilustracion.html">Ilustración</a></li>
-                            <li><a class="nav-link dropdown-item" href="carteles.html">Carteles</a></li>
-                        </ul>
-                    </li>
+                    <li class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Proyectos Seleccionados</button><ul class="dropdown-menu">
+                        <!-- TODO: BODA VISIBILITY — restaurar este elemento al publicar el caso. -->
+                        <li hidden inert aria-hidden="true" data-project-status="draft"><a class="nav-link dropdown-item" href="revista.html">Identidad visual para boda</a></li>
+                        <li><a class="nav-link dropdown-item" href="prevencion.html">Too Munch?</a></li>
+                        <li><a class="nav-link dropdown-item" href="packaging.html">Packaging Ilustrado</a></li>
+                    </ul></li>
+                    <li class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Colecciones</button><ul class="dropdown-menu">
+                        <li><a class="nav-link dropdown-item" href="educacion.html">Comunicación Visual</a></li>
+                        <li><a class="nav-link dropdown-item" href="ilustracion.html">Ilustración</a></li>
+                        <li><a class="nav-link dropdown-item" href="carteles.html">Carteles</a></li>
+                    </ul></li>
                     <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre mí</a></li>
                     <li class="language-switch" aria-label="Selector de idioma"><span class="language-switch__current" lang="es" aria-current="page" aria-label="Versión actual: español">ES</span><a class="language-switch__link" href="revista-en.html" lang="en" hreflang="en" aria-label="English version">EN</a></li>
                 </ul>
@@ -69,9 +63,7 @@
             <h1 class="project-hero__title">Identidad visual para boda</h1>
             <!-- TODO: BODA COPY — sustituir cuando el año esté confirmado. -->
             <p class="project-hero__period">[AÑO]</p>
-            <div class="project-hero__ticker-glass">
-                <div class="project-ticker" aria-label="Disciplinas confirmadas del proyecto" tabindex="0"><div class="project-ticker-track"><div class="project-ticker-group"><span>Identidad visual</span><span>Ilustración</span><span>Diseño editorial</span><span>Aplicaciones impresas</span></div><div class="project-ticker-group" aria-hidden="true"><span>Identidad visual</span><span>Ilustración</span><span>Diseño editorial</span><span>Aplicaciones impresas</span></div></div></div>
-            </div>
+            <div class="project-hero__ticker-glass"><div class="project-ticker" aria-label="Disciplinas confirmadas del proyecto" tabindex="0"><div class="project-ticker-track"><div class="project-ticker-group"><span>Identidad visual</span><span>Ilustración</span><span>Diseño editorial</span><span>Aplicaciones impresas</span></div><div class="project-ticker-group" aria-hidden="true"><span>Identidad visual</span><span>Ilustración</span><span>Diseño editorial</span><span>Aplicaciones impresas</span></div></div></div></div>
         </div>
     </section>
 
@@ -82,15 +74,15 @@
         </div>
     </section>
 
-    <section class="wedding-section" aria-labelledby="wedding-context-title">
+    <section class="wedding-section wedding-context" aria-labelledby="wedding-context-title">
         <div class="container wedding-context-grid">
             <div class="wedding-chapter-header">
                 <p class="wedding-kicker">Contexto</p>
-                <h2 id="wedding-context-title">El punto de partida</h2>
-                <!-- TODO: BODA COPY -->
-                <p>[Agregar contexto de la celebración y explicar qué necesidad dio origen al sistema visual.]</p>
+                <!-- TODO: BODA COPY — sustituir cuando exista el contexto definitivo. -->
+                <h2 id="wedding-context-title">El punto de partida de la identidad</h2>
+                <p>El proyecto comenzó con una exploración de estructuras, elementos florales y patrones que permitieran construir un lenguaje visual propio para la celebración. Estos primeros trazos establecieron una base para desarrollar el símbolo, los recursos gráficos y sus aplicaciones posteriores.</p>
             </div>
-            <figure class="wedding-media"><picture><source srcset="assets/images/boda/web/1.avif" type="image/avif"><source srcset="assets/images/boda/web/1.webp" type="image/webp"><img src="assets/images/boda/1.jpeg" width="1496" height="1496" loading="lazy" alt="Bocetos a lápiz de flores, patrones y composiciones para la papelería de boda."></picture></figure>
+            <figure class="wedding-media wedding-context-media" data-asset-number="1"><picture><source srcset="assets/images/boda/web/1.avif" type="image/avif"><source srcset="assets/images/boda/web/1.webp" type="image/webp"><img src="assets/images/boda/1.jpeg" width="1496" height="1496" loading="lazy" alt="Bocetos iniciales de estructuras, flores y patrones para la identidad visual de la boda."></picture></figure>
         </div>
     </section>
 
@@ -99,67 +91,51 @@
             <header class="wedding-chapter-header wedding-chapter-header--wide"><p class="wedding-kicker">Brief condensado</p><h2 id="wedding-brief-title">Cinco campos por definir</h2></header>
             <div class="wedding-brief-grid">
                 <!-- TODO: BODA COPY — completar las cinco tarjetas. -->
-                <article class="wedding-brief-card"><h3>Contexto</h3><p>[Agregar contexto de la celebración]</p></article>
-                <article class="wedding-brief-card"><h3>Objetivo</h3><p>[Definir objetivo de la identidad]</p></article>
-                <article class="wedding-brief-card wedding-brief-card--accent"><h3>Concepto</h3><p>[Explicar el concepto rector]</p></article>
-                <article class="wedding-brief-card"><h3>Alcance</h3><p>[Enumerar aplicaciones diseñadas]</p></article>
-                <article class="wedding-brief-card"><h3>Mi participación</h3><p>[Detallar participación y responsabilidades]</p></article>
+                <article class="wedding-brief-card"><h3>Contexto</h3><p>[Agregar contexto de la celebración y la necesidad que dio origen al sistema visual.]</p></article>
+                <article class="wedding-brief-card"><h3>Objetivo</h3><p>[Definir el objetivo de la identidad y las piezas que debe articular.]</p></article>
+                <article class="wedding-brief-card wedding-brief-card--accent"><h3>Concepto</h3><p>[Explicar cómo el concepto rector se traduce en formas, símbolos y recursos gráficos.]</p></article>
+                <article class="wedding-brief-card"><h3>Alcance</h3><p>[Enumerar las aplicaciones impresas y digitales una vez confirmado el alcance.]</p></article>
+                <article class="wedding-brief-card"><h3>Mi participación</h3><p>[Detallar participación, responsabilidades y etapas de desarrollo.]</p></article>
             </div>
         </div>
     </section>
 
-    <section class="wedding-section" aria-labelledby="wedding-concept-title">
+    <section class="wedding-section" aria-labelledby="wedding-identity-title">
         <div class="container">
-            <header class="wedding-chapter-header"><p class="wedding-kicker">Concepto rector</p><h2 id="wedding-concept-title">Del trazo al lenguaje visual</h2><p>[Explicar cómo el concepto se traduce en formas, símbolos y recursos gráficos.]</p></header>
-            <div class="wedding-system-grid">
-                <figure class="wedding-media wedding-media--contain"><picture><source srcset="assets/images/boda/web/3.avif" type="image/avif"><source srcset="assets/images/boda/web/3.webp" type="image/webp"><img src="assets/images/boda/3.png" width="1876" height="1677" loading="lazy" alt="Símbolo geométrico rojo de líneas entrelazadas."></picture></figure>
-                <figure class="wedding-media wedding-media--contain"><picture><source srcset="assets/images/boda/web/5.avif" type="image/avif"><source srcset="assets/images/boda/web/5.webp" type="image/webp"><img src="assets/images/boda/5.png" width="1200" height="1800" loading="lazy" alt="Motivo floral rojo pintado con textura de acuarela."></picture></figure>
-                <div class="wedding-placeholder wedding-placeholder--square" data-placeholder="logo-variants"><span>[Variantes del logotipo]</span></div>
+            <header class="wedding-chapter-header"><p class="wedding-kicker">Identidad</p><h2 id="wedding-identity-title">Del boceto a un lenguaje visual propio</h2><!-- TODO: BODA COPY --><p>Exploraciones provisionales de estructura, nombre, símbolo y motivos florales que preparan el sistema gráfico de la celebración.</p></header>
+            <div class="wedding-identity-grid">
+                <figure class="wedding-media" data-asset-number="2"><picture><source srcset="assets/images/boda/web/2.avif" type="image/avif"><source srcset="assets/images/boda/web/2.webp" type="image/webp"><img src="assets/images/boda/2.jpeg" width="1496" height="1496" loading="lazy" alt="Pruebas manuscritas de nombres y monogramas para la identidad de boda."></picture></figure>
+                <figure class="wedding-media wedding-media--contain" data-asset-number="3"><picture><source srcset="assets/images/boda/web/3.avif" type="image/avif"><source srcset="assets/images/boda/web/3.webp" type="image/webp"><img src="assets/images/boda/3.png" width="1876" height="1677" loading="lazy" alt="Símbolo geométrico rojo de líneas entrelazadas."></picture></figure>
+                <figure class="wedding-media wedding-media--contain" data-asset-number="5"><picture><source srcset="assets/images/boda/web/5.avif" type="image/avif"><source srcset="assets/images/boda/web/5.webp" type="image/webp"><img src="assets/images/boda/5.png" width="1200" height="1800" loading="lazy" alt="Motivo floral rojo pintado con textura de acuarela."></picture></figure>
+                <figure class="wedding-media wedding-media--contain" data-asset-number="6"><picture><source srcset="assets/images/boda/web/6.avif" type="image/avif"><source srcset="assets/images/boda/web/6.webp" type="image/webp"><img src="assets/images/boda/6.png" width="1200" height="1800" loading="lazy" alt="Ornamento floral rojo de formato vertical."></picture></figure>
+                <figure class="wedding-media wedding-media--contain" data-asset-number="7"><img src="assets/images/boda/7.svg" width="1024" height="1024" loading="lazy" alt="Ilustración botánica roja que forma parte del sistema visual."></figure>
+                <div class="wedding-placeholder wedding-placeholder--landscape" data-placeholder="logo-variants-applications"><span>[Variantes y aplicaciones directas del logo]</span></div>
+                <div class="wedding-placeholder wedding-placeholder--landscape wedding-identity-placeholder--wide" data-placeholder="palette-type"><span>[Paleta y tipografía]</span></div>
             </div>
         </div>
     </section>
 
-    <section class="wedding-section wedding-section--soft" aria-labelledby="wedding-construction-title">
+    <section class="wedding-section wedding-section--soft" aria-labelledby="wedding-print-title">
         <div class="container">
-            <header class="wedding-chapter-header"><p class="wedding-kicker">Construcción de la identidad</p><h2 id="wedding-construction-title">Pruebas de composición y papelería</h2><p>Fotografías de trabajo que registran la exploración de nombres, ornamentos y estructura de la invitación.</p></header>
-            <div class="wedding-process-grid">
-                <figure class="wedding-media"><picture><source srcset="assets/images/boda/web/2.avif" type="image/avif"><source srcset="assets/images/boda/web/2.webp" type="image/webp"><img src="assets/images/boda/2.jpeg" width="1496" height="1496" loading="lazy" alt="Pruebas manuscritas de nombres y monogramas para la identidad de boda."></picture></figure>
-                <figure class="wedding-media"><picture><source srcset="assets/images/boda/web/8.avif" type="image/avif"><source srcset="assets/images/boda/web/8.webp" type="image/webp"><img src="assets/images/boda/8.jpeg" width="1496" height="1496" loading="lazy" alt="Prototipo a lápiz del exterior de una invitación con motivos florales."></picture></figure>
-                <figure class="wedding-media"><picture><source srcset="assets/images/boda/web/9.avif" type="image/avif"><source srcset="assets/images/boda/web/9.webp" type="image/webp"><img src="assets/images/boda/9.jpeg" width="1496" height="1496" loading="lazy" alt="Prototipo abierto de una invitación con nombres, flores y espacio para código QR."></picture></figure>
-                <div class="wedding-placeholder wedding-placeholder--landscape" data-placeholder="monogram-sketches"><span>[Bocetos del monograma]</span></div>
+            <header class="wedding-chapter-header"><p class="wedding-kicker">Invitaciones impresas</p><h2 id="wedding-print-title">De la prueba en papel a la pieza física</h2><!-- TODO: BODA COPY --><p>Prototipos de exterior e interior, seguidos por una primera producción en material translúcido.</p></header>
+            <div class="wedding-print-grid">
+                <figure class="wedding-media" data-asset-number="8"><picture><source srcset="assets/images/boda/web/8.avif" type="image/avif"><source srcset="assets/images/boda/web/8.webp" type="image/webp"><img src="assets/images/boda/8.jpeg" width="1496" height="1496" loading="lazy" alt="Prototipo a lápiz del exterior de una invitación con motivos florales."></picture></figure>
+                <figure class="wedding-media" data-asset-number="9"><picture><source srcset="assets/images/boda/web/9.avif" type="image/avif"><source srcset="assets/images/boda/web/9.webp" type="image/webp"><img src="assets/images/boda/9.jpeg" width="1496" height="1496" loading="lazy" alt="Prototipo abierto de una invitación con nombres, flores y un espacio previsto para código QR."></picture></figure>
+                <figure class="wedding-media" data-asset-number="10"><picture><source srcset="assets/images/boda/web/10.avif" type="image/avif"><source srcset="assets/images/boda/web/10.webp" type="image/webp"><img src="assets/images/boda/10.jpeg" width="1496" height="1496" loading="lazy" alt="Primera producción de invitaciones impresas en material translúcido."></picture></figure>
+                <div class="wedding-placeholder wedding-placeholder--landscape" data-placeholder="final-invitation-stationery"><span>[Invitación final y papelería complementaria]</span></div>
             </div>
         </div>
     </section>
 
-    <section class="wedding-section" aria-labelledby="wedding-system-title">
+    <section class="wedding-section" aria-labelledby="wedding-digital-title">
         <div class="container">
-            <header class="wedding-chapter-header"><p class="wedding-kicker">Sistema visual</p><h2 id="wedding-system-title">Elementos para construir una misma familia</h2><p>[Documentar paleta, tipografía, variantes y reglas de combinación.]</p></header>
-            <div class="wedding-system-grid">
-                <figure class="wedding-media wedding-media--contain"><img src="assets/images/boda/7.svg" width="1024" height="1024" loading="lazy" alt="Ilustración botánica roja utilizada como elemento del sistema visual."></figure>
-                <figure class="wedding-media wedding-media--contain"><picture><source srcset="assets/images/boda/web/6.avif" type="image/avif"><source srcset="assets/images/boda/web/6.webp" type="image/webp"><img src="assets/images/boda/6.png" width="1200" height="1800" loading="lazy" alt="Ornamento floral rojo de formato vertical para la papelería."></picture></figure>
-                <div class="wedding-placeholder wedding-placeholder--landscape" data-placeholder="palette-type"><span>[Paleta y tipografía]</span></div>
+            <header class="wedding-chapter-header"><p class="wedding-kicker">Experiencia digital</p><h2 id="wedding-digital-title">Una extensión digital todavía por documentar</h2><!-- TODO: BODA COPY --><p>El save the date disponible anticipa esta línea; las pantallas, interacciones y posibles secuencias se incorporarán cuando exista material confirmado.</p></header>
+            <div class="wedding-digital-grid">
+                <figure class="wedding-media wedding-media--contain" data-asset-number="4"><picture><source srcset="assets/images/boda/web/4.avif" type="image/avif"><source srcset="assets/images/boda/web/4.webp" type="image/webp"><img src="assets/images/boda/4.png" width="362" height="255" loading="lazy" alt="Diseño provisional de save the date con símbolo rojo, flores y fecha visible."></picture></figure>
+                <div class="wedding-placeholder wedding-placeholder--portrait" data-placeholder="digital-screens-interaction"><span>[Pantallas e interacción digital]</span></div>
+                <div class="wedding-placeholder wedding-placeholder--landscape" data-placeholder="digital-video-closing"><span>[Video o cierre digital]</span></div>
             </div>
         </div>
-    </section>
-
-    <section class="wedding-section wedding-section--soft" aria-labelledby="wedding-applications-title">
-        <div class="container">
-            <header class="wedding-chapter-header"><p class="wedding-kicker">Aplicaciones</p><h2 id="wedding-applications-title">El sistema llevado a piezas concretas</h2><p>[Enumerar las aplicaciones aprobadas cuando el alcance definitivo esté confirmado.]</p></header>
-            <div class="wedding-applications-grid">
-                <figure class="wedding-media wedding-media--contain"><picture><source srcset="assets/images/boda/web/4.avif" type="image/avif"><source srcset="assets/images/boda/web/4.webp" type="image/webp"><img src="assets/images/boda/4.png" width="362" height="255" loading="lazy" alt="Diseño de save the date con símbolo rojo, flores en relieve y fecha provisional visible en la pieza."></picture></figure>
-                <div class="wedding-placeholder wedding-placeholder--portrait" data-placeholder="final-invitation"><span>[Invitación final]</span></div>
-                <div class="wedding-placeholder wedding-placeholder--portrait" data-placeholder="menu-stationery"><span>[Menú o papelería]</span></div>
-                <div class="wedding-placeholder wedding-placeholder--landscape" data-placeholder="context-application"><span>[Aplicación en contexto]</span></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="wedding-section" aria-labelledby="wedding-result-title">
-        <div class="container wedding-result-grid">
-            <div class="wedding-result-copy"><p class="wedding-kicker">Resultado</p><h2 id="wedding-result-title">Una primera prueba física del sistema</h2><!-- TODO: BODA COPY --><p>[Describir el resultado final cuando las piezas y el alcance estén aprobados.]</p></div>
-            <figure class="wedding-media"><picture><source srcset="assets/images/boda/web/10.avif" type="image/avif"><source srcset="assets/images/boda/web/10.webp" type="image/webp"><img src="assets/images/boda/10.jpeg" width="1496" height="1496" loading="lazy" alt="Invitaciones impresas en material translúcido con ornamentos florales y tipografía roja."></picture></figure>
-        </div>
-        <div class="container wedding-closing-placeholder"><div class="wedding-placeholder wedding-placeholder--landscape" data-placeholder="closing-image"><span>[Imagen final de cierre]</span></div></div>
     </section>
 </main>
 

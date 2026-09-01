@@ -2,7 +2,7 @@
 .too-munch .project-hero__title { max-width:8ch; }
 .tm-section { padding:clamp(4rem,8vw,8rem) 0; }
 .tm-kicker { margin:0 0 1rem; font-size:.78rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
-.tm-opening { padding-top:clamp(4rem,10vw,9rem); text-align:center; }
+.too-munch .tm-opening { padding-top:var(--project-opening-gap); text-align:center; }
 .tm-opening h2 { width:100%; max-width:none; margin:0 auto; font-size:clamp(2rem,5.2vw,5.2rem); line-height:.98; }
 .tm-context-grid { display:grid; gap:clamp(2rem,6vw,6rem); align-items:center; }
 .tm-context-copy h2,.tm-result-copy h2,.tm-section-heading h2 { max-width:15ch; margin:0 0 1.5rem; }

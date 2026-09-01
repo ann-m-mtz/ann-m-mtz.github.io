@@ -1,6 +1,19 @@
 
 /* Packaging editorial system */
 
+.editorial-project--packaging .packaging-statement {
+    padding-block: var(--project-opening-gap) clamp(3rem, 7vw, 6rem);
+    text-align: center;
+}
+
+.editorial-project--packaging .packaging-statement h2 {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    font-size: clamp(2rem, 5.2vw, 5.2rem);
+    line-height: .98;
+}
+
 .editorial-project--packaging .packaging-section {
     padding-block: clamp(3.75rem, 7vw, 6.5rem);
     color: var(--color-ink);
@@ -102,6 +115,16 @@
     line-height: 1.65;
 }
 
+.editorial-project--packaging .packaging-brief-card--accent {
+    border-color: var(--color-ink);
+    background: var(--color-ink);
+    color: #fff;
+}
+
+.editorial-project--packaging .packaging-brief-card--accent p {
+    color: #fff;
+}
+
 .editorial-project--packaging #packaging-retos {
     padding-top: clamp(3.75rem, 7vw, 6.5rem);
 }
@@ -182,6 +205,7 @@
 .editorial-project--packaging .packaging-result {
     overflow: hidden;
     padding-bottom: clamp(3.75rem, 7vw, 6.5rem);
+    background: var(--color-surface);
 }
 
 .editorial-project--packaging .packaging-result .packagingSwiper {
@@ -226,6 +250,10 @@
 }
 
 @media (max-width: 767px) {
+    .editorial-project--packaging .packaging-statement {
+        padding-bottom: 3rem;
+    }
+
     .editorial-project--packaging .packaging-section {
         padding-block: 3.5rem;
     }

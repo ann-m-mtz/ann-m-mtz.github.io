@@ -161,6 +161,21 @@
     color: var(--color-ink);
 }
 
+.exception--mapu .mapu-statement {
+    --project-opening-gap: clamp(1.75rem, 3.5vw, 3.5rem);
+    margin-top: -1px;
+    padding-block: var(--project-opening-gap) clamp(3rem, 7vw, 6rem);
+    text-align: center;
+}
+
+.exception--mapu .mapu-statement h2 {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    font-size: clamp(2rem, 5.2vw, 5.2rem);
+    line-height: .98;
+}
+
 .exception--mapu .mapu-opening-grid {
     display: grid;
     gap: clamp(2rem, 5vw, 5rem);
@@ -250,6 +265,16 @@
     margin: 0;
     color: var(--color-ink-secondary);
     line-height: 1.65;
+}
+
+.exception--mapu .mapu-brief-card--accent {
+    border-color: var(--color-ink);
+    background: var(--color-ink);
+    color: #fff;
+}
+
+.exception--mapu .mapu-brief-card--accent p {
+    color: #fff;
 }
 
 @media (min-width: 768px) {
@@ -549,6 +574,9 @@
 }
 
 @media (max-width: 767px) {
+    .exception--mapu .mapu-statement {
+        padding-bottom: 3rem;
+    }
     .exception--mapu #mapu-intro {
         padding-top: 2.75rem;
     }
