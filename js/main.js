@@ -106,6 +106,10 @@ function getSwiperPresentation(selector) {
     const slidesCount = swiperElement.querySelectorAll(".swiper-wrapper > .swiper-slide").length;
     let paginationElement = swiperElement.querySelector(".swiper-pagination");
 
+    if (!paginationElement && swiperElement.nextElementSibling?.classList.contains("swiper-pagination")) {
+        paginationElement = swiperElement.nextElementSibling;
+    }
+
     if (!paginationElement) {
         paginationElement = document.createElement("div");
         paginationElement.className = "swiper-pagination";
@@ -289,13 +293,17 @@ const revistaSwiper = document.querySelector(".revistaSwiper") && new Swiper(".r
 });
 
 
-//Prevención
-
-const prevencionSwiper = document.querySelector(".prevencionSwiper") && new Swiper(".prevencionSwiper", {
+// Too Munch?: proceso de identidad
+const tooMunchSwiper = document.querySelector(".tooMunchSwiper") && new Swiper(".tooMunchSwiper", {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
     spaceBetween: 2,
+    watchOverflow: true,
+    resizeObserver: true,
+    observer: true,
+    preventInteractionOnTransition: true,
+    touchReleaseOnEdges: true,
     breakpoints: {
         768: {
             slidesPerView: 2.3,
@@ -304,9 +312,90 @@ const prevencionSwiper = document.querySelector(".prevencionSwiper") && new Swip
             slidesPerView: 3.3,
         }
     },
-    ...getSwiperPresentation(".prevencionSwiper"),
+    ...getSwiperPresentation(".tooMunchSwiper"),
     ...swiperAccessibility
 });
+
+// Evita que el arrastre nativo de imágenes interrumpa el pointerup de Swiper
+// y limpia su estado si el puntero termina fuera del carrusel o la ventana pierde foco.
+function stabilizeSwiperPointer(swiper) {
+    if (!swiper) return () => {};
+
+    const images = [...swiper.el.querySelectorAll("img")];
+    const preventImageDrag = (event) => event.preventDefault();
+    images.forEach((image) => {
+        image.draggable = false;
+        image.addEventListener("dragstart", preventImageDrag);
+    });
+
+    const releasePointerState = () => {
+        if (!swiper.touchEventsData) return;
+
+        swiper.touchEventsData.isTouched = false;
+        swiper.touchEventsData.isMoved = false;
+        swiper.allowClick = true;
+        swiper.setGrabCursor?.();
+    };
+
+    const releaseOnPointerLeave = (event) => {
+        if (event.buttons === 0) releasePointerState();
+    };
+
+    swiper.el.addEventListener("pointerleave", releaseOnPointerLeave);
+    swiper.el.addEventListener("pointercancel", releasePointerState);
+    swiper.el.addEventListener("lostpointercapture", releasePointerState);
+    window.addEventListener("pointerup", releasePointerState);
+    window.addEventListener("blur", releasePointerState);
+
+    return () => {
+        images.forEach((image) => image.removeEventListener("dragstart", preventImageDrag));
+        swiper.el.removeEventListener("pointerleave", releaseOnPointerLeave);
+        swiper.el.removeEventListener("pointercancel", releasePointerState);
+        swiper.el.removeEventListener("lostpointercapture", releasePointerState);
+        window.removeEventListener("pointerup", releasePointerState);
+        window.removeEventListener("blur", releasePointerState);
+    };
+}
+
+stabilizeSwiperPointer(tooMunchSwiper);
+enableVisibleSlidesHeight(tooMunchSwiper);
+
+// Resultados: una sola secuencia en el DOM. En móvil se comporta como Swiper;
+// desde tablet conserva el orden y pasa a composición editorial tipo masonry.
+const tooMunchResultsElement = document.querySelector(".tmResultsGallery");
+const tooMunchResultsMedia = window.matchMedia("(max-width: 767.98px)");
+let tooMunchResultsSwiper;
+let cleanupTooMunchResultsPointer;
+
+function syncTooMunchResultsGallery() {
+    if (!tooMunchResultsElement) return;
+
+    if (tooMunchResultsMedia.matches && !tooMunchResultsSwiper) {
+        tooMunchResultsSwiper = new Swiper(tooMunchResultsElement, {
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 1.12,
+            spaceBetween: 14,
+            watchOverflow: true,
+            resizeObserver: true,
+            observer: true,
+            preventInteractionOnTransition: true,
+            touchReleaseOnEdges: true,
+            ...getSwiperPresentation(".tmResultsGallery"),
+            ...swiperAccessibility
+        });
+        cleanupTooMunchResultsPointer = stabilizeSwiperPointer(tooMunchResultsSwiper);
+        enableVisibleSlidesHeight(tooMunchResultsSwiper);
+    } else if (!tooMunchResultsMedia.matches && tooMunchResultsSwiper) {
+        cleanupTooMunchResultsPointer?.();
+        cleanupTooMunchResultsPointer = undefined;
+        tooMunchResultsSwiper.destroy(true, true);
+        tooMunchResultsSwiper = undefined;
+    }
+}
+
+syncTooMunchResultsGallery();
+tooMunchResultsMedia.addEventListener("change", syncTooMunchResultsGallery);
 
 // Packaging
 
