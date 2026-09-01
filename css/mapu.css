@@ -150,6 +150,137 @@
     }
 }
 
+/* ============================================================
+   MAPU — EDITORIAL CHAPTER SYSTEM
+   Textual hierarchy only; gallery geometry and Swiper behavior stay local.
+   ============================================================ */
+
+.exception--mapu .mapu-opening,
+.exception--mapu .mapu-brief,
+.exception--mapu .mapu-section {
+    color: var(--color-ink);
+}
+
+.exception--mapu .mapu-opening-grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+}
+
+.exception--mapu .mapu-opening-media {
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--radius-media);
+}
+
+.exception--mapu .mapu-opening-media picture,
+.exception--mapu .mapu-opening-media img {
+    display: block;
+    width: 100%;
+}
+
+.exception--mapu .mapu-opening-media img {
+    height: auto;
+    object-fit: contain;
+}
+
+.exception--mapu .mapu-kicker {
+    margin: 0 0 var(--space-3);
+    color: var(--color-ink-muted);
+    font-size: var(--type-label);
+    font-weight: 700;
+    letter-spacing: .13em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.exception--mapu .mapu-chapter-header {
+    max-width: var(--content-reading);
+    margin-bottom: clamp(1.75rem, 3.5vw, 3rem);
+}
+
+.exception--mapu .mapu-opening .mapu-chapter-header {
+    margin-bottom: 0;
+}
+
+.exception--mapu .mapu-chapter-header--wide {
+    max-width: var(--content-wide);
+}
+
+.exception--mapu .mapu-chapter-header > h2 {
+    max-width: 20ch;
+    margin: 0 0 var(--space-heading-content);
+    color: var(--color-ink);
+    text-align: left;
+}
+
+.exception--mapu .mapu-chapter-header > .reading-copy {
+    max-width: var(--content-reading);
+    margin: 0;
+    text-align: left;
+}
+
+.exception--mapu .mapu-brief,
+.exception--mapu .mapu-section--growth,
+.exception--mapu .mapu-section--other {
+    background: var(--color-surface);
+}
+
+.exception--mapu .mapu-brief {
+    padding-block: clamp(3.75rem, 7vw, 6.5rem);
+}
+
+.exception--mapu .mapu-brief-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.exception--mapu .mapu-brief-card {
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    background: #fff;
+    border: 1px solid var(--color-line-subtle);
+    border-radius: var(--radius-media);
+}
+
+.exception--mapu .mapu-brief-card h3 {
+    margin-bottom: var(--space-3);
+}
+
+.exception--mapu .mapu-brief-card p {
+    margin: 0;
+    color: var(--color-ink-secondary);
+    line-height: 1.65;
+}
+
+@media (min-width: 768px) {
+    .exception--mapu .mapu-opening-grid {
+        grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+    }
+
+    .exception--mapu #mapu-intro .reading-copy {
+        margin: 0;
+        text-align: left;
+    }
+
+    .exception--mapu .mapu-brief-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .exception--mapu .mapu-brief-card--wide {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1100px) {
+    .exception--mapu .mapu-brief-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .exception--mapu .mapu-brief-card--wide {
+        grid-column: span 2;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .crecimientoSwiper {
         transition: none;
@@ -437,4 +568,10 @@
     .exception--mapu .mapu-section--other {
         padding-bottom: 3.75rem;
     }
+}
+
+/* Keep the new opening text-led after the legacy centered intro rule. */
+.exception--mapu #mapu-intro .mapu-chapter-header > .reading-copy {
+    margin: 0;
+    text-align: left;
 }

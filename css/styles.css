@@ -1090,11 +1090,16 @@ p.home-work-copy {
 }
 
 .prevencion {
-	background-image:
-		linear-gradient(145deg, rgba(255,255,255,.08), rgba(0,0,0,.58)),
-		radial-gradient(circle at 25% 30%, #bdbdbd 0 18%, transparent 19%),
-		radial-gradient(circle at 70% 65%, #5d5d5d 0 21%, transparent 22%),
-		linear-gradient(135deg, #2a2a2a, #090909);
+	background-image: url("../assets/images/too munch/cover.jpg");
+	background-image: -webkit-image-set(
+		url("../assets/images/too munch/web/cover-1280.webp") type("image/webp") 1x,
+		url("../assets/images/too munch/cover.jpg") type("image/jpeg") 1x
+	);
+	background-image: image-set(
+		url("../assets/images/too munch/web/cover-1280.webp") type("image/webp") 1x,
+		url("../assets/images/too munch/cover.jpg") type("image/jpeg") 1x
+	);
+	background-position: center 50%;
 
 }
 

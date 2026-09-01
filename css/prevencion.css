@@ -38,7 +38,7 @@
 .tm-brief-card h3 { margin-bottom:.9rem; }
 .tm-brief-card p { margin:0; line-height:1.65; }
 .tm-brief-card--wide { background:var(--tm-ink); color:white; }
-.tm-results { background:#fff; color:#333; }
+.tm-results { background:var(--tm-soft); color:#333; }
 .tm-results .tm-kicker,.tm-results h2 { color:#3b3b3b; }
 .tm-results .tm-result-copy p:not(.tm-kicker) { color:#555; }
 .tm-results .tm-media { color:var(--tm-ink); }
