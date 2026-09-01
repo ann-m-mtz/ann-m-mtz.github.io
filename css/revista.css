@@ -6,7 +6,7 @@
     --wedding-surface: #f3f3f3;
 }
 
-.wedding-opening { padding-block: clamp(4rem, 10vw, 9rem) clamp(3rem, 7vw, 6rem); text-align: center; }
+.editorial-project--wedding .wedding-opening { padding-bottom: var(--project-chapter-gap); text-align: center; }
 .wedding-opening h2 { width: 100%; max-width: none; margin: 0; font-size: clamp(2rem, 5.2vw, 5rem); line-height: 1; }
 .wedding-section { padding-block: clamp(3.75rem, 8vw, 7.5rem); }
 .wedding-section--soft { background: var(--wedding-surface); }
@@ -62,7 +62,6 @@
 }
 
 @media (max-width: 767px) {
-    .wedding-opening { padding-block: 3.75rem 3rem; }
     .wedding-section { padding-block: 3.5rem; }
     .wedding-media--contain img { max-height: 32rem; }
 }

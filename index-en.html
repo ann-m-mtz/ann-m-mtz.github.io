@@ -38,12 +38,13 @@ rel="stylesheet"
 />
 
 
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=20260901d">
 
 </head>
 
 
     <body class="home-page">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Comienza el nav bar -->
     <header>
 
@@ -125,7 +126,7 @@ rel="stylesheet"
                        data-bs-toggle="dropdown"
                        aria-expanded="false">
 
-                        Collections
+                        Galleries
 
                     </button>
 
@@ -175,7 +176,7 @@ rel="stylesheet"
 
 </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
 
 
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaComienza el Hero -->
@@ -251,13 +252,15 @@ rel="stylesheet"
 </section>
         <section id="featured-project">
             <div class="container fluid">
-                <div class="mapu-card">
+                <a class="mapu-card" href="mapu-en.html" aria-describedby="mapu-cover-description">
                         <div class="mapu-content">
-                            <h2>CASE STUDY</h2>
+                            <span class="project-tag">Case study</span>
+                            <h2>Mapu</h2>
                             <p>More than 5 years collaborating in the visual communication of a 100% Mexican brand.</p>
-                            <a href="mapu-en.html"> View project</a>
+                            <span class="card-action" aria-hidden="true">View project →</span>
+                            <span id="mapu-cover-description" class="visually-hidden">Pink and blue Mapu packages presented as the project's main image.</span>
                         </div>
-                </div>
+                </a>
             </div>
 
         </section>
@@ -278,7 +281,7 @@ rel="stylesheet"
 
         <div class="desktop-projects">
 
-            <div class="grid">
+            <div class="grid project-grid project-grid--two">
 
 
                 <!-- TODO: WEDDING VISIBILITY — remove hidden/inert and update copy/cover when publishing. -->
@@ -303,42 +306,30 @@ rel="stylesheet"
 
 
                 <article class="project-card prevencion" aria-label="Too Munch? project">
-
-                    <div class="card-content">
-
-                        <span class="visually-hidden">Cover: a hand holds a phone displaying a recipe in Too Munch?.</span>
-
-                        <h3>Too Munch?</h3>
-
-                        <p>
-                            Identity and UX/UI for a more playful way to decide what to eat.
-                        </p>
-
-                        <a href="prevencion-en.html" aria-label="View Too Munch? project">
-                            View project
-                        </a>
-
-                    </div>
+                    <a class="project-card__link" href="prevencion-en.html" aria-describedby="too-munch-cover-description-desktop">
+                        <div class="card-content">
+                            <span class="project-tag">Identity · UX/UI</span>
+                            <h3>Too Munch?</h3>
+                            <p>Identity and UX/UI for a more playful way to decide what to eat.</p>
+                            <span class="card-action" aria-hidden="true">View project →</span>
+                            <span id="too-munch-cover-description-desktop" class="visually-hidden">A hand holds a phone displaying an open recipe.</span>
+                        </div>
+                    </a>
 
                 </article>
 
 
 
                 <article class="project-card packaging">
-
-                    <div class="card-content">
-
-                        <h3>Illustrated Packaging</h3>
-
-                        <p>
-                            Integrating original illustrations into an applied design solution.
-                        </p>
-
-                        <a href="packaging-en.html">
-                            View project
-                        </a>
-
-                    </div>
+                    <a class="project-card__link" href="packaging-en.html" aria-describedby="packaging-cover-description-desktop">
+                        <div class="card-content">
+                            <span class="project-tag">Packaging · Illustration</span>
+                            <h3>Illustrated Packaging</h3>
+                            <p>Integrating original illustrations into an applied design solution.</p>
+                            <span class="card-action" aria-hidden="true">View project →</span>
+                            <span id="packaging-cover-description-desktop" class="visually-hidden">Illustrated packages from the collection arranged in a product composition.</span>
+                        </div>
+                    </a>
 
                 </article>
 
@@ -384,34 +375,29 @@ rel="stylesheet"
                 <div class="swiper-slide">
 
                     <article class="project-card prevencion" aria-label="Too Munch? project">
-
-                        <div class="card-content">
-
-                            <span class="visually-hidden">Cover: a hand holds a phone displaying a recipe in Too Munch?.</span>
-
-                            <h3>Too Munch?</h3>
-
-                            <p>
-                                Identity and UX/UI for a more playful way to decide what to eat.
-                            </p>
-                            <a href="prevencion-en.html" aria-label="View Too Munch? project">
-                                View project
-                            </a>
-                        </div>
+                        <a class="project-card__link" href="prevencion-en.html" aria-describedby="too-munch-cover-description-mobile">
+                            <div class="card-content">
+                                <span class="project-tag">Identity · UX/UI</span>
+                                <h3>Too Munch?</h3>
+                                <p>Identity and UX/UI for a more playful way to decide what to eat.</p>
+                                <span class="card-action" aria-hidden="true">View project →</span>
+                                <span id="too-munch-cover-description-mobile" class="visually-hidden">A hand holds a phone displaying an open recipe.</span>
+                            </div>
+                        </a>
                     </article>
                 </div>
 
                 <div class="swiper-slide">
                     <article class="project-card packaging">
-                        <div class="card-content">
-                            <h3>Illustrated Packaging</h3>
-                            <p>
-                                Integrating original illustrations into an applied design solution.
-                            </p>
-                            <a href="packaging-en.html">
-                                View project
-                            </a>
-                        </div>
+                        <a class="project-card__link" href="packaging-en.html" aria-describedby="packaging-cover-description-mobile">
+                            <div class="card-content">
+                                <span class="project-tag">Packaging · Illustration</span>
+                                <h3>Illustrated Packaging</h3>
+                                <p>Integrating original illustrations into an applied design solution.</p>
+                                <span class="card-action" aria-hidden="true">View project →</span>
+                                <span id="packaging-cover-description-mobile" class="visually-hidden">Illustrated packages from the collection arranged in a product composition.</span>
+                            </div>
+                        </a>
                     </article>
                 </div>
             </div>
@@ -425,7 +411,7 @@ rel="stylesheet"
 
         <section id="collections">
             <div class="coleccionheader">
-                <h2 class="titulocoleccion">Collections</h2>
+                <h2 class="titulocoleccion">Galleries</h2>
             </div>
             <div class="collections-grid">
                  <a href="educacion-en.html" class="collection-card educacion">
@@ -458,7 +444,7 @@ rel="stylesheet"
                             <source srcset="assets/images/perfil/foto.avif" type="image/avif">
                             <source srcset="assets/images/perfil/foto.webp" type="image/webp">
                             <img src="assets/images/perfil/foto.jpg"
-                                 width="2371" height="2371" loading="lazy" alt="Portrait of Ana Muñoz">
+                                 width="640" height="640" loading="lazy" alt="Portrait of Ana Muñoz">
                         </picture>
                     </div>
                     <div class="sobremi">

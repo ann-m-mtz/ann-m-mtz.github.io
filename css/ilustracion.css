@@ -1,16 +1,4 @@
 
-#ilustracion-intro {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-#ilustracion-intro p {
-    max-width: 800px;
-    margin: 0 auto;
-    margin-bottom: 40px;
-}
-
 .masonry-gallery {
 
     column-gap: 1rem;
@@ -116,19 +104,8 @@
    Contemplative hierarchy for traditionally produced work.
    ============================================================ */
 
-.exception--illustration #ilustracion-intro {
-    padding-top: clamp(2.75rem, 5vw, 4.5rem);
-    text-align: left;
-}
-
-.exception--illustration #ilustracion-intro > .container,
 .exception--illustration #gallery-section > .container {
     width: min(calc(100% - (2 * var(--gutter-inline))), var(--content-wide));
-}
-
-.exception--illustration #ilustracion-intro p {
-    max-width: var(--content-reading);
-    margin: 0;
 }
 
 .exception--illustration #gallery-section {
@@ -153,10 +130,6 @@
 }
 
 @media (max-width: 767px) {
-    .exception--illustration #ilustracion-intro {
-        padding-top: 2.75rem;
-    }
-
     .exception--illustration #gallery-section {
         padding-block: 3rem 4.5rem;
     }
