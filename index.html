@@ -91,7 +91,7 @@ rel="stylesheet"
 
                     <ul class="dropdown-menu">
 
-                        <li>
+                        <li hidden inert aria-hidden="true" data-project-status="draft">
                             <a class="nav-link dropdown-item"
                                href="revista.html">
                                 Revista
@@ -282,7 +282,8 @@ rel="stylesheet"
             <div class="grid">
 
 
-                <article class="project-card revista">
+                <!-- TODO: BODA VISIBILITY — remove hidden/inert and update copy/cover when publishing. -->
+                <article class="project-card revista" hidden inert aria-hidden="true" data-project-status="draft">
 
                     <div class="card-content">
 
@@ -360,7 +361,7 @@ rel="stylesheet"
             <div class="swiper-wrapper">
 
 
-                <div class="swiper-slide">
+                <div class="swiper-slide" hidden inert aria-hidden="true" data-project-status="draft">
 
                     <article class="project-card revista">
 

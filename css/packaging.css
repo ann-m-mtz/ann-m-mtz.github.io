@@ -193,6 +193,17 @@
     outline-offset: 4px;
 }
 
+.packaging-project-nav {
+    display: flex;
+    padding-block: clamp(2rem, 4vw, 3.5rem);
+}
+
+.packaging-project-nav a {
+    color: inherit;
+    font-weight: 650;
+    text-underline-offset: .25em;
+}
+
 @media (min-width: 768px) {
     .editorial-project--packaging .packaging-context-grid {
         grid-template-columns: minmax(0, 1.12fr) minmax(18rem, .88fr);

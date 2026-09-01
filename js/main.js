@@ -131,7 +131,12 @@ function getSwiperPresentation(selector) {
 
 //Slider Index Proyectos
 
-const projectsSwiper = document.querySelector(".projectsSwiper") && new Swiper(".projectsSwiper", {
+const projectsSwiperElement = document.querySelector(".projectsSwiper");
+
+// Draft projects stay in source control but are removed from the runtime carousel.
+projectsSwiperElement?.querySelectorAll('.swiper-slide[data-project-status="draft"]').forEach((slide) => slide.remove());
+
+const projectsSwiper = projectsSwiperElement && new Swiper(".projectsSwiper", {
     grabCursor:true,
     centeredSlides:true,
     slidesPerView:1.2,
@@ -274,26 +279,6 @@ const otrosSwiper = document.querySelector(".otrosSwiper") && new Swiper(".otros
     ...getSwiperPresentation(".otrosSwiper"),
     ...swiperAccessibility
 });
-
-//Revista
-
-const revistaSwiper = document.querySelector(".revistaSwiper") && new Swiper(".revistaSwiper", {
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 1.2,
-    spaceBetween: 8,
-    breakpoints: {
-        768: {
-            slidesPerView: 2.3,
-        },
-        992: {
-            slidesPerView: 3.3,
-        }
-    },
-    ...getSwiperPresentation(".revistaSwiper"),
-    ...swiperAccessibility
-});
-
 
 // Too Munch?: proceso de identidad
 const tooMunchSwiper = document.querySelector(".tooMunchSwiper") && new Swiper(".tooMunchSwiper", {
