@@ -190,6 +190,8 @@ function enableVisibleSlidesHeight(swiper) {
         cancelAnimationFrame(animationFrame);
 
         animationFrame = requestAnimationFrame(() => {
+            if (swiper.destroyed || !swiper.el || !swiper.slides) return;
+
             const carouselRect = swiper.el.getBoundingClientRect();
             const visibleImages = [...swiper.slides]
                 .filter((slide) => {
@@ -398,6 +400,33 @@ syncTooMunchResultsGallery();
 tooMunchResultsMedia.addEventListener("change", syncTooMunchResultsGallery);
 
 // Packaging
+
+const packagingProcessSwiper = document.querySelector(".packagingProcessSwiper") && new Swiper(".packagingProcessSwiper", {
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1.08,
+    spaceBetween: 16,
+    watchOverflow: true,
+    resizeObserver: true,
+    observer: true,
+    preventInteractionOnTransition: true,
+    touchReleaseOnEdges: true,
+    breakpoints: {
+        768: {
+            slidesPerView: 1.45,
+            spaceBetween: 20
+        },
+        992: {
+            slidesPerView: 2.05,
+            spaceBetween: 24
+        }
+    },
+    ...getSwiperPresentation(".packagingProcessSwiper"),
+    ...swiperAccessibility
+});
+
+stabilizeSwiperPointer(packagingProcessSwiper);
+enableVisibleSlidesHeight(packagingProcessSwiper);
 
 const packagingSwiper = document.querySelector(".packagingSwiper") && new Swiper(".packagingSwiper", {
     grabCursor: true,
