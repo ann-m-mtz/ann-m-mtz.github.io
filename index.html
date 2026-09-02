@@ -38,12 +38,13 @@ rel="stylesheet"
 />
 
 
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=20260901e">
 
 </head>
 
 
     <body class="home-page">
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa Comienza el nav bar -->
     <header>
 
@@ -91,7 +92,7 @@ rel="stylesheet"
 
                     <ul class="dropdown-menu">
 
-                        <li>
+                        <li hidden inert aria-hidden="true" data-project-status="draft">
                             <a class="nav-link dropdown-item"
                                href="revista.html">
                                 Revista
@@ -100,8 +101,8 @@ rel="stylesheet"
 
                         <li>
                             <a class="nav-link dropdown-item"
-                               href="prevencion.html">
-                                Prevención
+                               href="too-munch.html">
+                                Too Munch?
                             </a>
                         </li>
 
@@ -125,7 +126,7 @@ rel="stylesheet"
                        data-bs-toggle="dropdown"
                        aria-expanded="false">
 
-                        Colecciones
+                        Galerías
 
                     </button>
 
@@ -175,7 +176,7 @@ rel="stylesheet"
 
 </header>
 
-    <main>
+    <main id="main-content" tabindex="-1">
 
 
 <!-- aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaComienza el Hero -->
@@ -252,13 +253,15 @@ rel="stylesheet"
 
         <section id="featured-project">
             <div class="container fluid">
-                <div class="mapu-card">
+                <a class="mapu-card" href="mapu.html" aria-describedby="mapu-cover-description">
                         <div class="mapu-content">
-                            <h2>CASO DE ESTUDIO</h2>
+                            <span class="project-tag">Caso de estudio</span>
+                            <h2>Mapu</h2>
                             <p>Más de 5 años colaborando en la comunicación visual de una marca 100% mexicana.</p>
-                            <a href="mapu.html"> Ver proyecto</a>
+                            <span class="card-action" aria-hidden="true">Ver proyecto →</span>
+                            <span id="mapu-cover-description" class="visually-hidden">Empaques de Mapu en tonos rosa y azul presentados como imagen principal del proyecto.</span>
                         </div>
-                </div>
+                </a>
             </div>
 
         </section>
@@ -279,10 +282,11 @@ rel="stylesheet"
 
         <div class="desktop-projects">
 
-            <div class="grid">
+            <div class="grid project-grid project-grid--two">
 
 
-                <article class="project-card revista">
+                <!-- TODO: BODA VISIBILITY — remove hidden/inert and update copy/cover when publishing. -->
+                <article class="project-card revista" hidden inert aria-hidden="true" data-project-status="draft">
 
                     <div class="card-content">
 
@@ -303,43 +307,31 @@ rel="stylesheet"
 
 
 
-                <article class="project-card prevencion">
-
-                    <div class="card-content">
-
-                        <h3>Prevención del Suicidio</h3>
-
-                        <p>
-                            Comunicación de temas sensibles de manera
-                            accesible, responsable y libre de estigmas.
-                        </p>
-
-                        <a href="prevencion.html">
-                            Ver proyecto
-                        </a>
-
-                    </div>
+                <article class="project-card prevencion" aria-label="Proyecto Too Munch?">
+                    <a class="project-card__link" href="too-munch.html" aria-describedby="too-munch-cover-description-desktop">
+                        <div class="card-content">
+                            <span class="project-tag">Identidad · UX/UI</span>
+                            <h3>Too Munch?</h3>
+                            <p>Identidad y UX/UI para decidir qué comer de una forma menos tediosa y más juguetona.</p>
+                            <span class="card-action" aria-hidden="true">Ver proyecto →</span>
+                            <span id="too-munch-cover-description-desktop" class="visually-hidden">Una mano sostiene un teléfono con una receta abierta.</span>
+                        </div>
+                    </a>
 
                 </article>
 
 
 
                 <article class="project-card packaging">
-
-                    <div class="card-content">
-
-                        <h3>Packaging Ilustrado</h3>
-
-                        <p>
-                            Integración de ilustraciones originales
-                            en una solución de diseño aplicada.
-                        </p>
-
-                        <a href="packaging.html">
-                            Ver proyecto
-                        </a>
-
-                    </div>
+                    <a class="project-card__link" href="packaging.html" aria-describedby="packaging-cover-description-desktop">
+                        <div class="card-content">
+                            <span class="project-tag">Packaging · Ilustración</span>
+                            <h3>Packaging Ilustrado</h3>
+                            <p>Integración de ilustraciones originales en una solución de diseño aplicada.</p>
+                            <span class="card-action" aria-hidden="true">Ver proyecto →</span>
+                            <span id="packaging-cover-description-desktop" class="visually-hidden">Empaques ilustrados de la colección en una composición de producto.</span>
+                        </div>
+                    </a>
 
                 </article>
 
@@ -358,7 +350,7 @@ rel="stylesheet"
             <div class="swiper-wrapper">
 
 
-                <div class="swiper-slide">
+                <div class="swiper-slide" hidden inert aria-hidden="true" data-project-status="draft">
 
                     <article class="project-card revista">
 
@@ -385,22 +377,16 @@ rel="stylesheet"
 
                 <div class="swiper-slide">
 
-                    <article class="project-card prevencion">
-
-                        <div class="card-content">
-
-                            <h3>Prevención del Suicidio</h3>
-
-                            <p>
-                                Comunicación de temas sensibles de manera
-                                accesible, responsable y libre de estigmas.
-                            </p>
-
-                            <a href="prevencion.html">
-                                Ver proyecto
-                            </a>
-
-                        </div>
+                    <article class="project-card prevencion" aria-label="Proyecto Too Munch?">
+                        <a class="project-card__link" href="too-munch.html" aria-describedby="too-munch-cover-description-mobile">
+                            <div class="card-content">
+                                <span class="project-tag">Identidad · UX/UI</span>
+                                <h3>Too Munch?</h3>
+                                <p>Identidad y UX/UI para decidir qué comer de una forma menos tediosa y más juguetona.</p>
+                                <span class="card-action" aria-hidden="true">Ver proyecto →</span>
+                                <span id="too-munch-cover-description-mobile" class="visually-hidden">Una mano sostiene un teléfono con una receta abierta.</span>
+                            </div>
+                        </a>
 
                     </article>
 
@@ -411,21 +397,15 @@ rel="stylesheet"
                 <div class="swiper-slide">
 
                     <article class="project-card packaging">
-
-                        <div class="card-content">
-
-                            <h3>Packaging Ilustrado</h3>
-
-                            <p>
-                                Integración de ilustraciones originales
-                                en una solución de diseño aplicada.
-                            </p>
-
-                            <a href="packaging.html">
-                                Ver proyecto
-                            </a>
-
-                        </div>
+                        <a class="project-card__link" href="packaging.html" aria-describedby="packaging-cover-description-mobile">
+                            <div class="card-content">
+                                <span class="project-tag">Packaging · Ilustración</span>
+                                <h3>Packaging Ilustrado</h3>
+                                <p>Integración de ilustraciones originales en una solución de diseño aplicada.</p>
+                                <span class="card-action" aria-hidden="true">Ver proyecto →</span>
+                                <span id="packaging-cover-description-mobile" class="visually-hidden">Empaques ilustrados de la colección en una composición de producto.</span>
+                            </div>
+                        </a>
 
                     </article>
 
@@ -449,7 +429,7 @@ rel="stylesheet"
 
         <section id="collections">
             <div class="coleccionheader">
-                <h2 class="titulocoleccion">Colecciones</h2>
+                <h2 class="titulocoleccion">Galerías</h2>
             </div>
             <div class="collections-grid">
                  <a href="educacion.html" class="collection-card educacion">
@@ -482,7 +462,7 @@ rel="stylesheet"
                             <source srcset="assets/images/perfil/foto.avif" type="image/avif">
                             <source srcset="assets/images/perfil/foto.webp" type="image/webp">
                             <img src="assets/images/perfil/foto.jpg"
-                                 width="2371" height="2371" loading="lazy" alt="Retrato de Ana Muñoz">
+                                 width="640" height="640" loading="lazy" alt="Retrato de Ana Muñoz">
                         </picture>
                     </div>
                     <div class="sobremi">

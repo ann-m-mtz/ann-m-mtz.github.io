@@ -106,6 +106,10 @@ function getSwiperPresentation(selector) {
     const slidesCount = swiperElement.querySelectorAll(".swiper-wrapper > .swiper-slide").length;
     let paginationElement = swiperElement.querySelector(".swiper-pagination");
 
+    if (!paginationElement && swiperElement.nextElementSibling?.classList.contains("swiper-pagination")) {
+        paginationElement = swiperElement.nextElementSibling;
+    }
+
     if (!paginationElement) {
         paginationElement = document.createElement("div");
         paginationElement.className = "swiper-pagination";
@@ -127,7 +131,12 @@ function getSwiperPresentation(selector) {
 
 //Slider Index Proyectos
 
-const projectsSwiper = document.querySelector(".projectsSwiper") && new Swiper(".projectsSwiper", {
+const projectsSwiperElement = document.querySelector(".projectsSwiper");
+
+// Draft projects stay in source control but are removed from the runtime carousel.
+projectsSwiperElement?.querySelectorAll('.swiper-slide[data-project-status="draft"]').forEach((slide) => slide.remove());
+
+const projectsSwiper = projectsSwiperElement && new Swiper(".projectsSwiper", {
     grabCursor:true,
     centeredSlides:true,
     slidesPerView:1.2,
@@ -186,6 +195,8 @@ function enableVisibleSlidesHeight(swiper) {
         cancelAnimationFrame(animationFrame);
 
         animationFrame = requestAnimationFrame(() => {
+            if (swiper.destroyed || !swiper.el || !swiper.slides) return;
+
             const carouselRect = swiper.el.getBoundingClientRect();
             const visibleImages = [...swiper.slides]
                 .filter((slide) => {
@@ -269,33 +280,17 @@ const otrosSwiper = document.querySelector(".otrosSwiper") && new Swiper(".otros
     ...swiperAccessibility
 });
 
-//Revista
-
-const revistaSwiper = document.querySelector(".revistaSwiper") && new Swiper(".revistaSwiper", {
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 1.2,
-    spaceBetween: 8,
-    breakpoints: {
-        768: {
-            slidesPerView: 2.3,
-        },
-        992: {
-            slidesPerView: 3.3,
-        }
-    },
-    ...getSwiperPresentation(".revistaSwiper"),
-    ...swiperAccessibility
-});
-
-
-//Prevención
-
-const prevencionSwiper = document.querySelector(".prevencionSwiper") && new Swiper(".prevencionSwiper", {
+// Too Munch?: proceso de identidad
+const tooMunchSwiper = document.querySelector(".tooMunchSwiper") && new Swiper(".tooMunchSwiper", {
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 1.2,
     spaceBetween: 2,
+    watchOverflow: true,
+    resizeObserver: true,
+    observer: true,
+    preventInteractionOnTransition: true,
+    touchReleaseOnEdges: true,
     breakpoints: {
         768: {
             slidesPerView: 2.3,
@@ -304,11 +299,119 @@ const prevencionSwiper = document.querySelector(".prevencionSwiper") && new Swip
             slidesPerView: 3.3,
         }
     },
-    ...getSwiperPresentation(".prevencionSwiper"),
+    ...getSwiperPresentation(".tooMunchSwiper"),
     ...swiperAccessibility
 });
 
+// Evita que el arrastre nativo de imágenes interrumpa el pointerup de Swiper
+// y limpia su estado si el puntero termina fuera del carrusel o la ventana pierde foco.
+function stabilizeSwiperPointer(swiper) {
+    if (!swiper) return () => {};
+
+    const images = [...swiper.el.querySelectorAll("img")];
+    const preventImageDrag = (event) => event.preventDefault();
+    images.forEach((image) => {
+        image.draggable = false;
+        image.addEventListener("dragstart", preventImageDrag);
+    });
+
+    const releasePointerState = () => {
+        if (!swiper.touchEventsData) return;
+
+        swiper.touchEventsData.isTouched = false;
+        swiper.touchEventsData.isMoved = false;
+        swiper.allowClick = true;
+        swiper.setGrabCursor?.();
+    };
+
+    const releaseOnPointerLeave = (event) => {
+        if (event.buttons === 0) releasePointerState();
+    };
+
+    swiper.el.addEventListener("pointerleave", releaseOnPointerLeave);
+    swiper.el.addEventListener("pointercancel", releasePointerState);
+    swiper.el.addEventListener("lostpointercapture", releasePointerState);
+    window.addEventListener("pointerup", releasePointerState);
+    window.addEventListener("blur", releasePointerState);
+
+    return () => {
+        images.forEach((image) => image.removeEventListener("dragstart", preventImageDrag));
+        swiper.el.removeEventListener("pointerleave", releaseOnPointerLeave);
+        swiper.el.removeEventListener("pointercancel", releasePointerState);
+        swiper.el.removeEventListener("lostpointercapture", releasePointerState);
+        window.removeEventListener("pointerup", releasePointerState);
+        window.removeEventListener("blur", releasePointerState);
+    };
+}
+
+stabilizeSwiperPointer(tooMunchSwiper);
+enableVisibleSlidesHeight(tooMunchSwiper);
+
+// Resultados: una sola secuencia en el DOM. En móvil se comporta como Swiper;
+// desde tablet conserva el orden y pasa a composición editorial tipo masonry.
+const tooMunchResultsElement = document.querySelector(".tmResultsGallery");
+const tooMunchResultsMedia = window.matchMedia("(max-width: 767.98px)");
+let tooMunchResultsSwiper;
+let cleanupTooMunchResultsPointer;
+
+function syncTooMunchResultsGallery() {
+    if (!tooMunchResultsElement) return;
+
+    if (tooMunchResultsMedia.matches && !tooMunchResultsSwiper) {
+        tooMunchResultsSwiper = new Swiper(tooMunchResultsElement, {
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 1.12,
+            spaceBetween: 14,
+            watchOverflow: true,
+            resizeObserver: true,
+            observer: true,
+            preventInteractionOnTransition: true,
+            touchReleaseOnEdges: true,
+            ...getSwiperPresentation(".tmResultsGallery"),
+            ...swiperAccessibility
+        });
+        cleanupTooMunchResultsPointer = stabilizeSwiperPointer(tooMunchResultsSwiper);
+        enableVisibleSlidesHeight(tooMunchResultsSwiper);
+    } else if (!tooMunchResultsMedia.matches && tooMunchResultsSwiper) {
+        cleanupTooMunchResultsPointer?.();
+        cleanupTooMunchResultsPointer = undefined;
+        tooMunchResultsSwiper.destroy(true, true);
+        tooMunchResultsSwiper = undefined;
+    }
+}
+
+syncTooMunchResultsGallery();
+tooMunchResultsMedia.addEventListener("change", syncTooMunchResultsGallery);
+
 // Packaging
+
+const packagingProcessSwiper = document.querySelector(".packagingProcessSwiper") && new Swiper(".packagingProcessSwiper", {
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1.08,
+    spaceBetween: 16,
+    watchOverflow: true,
+    resizeObserver: true,
+    observer: true,
+    preventInteractionOnTransition: true,
+    touchReleaseOnEdges: true,
+    breakpoints: {
+        768: {
+            slidesPerView: 1.45,
+            spaceBetween: 20
+        },
+        992: {
+            slidesPerView: 2.05,
+            spaceBetween: 24
+        }
+    },
+    ...getSwiperPresentation(".packagingProcessSwiper"),
+    ...swiperAccessibility
+});
+
+stabilizeSwiperPointer(packagingProcessSwiper);
+enableVisibleSlidesHeight(packagingProcessSwiper);
 
 const packagingSwiper = document.querySelector(".packagingSwiper") && new Swiper(".packagingSwiper", {
     grabCursor: true,

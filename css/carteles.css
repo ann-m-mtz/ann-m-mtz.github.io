@@ -1,15 +1,4 @@
 
-#carteles-intro {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-#carteles-intro p {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 /*What what*/
 .award-poster {
     padding: 2rem 0;
@@ -100,19 +89,8 @@
    Alternating editorial rhythm; posters remain dominant.
    ============================================================ */
 
-.exception--posters #carteles-intro {
-    padding-top: clamp(2.75rem, 5vw, 4.5rem);
-    text-align: center;
-}
-
-.exception--posters #carteles-intro > .container,
 .exception--posters .award-poster > .container {
     width: min(calc(100% - (2 * var(--gutter-inline))), 72rem);
-}
-
-.exception--posters #carteles-intro p {
-    max-width: var(--content-reading);
-    margin: 0 auto;
 }
 
 .exception--posters .award-poster {
@@ -209,12 +187,14 @@
 
     .exception--posters .award-info {
         order: 2;
-        margin: var(--space-5) auto 0;
+        width: 100%;
+        margin: var(--space-5) 0 0;
+        text-align: left;
     }
 
     .exception--posters .poster-image,
     .exception--posters .award-proof {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .exception--posters .award-proof {
