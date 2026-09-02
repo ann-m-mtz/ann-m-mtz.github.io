@@ -144,13 +144,16 @@
     height: auto;
     align-items: center;
     justify-content: center;
+    overflow: visible;
 }
 
 .packagingProcessSwiper picture {
     display: flex;
     width: 100%;
+    height: auto;
     align-items: center;
     justify-content: center;
+    overflow: visible;
 }
 
 .packagingProcessSwiper img {
@@ -161,6 +164,7 @@
     max-height: min(70vh, 36rem);
     border-radius: var(--radius-media);
     object-fit: contain;
+    object-position: center;
     user-select: none;
     -webkit-user-drag: none;
 }

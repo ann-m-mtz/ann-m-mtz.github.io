@@ -98,6 +98,26 @@ const swiperAccessibility = {
     }
 };
 
+// Interacción de snap sensible para carruseles editoriales con pocas piezas.
+// Mantiene un avance por gesto, sin free mode ni bloqueo durante la transición.
+const responsiveSnapInteraction = {
+    followFinger: true,
+    threshold: 2,
+    touchRatio: 1,
+    shortSwipes: true,
+    longSwipes: true,
+    longSwipesRatio: 0.18,
+    longSwipesMs: 300,
+    resistance: true,
+    resistanceRatio: 0.85,
+    touchReleaseOnEdges: true,
+    preventInteractionOnTransition: false,
+    speed: 420,
+    slidesPerGroup: 1,
+    freeMode: false,
+    oneWayMovement: false
+};
+
 // Refinamiento visual compartido: en desktop comienza cerca del centro para
 // mostrar continuidad a ambos lados; tablet y móvil conservan el primer slide.
 // La paginación se crea en runtime para no alterar el markup de cada página.
@@ -186,7 +206,7 @@ const crecimientoSwiper = document.querySelector(".crecimientoSwiper") && new Sw
 
 // MAPU: conserva únicamente la altura necesaria para las slides que se ven.
 // autoHeight sólo considera la slide activa y podría recortar las previews laterales.
-function enableVisibleSlidesHeight(swiper) {
+function enableVisibleSlidesHeight(swiper, { trackDrag = false } = {}) {
     if (!swiper) return;
 
     let animationFrame;
@@ -223,13 +243,19 @@ function enableVisibleSlidesHeight(swiper) {
         });
     };
 
-    [
+    const heightEvents = [
         "slideChange",
         "slideChangeTransitionStart",
         "slideChangeTransitionEnd",
         "resize",
         "imagesReady"
-    ].forEach((eventName) => swiper.on(eventName, updateHeight));
+    ];
+
+    if (trackDrag) {
+        heightEvents.push("sliderMove", "touchMove", "setTranslate");
+    }
+
+    heightEvents.forEach((eventName) => swiper.on(eventName, updateHeight));
 
     swiper.el.querySelectorAll("img").forEach((image) => {
         image.addEventListener("load", updateHeight);
@@ -289,8 +315,7 @@ const tooMunchSwiper = document.querySelector(".tooMunchSwiper") && new Swiper("
     watchOverflow: true,
     resizeObserver: true,
     observer: true,
-    preventInteractionOnTransition: true,
-    touchReleaseOnEdges: true,
+    ...responsiveSnapInteraction,
     breakpoints: {
         768: {
             slidesPerView: 2.3,
@@ -366,8 +391,7 @@ function syncTooMunchResultsGallery() {
             watchOverflow: true,
             resizeObserver: true,
             observer: true,
-            preventInteractionOnTransition: true,
-            touchReleaseOnEdges: true,
+            ...responsiveSnapInteraction,
             ...getSwiperPresentation(".tmResultsGallery"),
             ...swiperAccessibility
         });
@@ -394,8 +418,7 @@ const packagingProcessSwiper = document.querySelector(".packagingProcessSwiper")
     watchOverflow: true,
     resizeObserver: true,
     observer: true,
-    preventInteractionOnTransition: true,
-    touchReleaseOnEdges: true,
+    ...responsiveSnapInteraction,
     breakpoints: {
         768: {
             slidesPerView: 1.45,
@@ -411,7 +434,7 @@ const packagingProcessSwiper = document.querySelector(".packagingProcessSwiper")
 });
 
 stabilizeSwiperPointer(packagingProcessSwiper);
-enableVisibleSlidesHeight(packagingProcessSwiper);
+enableVisibleSlidesHeight(packagingProcessSwiper, { trackDrag: true });
 
 const packagingSwiper = document.querySelector(".packagingSwiper") && new Swiper(".packagingSwiper", {
     grabCursor: true,
