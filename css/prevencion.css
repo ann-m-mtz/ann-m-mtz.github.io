@@ -1,5 +1,6 @@
 .too-munch { --tm-ink:#171717; --tm-paper:#fff; --tm-soft:#f2f2f2; --tm-line:#d0d0d0; color:var(--tm-ink); }
 .too-munch .project-hero__title { max-width:8ch; }
+@media (min-width:992px) { .too-munch .project-hero__title { max-width:min(100%,12ch); white-space:nowrap; } }
 .tm-section { padding:clamp(4rem,8vw,8rem) 0; }
 .tm-kicker { margin:0 0 1rem; font-size:.78rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
 .too-munch .tm-opening { padding-top:var(--project-opening-gap); text-align:center; }
