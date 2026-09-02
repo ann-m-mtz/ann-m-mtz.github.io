@@ -2981,7 +2981,7 @@ body.editorial-project:not(.home-page):not(.about-page) #resultado-impreso {
     width: min(34rem, calc(100% - 3rem));
     border: 1px solid rgba(255, 255, 255, .14);
     background: #141414;
-    background: rgba(8, 8, 8, .78);
+    background: rgba(8, 8, 8, .70);
     color: var(--color-on-dark);
     box-shadow: var(--shadow-card);
     backdrop-filter: blur(8px);
@@ -3090,7 +3090,7 @@ body.editorial-project:not(.home-page):not(.about-page) #resultado-impreso {
     border-top: 1px solid rgba(255, 255, 255, .14);
     border-radius: 0;
     background: #141414;
-    background: rgba(8, 8, 8, .78);
+    background: rgba(8, 8, 8, .70);
     color: var(--color-on-dark);
     box-shadow: 0 -8px 24px rgba(0, 0, 0, .1);
     backdrop-filter: blur(8px);

@@ -1,0 +1,10 @@
+/* Shared presentation for editorial chapter labels across project case studies. */
+:is(.editorial-project, .exception--mapu) :is(.tm-kicker, .mapu-kicker, .packaging-kicker, .wedding-kicker) {
+    margin: 0 0 var(--space-3, 1rem);
+    color: var(--color-ink-muted, #686868);
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
