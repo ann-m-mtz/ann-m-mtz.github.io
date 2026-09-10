@@ -133,8 +133,30 @@ function getSwiperPresentation(selector) {
 
 const projectsSwiperElement = document.querySelector(".projectsSwiper");
 
-// Draft projects stay in source control but are removed from the runtime carousel.
-projectsSwiperElement?.querySelectorAll('.swiper-slide[data-project-status="draft"]').forEach((slide) => slide.remove());
+// Publica Boda en los menús históricos sin duplicarla en las páginas que ya
+// contienen el enlace definitivo en su HTML.
+document.querySelectorAll('.dropdown-menu').forEach((menu) => {
+    if (menu.querySelector('a[href="boda.html"], a[href="boda-en.html"]')) return;
+
+    const packagingLink = menu.querySelector('a[href="packaging.html"], a[href="packaging-en.html"]');
+    if (!packagingLink) return;
+
+    const english = packagingLink.getAttribute("href") === "packaging-en.html";
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.className = "nav-link dropdown-item";
+    link.href = english ? "boda-en.html" : "boda.html";
+    link.textContent = english ? "Wedding visual system" : "Sistema visual para boda";
+    item.append(link);
+    packagingLink.closest("li")?.insertAdjacentElement("afterend", item);
+});
+
+// El orden público del índice es Too Munch? → Packaging → Boda.
+document.querySelectorAll(".project-grid .project-card.revista").forEach((card) => card.parentElement.append(card));
+projectsSwiperElement?.querySelectorAll(".project-card.revista").forEach((card) => {
+    const slide = card.closest(".swiper-slide");
+    if (slide) projectsSwiperElement.querySelector(".swiper-wrapper")?.append(slide);
+});
 
 const projectsSwiper = projectsSwiperElement && new Swiper(".projectsSwiper", {
     grabCursor:true,
@@ -399,6 +421,80 @@ function syncTooMunchResultsGallery() {
 
 syncTooMunchResultsGallery();
 tooMunchResultsMedia.addEventListener("change", syncTooMunchResultsGallery);
+
+// Boda: Identidad e Invitaciones permanecen como Swiper. Las dos secuencias
+// digitales usan el mismo DOM como Swiper móvil y composición masonry desktop.
+document.querySelectorAll(".wedding-gallery .swiper-wrapper > .wedding-media").forEach((slide) => {
+    slide.classList.add("swiper-slide");
+    slide.querySelectorAll("img").forEach((image) => { image.draggable = false; });
+});
+
+function createWeddingSwiper(selector) {
+    const element = document.querySelector(selector);
+    if (!element) return null;
+
+    const slidesCount = element.querySelectorAll(".swiper-slide").length;
+    return new Swiper(element, {
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 1.12,
+        spaceBetween: 14,
+        watchOverflow: true,
+        resizeObserver: true,
+        observer: true,
+        breakpoints: {
+            768: { slidesPerView: 2.3, spaceBetween: 16 },
+            992: { slidesPerView: 3.3, spaceBetween: 18 }
+        },
+        ...getSwiperPresentation(selector),
+        ...swiperAccessibility,
+        initialSlide: window.matchMedia("(min-width: 768px)").matches
+            ? Math.floor((slidesCount - 1) / 2)
+            : 0
+    });
+}
+
+const weddingIdentitySwiper = createWeddingSwiper(".weddingIdentitySwiper");
+const weddingPrintSwiper = createWeddingSwiper(".weddingPrintSwiper");
+[weddingIdentitySwiper, weddingPrintSwiper].forEach((swiper) => {
+    stabilizeSwiperPointer(swiper);
+    enableVisibleSlidesHeight(swiper);
+});
+
+const weddingDigitalMedia = window.matchMedia("(max-width: 767.98px)");
+const weddingDigitalGalleries = [".weddingDigitalMain", ".weddingDigitalGifts"]
+    .map((selector) => ({ selector, element: document.querySelector(selector), swiper: null, cleanup: null }));
+
+function syncWeddingDigitalGalleries() {
+    weddingDigitalGalleries.forEach((gallery) => {
+        if (!gallery.element) return;
+
+        if (weddingDigitalMedia.matches && !gallery.swiper) {
+            gallery.swiper = new Swiper(gallery.element, {
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 1.08,
+                spaceBetween: 14,
+                initialSlide: 0,
+                watchOverflow: true,
+                resizeObserver: true,
+                observer: true,
+                ...getSwiperPresentation(gallery.selector),
+                ...swiperAccessibility
+            });
+            gallery.cleanup = stabilizeSwiperPointer(gallery.swiper);
+            enableVisibleSlidesHeight(gallery.swiper);
+        } else if (!weddingDigitalMedia.matches && gallery.swiper) {
+            gallery.cleanup?.();
+            gallery.cleanup = null;
+            gallery.swiper.destroy(true, true);
+            gallery.swiper = null;
+        }
+    });
+}
+
+syncWeddingDigitalGalleries();
+weddingDigitalMedia.addEventListener("change", syncWeddingDigitalGalleries);
 
 // Packaging
 

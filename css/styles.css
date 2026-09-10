@@ -1092,18 +1092,24 @@ p.home-work-copy {
 }
 
 .revista {
-	background-image: url(../assets/images/revista/revistamockup.jpg);
+	background-image: url("../assets/images/boda/cover.jpeg");
 	background-image: -webkit-image-set(
-		url("../assets/images/revista/revistamockup.avif") type("image/avif") 1x,
-		url("../assets/images/revista/revistamockup.webp") type("image/webp") 1x,
-		url("../assets/images/revista/revistamockup.jpg") type("image/jpeg") 1x
+		url("../assets/images/boda/web/cover-v2-1280.avif") type("image/avif") 1x,
+		url("../assets/images/boda/web/cover-v2-1280.webp") type("image/webp") 1x,
+		url("../assets/images/boda/cover.jpeg") type("image/jpeg") 1x
 	);
 	background-image: image-set(
-		url("../assets/images/revista/revistamockup.avif") type("image/avif") 1x,
-		url("../assets/images/revista/revistamockup.webp") type("image/webp") 1x,
-		url("../assets/images/revista/revistamockup.jpg") type("image/jpeg") 1x
+		url("../assets/images/boda/web/cover-v2-1280.avif") type("image/avif") 1x,
+		url("../assets/images/boda/web/cover-v2-1280.webp") type("image/webp") 1x,
+		url("../assets/images/boda/cover.jpeg") type("image/jpeg") 1x
 	);
+	background-position: center;
+}
 
+@media (max-width: 767px) {
+    .home-page .project-card.revista {
+        background-image: image-set(url("../assets/images/boda/web/cover-v2-720.avif") type("image/avif") 1x, url("../assets/images/boda/web/cover-v2-720.webp") type("image/webp") 1x, url("../assets/images/boda/cover.jpeg") type("image/jpeg") 1x);
+    }
 }
 
 .prevencion {

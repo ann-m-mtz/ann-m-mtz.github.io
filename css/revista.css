@@ -1,9 +1,10 @@
-/* Temporary wedding case study. The final route migration from revista* remains pending. */
+/* Wedding visual-system case study. */
 .editorial-project--wedding {
     --wedding-ink: #202020;
     --wedding-muted: #686868;
     --wedding-line: #d8d8d8;
     --wedding-surface: #f3f3f3;
+    --wedding-masonry-gap: clamp(.5rem, .8vw, .8rem);
 }
 
 .editorial-project--wedding .wedding-opening { padding-bottom: var(--project-chapter-gap); text-align: center; }
@@ -45,12 +46,25 @@
 .wedding-digital-subsection { max-width: var(--content-reading); margin: clamp(4rem, 8vw, 7rem) 0 clamp(2rem, 5vw, 4rem); }
 .wedding-digital-subsection h3 { margin: 0 0 1rem; font-size: clamp(1.75rem, 3vw, 2.75rem); }
 .wedding-digital-subsection p { margin: 0; color: var(--wedding-muted); line-height: 1.75; }
+.wedding-gallery { width: 100%; overflow: clip; touch-action: pan-y; }
+.wedding-gallery .swiper-wrapper { align-items: flex-start; }
+.wedding-gallery .swiper-slide { display: flex; height: auto; align-items: center; justify-content: center; opacity: .58; transition: opacity .3s ease, transform .3s ease; }
+.wedding-gallery .swiper-slide-active { opacity: 1; transform: scale(1.025); }
+.wedding-gallery .wedding-media img { width: 100%; height: auto; max-height: min(72vh, 46rem); object-fit: contain; }
+.wedding-gallery + .swiper-pagination { position: relative; inset: auto; margin-top: 1.25rem; }
+.wedding-gallery + .swiper-pagination .swiper-pagination-bullet { width: .7rem; height: .7rem; margin-inline: .35rem; background: var(--wedding-ink); }
 .editorial-project--wedding :focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
 
 @media (min-width: 768px) {
     .wedding-brief-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .wedding-identity-grid, .wedding-print-grid, .wedding-digital-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .wedding-context-grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
+    .wedding-masonry { overflow: visible; }
+    .wedding-masonry .swiper-wrapper { display: block; columns: 2; column-gap: var(--wedding-masonry-gap); transform: none !important; }
+    .wedding-masonry .swiper-slide { display: block; width: 100% !important; margin: 0 0 var(--wedding-masonry-gap); padding: 0; break-inside: avoid; opacity: 1; transform: none; }
+    .wedding-masonry :is(picture, img) { display: block; }
+    .wedding-masonry .wedding-media img { width: 100%; height: auto; max-height: none; object-fit: contain; }
+    .wedding-masonry + .swiper-pagination { display: none; }
 }
 
 @media (min-width: 1100px) {

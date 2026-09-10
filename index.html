@@ -92,10 +92,10 @@ rel="stylesheet"
 
                     <ul class="dropdown-menu">
 
-                        <li hidden inert aria-hidden="true" data-project-status="draft">
+                        <li>
                             <a class="nav-link dropdown-item"
-                               href="revista.html">
-                                Revista
+                               href="boda.html">
+                                Sistema visual para boda
                             </a>
                         </li>
 
@@ -282,27 +282,13 @@ rel="stylesheet"
 
         <div class="desktop-projects">
 
-            <div class="grid project-grid project-grid--two">
+            <div class="grid project-grid project-grid--three">
 
 
-                <!-- TODO: BODA VISIBILITY — remove hidden/inert and update copy/cover when publishing. -->
-                <article class="project-card revista" hidden inert aria-hidden="true" data-project-status="draft">
-
-                    <div class="card-content">
-
-                        <h3>Revista Psicología</h3>
-
-                        <p>
-                            Proyecto de divulgación científica;
-                            desarrollo editorial completo.
-                        </p>
-
-                        <a href="revista.html">
-                            Ver proyecto
-                        </a>
-
-                    </div>
-
+                <article class="project-card revista" aria-label="Proyecto Sistema visual para boda">
+                    <a class="project-card__link" href="boda.html" aria-describedby="boda-cover-description-desktop">
+                        <div class="card-content"><span class="project-tag">Identidad · Diseño editorial</span><h3>Sistema visual para boda</h3><p>Una identidad aplicada a invitaciones impresas y experiencias digitales conectadas.</p><span class="card-action" aria-hidden="true">Ver proyecto →</span><span id="boda-cover-description-desktop" class="visually-hidden">Invitación física acompañada por vistas móvil y de escritorio del proyecto.</span></div>
+                    </a>
                 </article>
 
 
@@ -350,27 +336,8 @@ rel="stylesheet"
             <div class="swiper-wrapper">
 
 
-                <div class="swiper-slide" hidden inert aria-hidden="true" data-project-status="draft">
-
-                    <article class="project-card revista">
-
-                        <div class="card-content">
-
-                            <h3>Revista Psicología</h3>
-
-                            <p>
-                                Proyecto de divulgación científica;
-                                desarrollo editorial completo.
-                            </p>
-
-                            <a href="revista.html">
-                                Ver proyecto
-                            </a>
-
-                        </div>
-
-                    </article>
-
+                <div class="swiper-slide">
+                    <article class="project-card revista" aria-label="Proyecto Sistema visual para boda"><a class="project-card__link" href="boda.html" aria-describedby="boda-cover-description-mobile"><div class="card-content"><span class="project-tag">Identidad · Diseño editorial</span><h3>Sistema visual para boda</h3><p>Una identidad aplicada a invitaciones impresas y experiencias digitales conectadas.</p><span class="card-action" aria-hidden="true">Ver proyecto →</span><span id="boda-cover-description-mobile" class="visually-hidden">Invitación física acompañada por vistas móvil y de escritorio del proyecto.</span></div></a></article>
                 </div>
 
 
@@ -497,6 +464,6 @@ rel="stylesheet"
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/main.js?v=20260910"></script>
 </body>
 </html>
