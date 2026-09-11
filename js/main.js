@@ -153,9 +153,6 @@ function getSwiperPresentation(selector) {
 
 const projectsSwiperElement = document.querySelector(".projectsSwiper");
 
-// Draft projects stay in source control but are removed from the runtime carousel.
-projectsSwiperElement?.querySelectorAll('.swiper-slide[data-project-status="draft"]').forEach((slide) => slide.remove());
-
 const projectsSwiper = projectsSwiperElement && new Swiper(".projectsSwiper", {
     grabCursor:true,
     centeredSlides:true,
