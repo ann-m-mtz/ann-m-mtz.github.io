@@ -98,6 +98,26 @@ const swiperAccessibility = {
     }
 };
 
+// Interacción de snap sensible para carruseles editoriales con pocas piezas.
+// Mantiene un avance por gesto, sin free mode ni bloqueo durante la transición.
+const responsiveSnapInteraction = {
+    followFinger: true,
+    threshold: 2,
+    touchRatio: 1,
+    shortSwipes: true,
+    longSwipes: true,
+    longSwipesRatio: 0.18,
+    longSwipesMs: 300,
+    resistance: true,
+    resistanceRatio: 0.85,
+    touchReleaseOnEdges: true,
+    preventInteractionOnTransition: false,
+    speed: 420,
+    slidesPerGroup: 1,
+    freeMode: false,
+    oneWayMovement: false
+};
+
 // Refinamiento visual compartido: en desktop comienza cerca del centro para
 // mostrar continuidad a ambos lados; tablet y móvil conservan el primer slide.
 // La paginación se crea en runtime para no alterar el markup de cada página.
@@ -132,31 +152,6 @@ function getSwiperPresentation(selector) {
 //Slider Index Proyectos
 
 const projectsSwiperElement = document.querySelector(".projectsSwiper");
-
-// Publica Boda en los menús históricos sin duplicarla en las páginas que ya
-// contienen el enlace definitivo en su HTML.
-document.querySelectorAll('.dropdown-menu').forEach((menu) => {
-    if (menu.querySelector('a[href="boda.html"], a[href="boda-en.html"]')) return;
-
-    const packagingLink = menu.querySelector('a[href="packaging.html"], a[href="packaging-en.html"]');
-    if (!packagingLink) return;
-
-    const english = packagingLink.getAttribute("href") === "packaging-en.html";
-    const item = document.createElement("li");
-    const link = document.createElement("a");
-    link.className = "nav-link dropdown-item";
-    link.href = english ? "boda-en.html" : "boda.html";
-    link.textContent = english ? "Wedding visual system" : "Sistema visual para boda";
-    item.append(link);
-    packagingLink.closest("li")?.insertAdjacentElement("afterend", item);
-});
-
-// El orden público del índice es Too Munch? → Packaging → Boda.
-document.querySelectorAll(".project-grid .project-card.revista").forEach((card) => card.parentElement.append(card));
-projectsSwiperElement?.querySelectorAll(".project-card.revista").forEach((card) => {
-    const slide = card.closest(".swiper-slide");
-    if (slide) projectsSwiperElement.querySelector(".swiper-wrapper")?.append(slide);
-});
 
 const projectsSwiper = projectsSwiperElement && new Swiper(".projectsSwiper", {
     grabCursor:true,
@@ -311,6 +306,7 @@ const tooMunchSwiper = document.querySelector(".tooMunchSwiper") && new Swiper("
     watchOverflow: true,
     resizeObserver: true,
     observer: true,
+    ...responsiveSnapInteraction,
     breakpoints: {
         768: {
             slidesPerView: 2.3,
@@ -406,6 +402,7 @@ function syncTooMunchResultsGallery() {
             watchOverflow: true,
             resizeObserver: true,
             observer: true,
+            ...responsiveSnapInteraction,
             ...getSwiperPresentation(".tmResultsGallery"),
             ...swiperAccessibility
         });
@@ -506,6 +503,7 @@ const packagingProcessSwiper = document.querySelector(".packagingProcessSwiper")
     watchOverflow: true,
     resizeObserver: true,
     observer: true,
+    ...responsiveSnapInteraction,
     breakpoints: {
         768: {
             slidesPerView: 1.45,
