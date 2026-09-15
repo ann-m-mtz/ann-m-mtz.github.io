@@ -558,3 +558,20 @@ const ilustracionSwiper = document.querySelector(".ilustracionSwiper") && new Sw
     ...getSwiperPresentation(".ilustracionSwiper"),
     ...swiperAccessibility
 });
+
+// Carteles: la misma navegación móvil de Ilustración, con snap de una pieza.
+const cartelesSwiper = document.querySelector(".cartelesSwiper") && new Swiper(".cartelesSwiper", {
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 1.08,
+    spaceBetween: 15,
+    initialSlide: 0,
+    watchOverflow: true,
+    resizeObserver: true,
+    observer: true,
+    ...responsiveSnapInteraction,
+    ...getSwiperPresentation(".cartelesSwiper"),
+    ...swiperAccessibility
+});
+
+stabilizeSwiperPointer(cartelesSwiper);

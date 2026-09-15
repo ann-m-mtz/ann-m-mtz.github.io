@@ -134,3 +134,151 @@
         padding-block: 3rem 4.5rem;
     }
 }
+
+/* Exhibitions and participation — typographic editorial band. */
+.exception--illustration .illustration-participations {
+    margin: 0;
+    padding-block: clamp(3.75rem, 7vw, 6.5rem);
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-line-subtle);
+}
+
+.exception--illustration .illustration-participations__header {
+    max-width: 48rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.exception--illustration .illustration-participations__kicker {
+    margin: 0 0 var(--space-3);
+    color: var(--color-ink-muted);
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.exception--illustration .illustration-participations__header h2 {
+    margin-bottom: 0;
+}
+
+.exception--illustration .illustration-participations__list,
+.exception--illustration .illustration-participations__venues {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.exception--illustration .illustration-participations__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+    border-top: 1px solid var(--color-line-strong);
+    border-bottom: 1px solid var(--color-line-strong);
+}
+
+.exception--illustration .illustration-participations__item {
+    padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.exception--illustration .illustration-participations__item:first-child {
+    padding-left: 0;
+}
+
+.exception--illustration .illustration-participations__item + .illustration-participations__item {
+    border-left: 1px solid var(--color-line-strong);
+}
+
+.exception--illustration .illustration-participations__item article {
+    max-width: 34rem;
+}
+
+.exception--illustration .illustration-participations__type,
+.exception--illustration .illustration-participations__label {
+    color: var(--color-ink-muted);
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.exception--illustration .illustration-participations__type {
+    margin: 0 0 1rem;
+}
+
+.exception--illustration .illustration-participations__item h3 {
+    margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+    font-size: clamp(1.65rem, 3vw, 2.65rem);
+    line-height: 1.08;
+    overflow-wrap: break-word;
+}
+
+.exception--illustration .illustration-participations__meta,
+.exception--illustration .illustration-participations__meta p,
+.exception--illustration .illustration-participations__venues {
+    color: var(--color-ink-secondary);
+    font-size: clamp(.95rem, .3vw + .88rem, 1.08rem);
+    line-height: 1.65;
+}
+
+.exception--illustration .illustration-participations__venues {
+    padding-left: 1rem;
+    border-left: 2px solid var(--color-line-strong);
+    color: var(--color-ink);
+    font-weight: 550;
+}
+
+.exception--illustration .illustration-participations__meta p {
+    margin: 0;
+}
+
+.exception--illustration .illustration-participations__label {
+    margin-bottom: .55rem !important;
+}
+
+.exception--illustration .illustration-participations__venues li + li {
+    margin-top: .3rem;
+}
+
+.exception--illustration .illustration-participations__organization {
+    margin-bottom: .5rem !important;
+    color: var(--color-ink) !important;
+    font-weight: 700;
+}
+
+.exception--illustration .illustration-participations__item time {
+    display: block;
+    margin-top: .35rem;
+    color: var(--color-ink);
+    font-size: clamp(.95rem, .3vw + .88rem, 1.08rem);
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+@media (max-width: 767px) {
+    .exception--illustration .illustration-participations {
+        padding-block: 3.5rem;
+    }
+
+    .exception--illustration .illustration-participations__header {
+        margin-bottom: 2.25rem;
+    }
+
+    .exception--illustration .illustration-participations__list {
+        grid-template-columns: 1fr;
+    }
+
+    .exception--illustration .illustration-participations__item,
+    .exception--illustration .illustration-participations__item:first-child {
+        padding: 2rem 0;
+    }
+
+    .exception--illustration .illustration-participations__item + .illustration-participations__item {
+        border-top: 1px solid var(--color-line-strong);
+        border-left: 0;
+    }
+
+    .exception--illustration .illustration-participations__item h3 {
+        font-size: clamp(1.65rem, 8vw, 2.2rem);
+    }
+}
