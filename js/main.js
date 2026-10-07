@@ -575,3 +575,44 @@ const cartelesSwiper = document.querySelector(".cartelesSwiper") && new Swiper("
 });
 
 stabilizeSwiperPointer(cartelesSwiper);
+
+// Franjas editoriales: una tarjeta en móvil, dos en tablet y tres en desktop.
+// La paginación sólo aparece cuando la lista supera las tres piezas visibles.
+function createEditorialBandSwiper(selector) {
+    const element = document.querySelector(selector);
+    if (!element) return null;
+
+    const slidesCount = element.querySelectorAll(".swiper-wrapper > .swiper-slide").length;
+    let pagination;
+
+    if (slidesCount > 3) {
+        const paginationElement = document.createElement("div");
+        paginationElement.className = "swiper-pagination swiper-pagination--minimal";
+        element.insertAdjacentElement("afterend", paginationElement);
+        pagination = { el: paginationElement, clickable: true };
+    }
+
+    const swiper = new Swiper(element, {
+        grabCursor: slidesCount > 1,
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 0,
+        watchOverflow: true,
+        resizeObserver: true,
+        observer: true,
+        ...responsiveSnapInteraction,
+        speed: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 420,
+        breakpoints: {
+            768: { slidesPerView: 2 },
+            992: { slidesPerView: 3 }
+        },
+        ...(pagination ? { pagination } : {}),
+        ...swiperAccessibility
+    });
+
+    stabilizeSwiperPointer(swiper);
+    return swiper;
+}
+
+const illustrationParticipationsSwiper = createEditorialBandSwiper(".illustrationParticipationsSwiper");
+const posterRecognitionsSwiper = createEditorialBandSwiper(".posterRecognitionsSwiper");
